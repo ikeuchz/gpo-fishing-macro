@@ -11,6 +11,7 @@ from .engine import Engine
 from .windows import WindowsInput
 from .hotkeys import active_shortcuts
 from . import theme
+from .overlay import TrackingOverlay
 
 
 class App:
@@ -20,6 +21,7 @@ class App:
         root.geometry('820x820')
         root.minsize(700, 600)
         theme.apply(root)
+        root.attributes('-topmost', True)
         assets = Path(__file__).resolve().parent / 'assets'
         icon = assets / 'app.ico'
         if sys.platform == 'win32' and icon.exists():
@@ -39,12 +41,17 @@ class App:
         self.capture_pending = False
         self.keys = set()
         self.start_pending = None
+        self.overlay = None
+        self.overlay_area = None
+        self.observations = queue.Queue(maxsize=1)
+        self.compact_mode = False
         try:
             self.settings = Settings.load(self.path)
         except (ValueError, TypeError, OSError, KeyError) as error:
             messagebox.showwarning('Configuração', f'Não foi possível carregar as configurações:\n{error}')
             self.settings = Settings()
         header = ttk.Frame(root)
+        self.header = header
         header.pack(fill='x', padx=24, pady=(22, 16))
         if hasattr(self, 'icon'):
             ttk.Label(header, image=self.icon).pack(side='left', padx=(0, 15))
@@ -59,10 +66,17 @@ class App:
         ttk.Button(controls, text='▶  Iniciar em 3 segundos', style='Accent.TButton', command=self.start_from_button).pack(side='left')
         ttk.Button(controls, text='■  Parar / cancelar', command=self.stop_from_button).pack(side='left', padx=8)
         ttk.Button(controls, text='Selecionar área', command=self.select_area).pack(side='right')
+        view = ttk.Frame(root)
+        view.pack(fill='x', padx=24, pady=(0, 8))
+        self.on_top = tk.BooleanVar(value=True)
+        ttk.Checkbutton(view, text='Sempre visível', variable=self.on_top,
+                        command=lambda: root.attributes('-topmost', self.on_top.get())).pack(side='left')
+        ttk.Button(view, text='Modo compacto / completo', command=self.toggle_compact).pack(side='right')
         self.shortcut_hint = tk.StringVar()
         ttk.Label(root, textvariable=self.shortcut_hint, style='Muted.TLabel').pack(anchor='w', padx=24, pady=(0, 10))
         self.update_shortcut_hint()
         notebook = ttk.Notebook(root)
+        self.notebook = notebook
         notebook.pack(fill='both', expand=True, padx=12, pady=10)
         page = ttk.Frame(notebook)
         notebook.add(page, text='Configurações de pesca')
@@ -80,7 +94,7 @@ class App:
                 viewport.yview_scroll(-int(event.delta / 120), 'units')
         root.bind('<MouseWheel>', wheel, add='+')
         self.fields = {}
-        fields = [('area', 'Área: x, y, largura, altura'), ('rod_key', 'Tecla da vara'),
+        fields = [('control_bar', 'Barra de controle: left / right'), ('area', 'Área: x, y, largura, altura'), ('rod_key', 'Tecla da vara'),
                   ('other_key', 'Tecla de outro item'), ('bite_timeout', 'Espera pela fisgada (s)'),
                   ('end_timeout', 'Espera para concluir ciclo (s)'), ('cast_hold', 'Duração do lançamento (s)'),
                   ('interval', 'Intervalo de captura (s)'), ('kp', 'Ganho proporcional'),
@@ -109,16 +123,19 @@ class App:
         advanced = ttk.Frame(notebook)
         notebook.add(advanced, text='Rotinas e pontos')
         self.toggles = {}
-        for name, label in [('auto_buy', 'Comprar iscas'), ('auto_bait', 'Selecionar isca'), ('auto_store', 'Guardar fruta')]:
+        for name, label in [('auto_cast', 'Lançar vara automaticamente (opcional)'), ('auto_buy', 'Comprar iscas'), ('auto_bait', 'Selecionar isca'), ('auto_store', 'Guardar fruta')]:
             variable = tk.BooleanVar(value=getattr(self.settings, name))
             self.toggles[name] = variable
             ttk.Checkbutton(advanced, text=label, variable=variable).pack(anchor='w', padx=8, pady=4)
         ttk.Label(advanced, text='Capture pontos e edite as ações em JSON: click, key ou wait.', wraplength=600).pack(padx=8, pady=8)
         ttk.Button(advanced, text='Capturar ponto em 3 segundos', command=self.capture_point).pack(pady=6)
+        ttk.Label(advanced, text='Lançamento automático desligado: apenas acompanha o minigame.', style='Muted.TLabel').pack(padx=8, pady=4)
         self.editor = tk.Text(advanced, height=14, width=65, undo=True, bg=theme.CARD, fg=theme.TEXT, insertbackground=theme.ACCENT, selectbackground='#304766', relief='flat', padx=12, pady=12, font=('Consolas', 10))
         self.editor.pack(fill='both', expand=True, padx=8, pady=8)
         self.editor.insert('1.0', json.dumps({'points': self.settings.points, 'routines': self.settings.routines}, indent=2))
-        ttk.Button(root, text='Salvar configurações', command=self.save).pack(pady=(0, 10))
+        self.footer = ttk.Frame(root)
+        self.footer.pack(pady=(0, 10))
+        ttk.Button(self.footer, text='Salvar configurações', command=self.save).pack()
         root.protocol('WM_DELETE_WINDOW', self.close)
         root.after(50, self.poll)
 
@@ -140,12 +157,51 @@ class App:
         try:
             self.settings = self.read_settings()
             self.settings.save(self.path)
+            if not self.busy():
+                self.show_overlay(self.settings.area)
             self.update_shortcut_hint()
             self.status.set(f'Salvo. Volte ao jogo e use {self.settings.start_hotkey}, ou o botão Iniciar.')
             return True
         except (ValueError, TypeError, OSError, KeyError, AttributeError) as error:
             messagebox.showerror('Configuração', str(error))
             return False
+
+    def toggle_compact(self):
+        self.compact_mode = not self.compact_mode
+        if self.compact_mode:
+            self.full_geometry = self.root.geometry()
+            self.header.pack_forget()
+            self.notebook.pack_forget()
+            self.footer.pack_forget()
+            self.root.minsize(700, 220)
+            self.root.geometry('760x250')
+        else:
+            self.header.pack(fill='x', padx=24, pady=(22, 16), before=self.root.winfo_children()[1])
+            self.notebook.pack(fill='both', expand=True, padx=12, pady=10)
+            self.footer.pack(pady=(0, 10))
+            self.root.minsize(700, 600)
+            self.root.geometry(self.full_geometry)
+
+    def show_overlay(self, area):
+        if sys.platform != 'win32':
+            return
+        if self.overlay is not None and self.overlay_area != area:
+            self.overlay.close()
+            self.overlay = None
+        if self.overlay is None:
+            self.overlay = TrackingOverlay(self.root, self.inputs, list(area))
+            self.overlay_area = list(area)
+
+    def observe(self, target):
+        # Worker only publishes data; Tk painting stays on the UI thread.
+        try:
+            self.observations.get_nowait()
+        except queue.Empty:
+            pass
+        try:
+            self.observations.put_nowait(target)
+        except queue.Full:
+            pass
 
     def update_shortcut_hint(self):
         self.shortcut_hint.set(f'{self.settings.start_hotkey} iniciar/parar    ·    {self.settings.area_hotkey} área    ·    {self.settings.exit_hotkey} sair')
@@ -194,6 +250,7 @@ class App:
             return
         self.stop = threading.Event()
         settings = self.settings
+        self.show_overlay(settings.area)
         def task():
             try:
                 import mss
@@ -201,7 +258,7 @@ class App:
                 x, y, width, height = settings.area
                 monitor = {'left': x, 'top': y, 'width': width, 'height': height}
                 with mss.mss() as screen:
-                    Engine(settings, self.inputs, self.stop, self.events.put).run(
+                    Engine(settings, self.inputs, self.stop, self.events.put, observe=self.observe).run(
                         lambda: np.asarray(screen.grab(monitor)))
             except Exception as error:
                 self.events.put(f'Erro: {error}')
@@ -214,6 +271,9 @@ class App:
         if self.busy() or self.selecting or self.capture_pending or self.start_pending is not None:
             self.status.set('Pare o macro antes de selecionar a área.')
             return
+        if self.overlay is not None:
+            self.overlay.close()
+            self.overlay = None
         self.selecting = True
         overlay = tk.Toplevel(self.root)
         overlay.attributes('-fullscreen', True)
@@ -222,7 +282,7 @@ class App:
         overlay.configure(bg='black', cursor='crosshair')
         canvas = tk.Canvas(overlay, bg='black', highlightthickness=0)
         canvas.pack(fill='both', expand=True)
-        canvas.create_text(20, 20, anchor='nw', text='Arraste sobre o minigame · Esc cancela', fill='white')
+        canvas.create_text(20, 20, anchor='nw', text='Selecione as barras. Controle à esquerda por padrão (left). Esc cancela.', fill='white')
         anchor = []
         rectangle = [None]
         def finish(event=None):
@@ -242,9 +302,11 @@ class App:
             x, y = min(anchor[0], event.x), min(anchor[1], event.y)
             width, height = abs(event.x-anchor[0]), abs(event.y-anchor[1])
             if width >= 10 and height >= 10:
-                self.fields['area'].set(f'{x + overlay.winfo_rootx()}, {y + overlay.winfo_rooty()}, {width}, {height}')
+                area = [x + overlay.winfo_rootx(), y + overlay.winfo_rooty(), width, height]
+                self.fields['area'].set(', '.join(map(str, area)))
                 finish()
-                self.status.set('Área selecionada. Salve as configurações.')
+                self.show_overlay(area)
+                self.status.set('Área selecionada. Salve. Branco = peixe; verde-água = seu marcador.')
         canvas.bind('<Button-1>', begin)
         canvas.bind('<B1-Motion>', drag)
         canvas.bind('<ButtonRelease-1>', end)
@@ -274,6 +336,12 @@ class App:
         self.root.after(3000, capture)
 
     def poll(self):
+        try:
+            target = self.observations.get_nowait()
+            if self.overlay is not None:
+                self.overlay.update(target)
+        except queue.Empty:
+            pass
         while True:
             try:
                 self.status.set(self.events.get_nowait())
@@ -281,6 +349,9 @@ class App:
                 break
         if self.closing:
             if not self.busy():
+                if self.overlay is not None:
+                    self.overlay.close()
+                    self.overlay = None
                 self.root.destroy()
                 return
         else:

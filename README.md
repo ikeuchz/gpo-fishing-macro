@@ -29,6 +29,18 @@ py -3.12 -m venv .venv
 
 O título da janela ativa deve conter `Roblox`, ou o texto configurado na interface. Se outra janela receber foco, o macro para e solta o mouse; use seu atalho configurado no jogo para retomar. Durante a execução, alterações da interface só passam a valer na próxima partida. Os atalhos padrão agora são **INSERT** (iniciar/parar), **HOME** (área) e **END** (sair). Na aba **Atalhos**, é possível trocar por combinações como **CTRL+G**, **ALT+P**, outras teclas de navegação ou F1–F12. Salve para aplicar; atalhos duplicados são rejeitados. Configurações antigas recebem os novos padrões automaticamente.
 
+### Acompanhar o peixe sem lançar a vara sozinho
+
+O lançamento automático agora vem **desligado**. Inicie o macro, volte ao jogo e lance a vara manualmente. Ele aguarda a leitura do minigame em três quadros consecutivos antes de atuar. Sem leitura, solta o mouse e não troca de item nem relança por timeout. A opção **Lançar vara automaticamente** na aba de rotinas é separada e só deve ser ativada se você quiser esse comportamento.
+
+Na seleção verde podem aparecer as duas barras. A leitura agora separa a barra de controle da barra de progresso. O campo **Barra de controle** usa `left` (esquerda) por padrão; troque por `right` se a barra com o peixe estiver à direita. A barra de progresso não entra no cálculo. A detecção ainda depende das cores azul/cinza/branco da sua interface; se não corresponderem, será preciso calibrar com uma captura real do minigame.
+
+A moldura verde permanece visível. Uma seta branca do lado de fora marca o **PEIXE**; uma seta verde-água marca **VOCÊ**, a posição estimada do marcador pela abertura da barra azul. Elas acompanham a leitura real, não são movimentos decorativos. Se a leitura sumir, as setas somem e o botão do mouse é solto. A moldura e as setas são transparentes a cliques e ficam fora da região analisada para não interferir na captura.
+
+### Ver o painel durante a pesca
+
+**Sempre visível** fica ativado por padrão. Use **Modo compacto / completo** para deixar apenas os controles e o status na tela. Mova o painel para fora do retângulo verde. O jogo deve estar em modo janela ou janela sem bordas: uma janela Tk pode não aparecer sobre tela cheia exclusiva. O macro continua parando se o jogo perder o foco; observar o painel não exige Alt+Tab. Para clicar nas configurações, pare e depois reinicie no jogo.
+
 O macro usa captura de tela para procurar a barra azul, o fundo cinza e o indicador branco de um minigame vertical. O controle mantém ou solta o botão esquerdo conforme a posição detectada e os ganhos proporcional/derivativo. Ajuste as tolerâncias se a detecção não reconhecer a interface. O contador indica ciclos terminados visualmente, não confirmação de itens no inventário.
 
 ## Iscas e frutas

@@ -78,7 +78,7 @@ class MacroTests(unittest.TestCase):
         inputs = FakeInput()
         stop = threading.Event()
         now = [0.0]
-        engine = Engine(Settings(bite_timeout=.05, interval=.01), inputs, stop,
+        engine = Engine(Settings(auto_cast=True, bite_timeout=.05, interval=.01), inputs, stop,
                         lambda text: None, clock=lambda: now[0])
         casts = []
         def cast():
@@ -100,6 +100,7 @@ class MacroTests(unittest.TestCase):
 
     def test_capture_error_releases_mouse(self):
         inputs = FakeInput()
+        inputs.hold(True)
         engine = Engine(Settings(), inputs, threading.Event(), lambda text: None)
         def cast(): inputs.hold(True)
         engine.cast = cast

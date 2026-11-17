@@ -37,3 +37,24 @@ class WindowsInput:
 
     def down(self, code):
         return bool(self.api.GetAsyncKeyState(code) & 0x8000)
+
+    def make_clickthrough(self, window):
+        self.api.GetAncestor.argtypes = [wintypes.HWND, wintypes.UINT]
+        self.api.GetAncestor.restype = wintypes.HWND
+        hwnd = self.api.GetAncestor(window.winfo_id(), 2)
+        get_style = self.api.GetWindowLongPtrW
+        set_style = self.api.SetWindowLongPtrW
+        get_style.argtypes = [wintypes.HWND, ctypes.c_int]
+        get_style.restype = ctypes.c_ssize_t
+        set_style.argtypes = [wintypes.HWND, ctypes.c_int, ctypes.c_ssize_t]
+        set_style.restype = ctypes.c_ssize_t
+        # WS_EX_TRANSPARENT | LAYERED | NOACTIVATE | TOOLWINDOW
+        set_style(hwnd, -20, get_style(hwnd, -20) | 0x20 | 0x80000 | 0x08000000 | 0x80)
+
+    def place_overlay(self, window, x, y, width, height):
+        # SetWindowPos handles negative virtual-desktop coordinates literally.
+        hwnd = self.api.GetAncestor(window.winfo_id(), 2)
+        self.api.SetWindowPos.argtypes = [wintypes.HWND, wintypes.HWND,
+                                         ctypes.c_int, ctypes.c_int, ctypes.c_int,
+                                         ctypes.c_int, wintypes.UINT]
+        self.api.SetWindowPos(hwnd, -1, x, y, width, height, 0x0010 | 0x0040)

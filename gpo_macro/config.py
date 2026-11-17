@@ -23,6 +23,8 @@ class Settings:
     white_tolerance: int = 8
     gray_tolerance: int = 4
     foreground_title: str = 'Roblox'
+    auto_cast: bool = False
+    control_bar: str = 'left'
     auto_buy: bool = False
     auto_store: bool = False
     auto_bait: bool = False
@@ -42,7 +44,9 @@ class Settings:
             raise ValueError('Escolha três atalhos diferentes para iniciar, área e sair.')
         if not isinstance(self.points, dict) or not isinstance(self.routines, dict):
             raise ValueError('points e routines devem ser objetos JSON.')
-        if any(type(v) is not bool for v in (self.auto_buy, self.auto_store, self.auto_bait)):
+        if self.control_bar not in ('left', 'right'):
+            raise ValueError('Barra de controle: escolha left (esquerda) ou right (direita).')
+        if any(type(v) is not bool for v in (self.auto_cast, self.auto_buy, self.auto_store, self.auto_bait)):
             raise ValueError('As opções de automação devem ser true ou false.')
         if len(self.area) != 4 or any(type(v) is not int for v in self.area):
             raise ValueError('Área deve conter quatro inteiros: x, y, largura, altura.')

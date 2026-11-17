@@ -3,9 +3,12 @@ import numpy as np
 
 
 def mask(image, rgb, tolerance):
-    # MSS supplies BGRA; signed conversion avoids uint8 subtraction wrapping.
     bgr = image[..., :3].astype(np.int16)
     return np.all(np.abs(bgr - np.array(rgb[::-1], dtype=np.int16)) <= tolerance, axis=2)
+
+
+def runs(indices):
+    return np.split(indices, np.flatnonzero(np.diff(indices) != 1) + 1) if len(indices) else []
 
 
 @dataclass(frozen=True)
@@ -20,28 +23,33 @@ class Target:
 
 
 def detect(image, settings):
+    """Read only one blue vertical bar; never combine it with the progress bar."""
     blue = mask(image, (85, 170, 255), settings.blue_tolerance)
-    ys, xs = np.where(blue)
-    if len(xs) < 4:
+    columns = np.flatnonzero(blue.sum(axis=0) >= 3)
+    bars = [r for r in runs(columns) if len(r) >= 4]
+    if not bars:
         return None
-    left, right = int(xs.min()), int(xs.max()) + 1
-    crop = image[:, left:right]
-    gray_rows = np.flatnonzero(mask(crop, (25, 25, 25), settings.gray_tolerance).any(axis=1))
-    if len(gray_rows) < 2:
+    bar = bars[0] if settings.control_bar == 'left' else bars[-1]
+    left, right = int(bar[0]), int(bar[-1]) + 1
+    blue_rows = np.flatnonzero(blue[:, left:right].any(axis=1))
+    if len(blue_rows) < 10:
         return None
-    top, bottom = int(gray_rows.min()), int(gray_rows.max()) + 1
-    crop = crop[top:bottom]
+    # Exclude gray margins above/below the actual blue track.
+    top, bottom = int(blue_rows[0]), int(blue_rows[-1]) + 1
+    crop = image[top:bottom, left:right]
+    if not mask(crop, (25, 25, 25), settings.gray_tolerance).any():
+        return None
     white_rows = np.flatnonzero(mask(crop, (255, 255, 255), settings.white_tolerance).any(axis=1))
-    if not len(white_rows):
+    whites = runs(white_rows)
+    gaps = runs(np.flatnonzero(~blue[top:bottom, left:right].any(axis=1)))
+    # A player's gap must be inside the track, not a blank outer margin.
+    gaps = [r for r in gaps if r[0] > 0 and r[-1] < bottom-top-1]
+    if not whites or not gaps:
         return None
-    gap_rows = np.flatnonzero(~mask(crop, (85, 170, 255), settings.blue_tolerance).any(axis=1))
-    if not len(gap_rows):
-        return None
-    sections = np.split(gap_rows, np.flatnonzero(np.diff(gap_rows) != 1) + 1)
-    gap = max(sections, key=len)
-    return Target(float((white_rows[0] + white_rows[-1]) / 2 + top),
-                  float((gap[0] + gap[-1]) / 2 + top),
-                  int(white_rows[-1] - white_rows[0] + 1))
+    fish = max(whites, key=len)
+    gap = max(gaps, key=len)
+    return Target(float((fish[0] + fish[-1]) / 2 + top),
+                  float((gap[0] + gap[-1]) / 2 + top), int(len(fish)))
 
 
 class Controller:
