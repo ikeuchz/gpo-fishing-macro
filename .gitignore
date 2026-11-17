@@ -9,3 +9,6 @@ settings.json
 settings.json.tmp
 
 GPOsettings.json
+
+interface.json
+interface.json.tmp

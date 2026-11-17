@@ -76,27 +76,49 @@ class OriginalCoreTests(unittest.TestCase):
 class WindowsUITests(unittest.TestCase):
     def test_original_settings_widgets_and_new_presentation(self):
         import tkinter as tk
+        import tempfile
+        temporary = tempfile.TemporaryDirectory()
         root = tk.Tk()
         root.withdraw()
         app = None
         try:
             # Exercise real original construction; register no global hooks in CI.
             with patch.object(App, 'setup_hotkeys', lambda self: None):
-                app = App(root)
+                app = App(root, preferences_path=Path(temporary.name)/'interface.json')
             root.update_idletasks()
             self.assertFalse(app.is_running)
-            self.assertEqual([app.notebook.tab(tab, 'text') for tab in app.notebook.tabs()], ['Pesca', 'Controle', 'Automação'])
+            self.assertEqual([app.notebook.tab(tab, 'text') for tab in app.notebook.tabs()], ['Fishing', 'Control', 'Automation'])
             self.assertEqual(app.keybindings['start_stop'], 'INSERT')
             for field in ('kp_entry', 'kd_entry', 'bite_timeout_entry', 'end_fish_timeout_entry',
                           'blue_tolerance_entry', 'white_tolerance_entry', 'gray_tolerance_entry'):
                 self.assertTrue(getattr(app, field).winfo_exists())
+            # Switch language in-place: preserve unsaved edits, selected page,
+            # pending start, and fishing state. No hooks or real input in CI.
+            app.notebook.select(1)
+            field_id = str(app.kp_entry)
+            app.kp_entry.delete(0, 'end')
+            app.kp_entry.insert(0, '0.123')
+            app.language_var.set('Português')
+            app.change_language()
+            self.assertEqual(app.translator.locale, 'pt')
+            self.assertEqual(app.notebook.tab(app.notebook.tabs()[0], 'text'), 'Pesca')
+            self.assertEqual(str(app.kp_entry), field_id)
+            self.assertEqual(app.kp_entry.get(), '0.123')
+            self.assertEqual(app.notebook.index(app.notebook.select()), 1)
+            app.is_running = True
+            app.language_var.set('English')
+            app.change_language()
+            self.assertTrue(app.is_running)
+            self.assertEqual(app.translator.locale, 'en')
+            self.assertEqual(app.notebook.tab(app.notebook.tabs()[0], 'text'), 'Fishing')
+            app.is_running = False
             # The new widgets still feed exactly the original saving callbacks.
             with patch.object(app, 'save_settings', return_value=True):
                 app.kp_entry.delete(0, 'end')
                 app.kp_entry.insert(0, '0.075')
                 app.save_pd_gains()
                 self.assertEqual(app.kp, .075)
-                self.assertEqual(app.status_label.cget('text'), 'Precisão do controle salva.')
+                self.assertEqual(app.status_label.cget('text'), 'PD gains saved!')
                 app.rod_key_var.set('5')
                 app.not_rod_key_var.set('4')
                 app.save_rod_keys()
@@ -109,17 +131,27 @@ class WindowsUITests(unittest.TestCase):
                 self.assertFalse(app.auto_buy_bait)
             app.water_point = (123, 456)
             app.update_point_buttons()
-            self.assertEqual(app.water_btn.cget('text'), 'Água: (123, 456)')
+            self.assertEqual(app.water_btn.cget('text'), 'Water Point: (123, 456)')
             app.status_label.config(text='Status: Running')
-            self.assertEqual(app.status_label.cget('text'), 'Status: pescando')
+            self.assertEqual(app.status_label.cget('text'), 'Status: Running')
             app.toggle_compact()
             self.assertTrue(app.compact_mode)
             app.toggle_compact()
             self.assertFalse(app.compact_mode)
             app.start_delayed()
             self.assertIsNotNone(app.pending_start)
+            pending = app.pending_start
+            app.language_var.set('Português')
+            app.change_language()
+            self.assertEqual(app.pending_start, pending)
+            self.assertIn('Iniciando em 3', app.summary.cget('text'))
+            app.language_var.set('English')
+            app.change_language()
+            self.assertEqual(app.pending_start, pending)
+            self.assertIn('Starting in 3', app.summary.cget('text'))
             app.stop_button()
             self.assertIsNone(app.pending_start)
             self.assertFalse(app.is_running)
         finally:
             root.destroy()
+            temporary.cleanup()

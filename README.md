@@ -6,15 +6,17 @@ A implementação experimental anterior foi substituída. O código de pesca ago
 
 ## Interface
 
-A interface é inteiramente em **português**, incluindo os avisos e as mensagens de captura de pontos. Esta versão tem idioma único, sem seletor.
+A interface abre em **English** por padrão. No topo da janela, em **Language / Idioma**, escolha **English** ou **Português**. A troca é imediata, incluindo abas, avisos, mensagens e pontos de captura; os campos não são recriados e os valores digitados são mantidos.
 
-![Interface em português](docs/interface.png)
+A escolha fica salva em `interface.json`, ao lado do aplicativo, e é restaurada na próxima abertura. Essa preferência é independente do `GPOsettings.json`, que continua guardando os ajustes do motor de pesca.
 
-- **Pesca**: itens, tempos e área do minigame.
-- **Controle**: precisão do acompanhamento e tolerâncias de cor.
-- **Automação**: compra e seleção de iscas, armazenamento de frutas e seus pontos de clique.
+![Interface em inglês com seletor de idioma](docs/interface.png)
 
-Os controles foram reorganizados, mas continuam chamando as funções originais. As configurações existentes em `GPOsettings.json` são mantidas. Cada cartão tem seu botão **Salvar** para aplicar ajustes.
+- **Fishing / Pesca**: itens, tempos e área do minigame.
+- **Control / Controle**: precisão do acompanhamento e tolerâncias de cor.
+- **Automation / Automação**: compra e seleção de iscas, armazenamento de frutas e seus pontos de clique.
+
+Os controles continuam chamando as funções originais. As instruções abaixo usam os nomes em português; escolha **Português** no seletor para segui-las com os mesmos rótulos.
 
 ## Download e uso
 

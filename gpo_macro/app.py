@@ -3,20 +3,25 @@ from pathlib import Path
 import queue
 import sys
 import tkinter as tk
-from tkinter import messagebox, ttk
+from tkinter import ttk
 from .original import OriginalMacro, core
 from .hotkeys import parse_shortcut
 from . import theme
-from .language import StatusLabel, PointButton, PortugueseMessages
+from .language import Translator, LocalizedWidgets, LocalizedMessages, load_locale, save_locale
 
 
 class App(OriginalMacro):
-    def __init__(self, root):
+    def __init__(self, root, preferences_path=None):
         self.ui_events = queue.SimpleQueue()
         self.pending_start = None
         self.compact_mode = False
         self.closing = False
-        core.messagebox = PortugueseMessages()
+        folder = Path(sys.executable).parent if getattr(sys, 'frozen', False) else Path(__file__).resolve().parents[1]
+        self.preferences_path = Path(preferences_path) if preferences_path is not None else folder/'interface.json'
+        self.translator = Translator(load_locale(self.preferences_path))
+        self.localized = LocalizedWidgets(self.translator)
+        self.messages = LocalizedMessages(self.translator)
+        core.messagebox = self.messages
         super().__init__(root)
         root.title('GPO Fishing — ikeuchz')
         self.full_geometry = f'720x{max(580, min(780, root.winfo_screenheight()-90))}'
@@ -46,24 +51,32 @@ class App(OriginalMacro):
         assets = Path(__file__).parent/'assets'
         if not hasattr(self, 'icon'):
             self.icon = tk.PhotoImage(file=str(assets/'app.png'))
-        ttk.Label(self.header, image=self.icon).pack(side='left', padx=(0, 14))
+        self.localized.Label(self.header, image=self.icon).pack(side='left', padx=(0, 14))
         brand = ttk.Frame(self.header)
         brand.pack(side='left')
-        ttk.Label(brand, text='GPO Fishing', style='Title.TLabel').pack(anchor='w')
-        ttk.Label(brand, text='IKEUCHZ  /  PAINEL DE PESCA', style='Muted.TLabel').pack(anchor='w', pady=(3, 0))
-        self.compact_control = ttk.Button(self.header, text='Modo compacto', command=self.toggle_compact)
+        self.localized.Label(brand, text='GPO Fishing', style='Title.TLabel').pack(anchor='w')
+        self.localized.Label(brand, text='IKEUCHZ  /  PAINEL DE PESCA', style='Muted.TLabel').pack(anchor='w', pady=(3, 0))
+        self.compact_control = self.localized.Button(self.header, text='Modo compacto', command=self.toggle_compact)
         self.compact_control.pack(side='right')
+        language = ttk.Frame(self.header)
+        language.pack(side='right', padx=(0, 12))
+        self.localized.Label(language, text='Idioma', style='Muted.TLabel').pack(anchor='w')
+        self.language_var = tk.StringVar(value='English' if self.translator.locale == 'en' else 'Português')
+        self.language_selector = ttk.Combobox(language, state='readonly', width=11,
+                                               textvariable=self.language_var, values=('English', 'Português'))
+        self.language_selector.pack(pady=(3, 0))
+        self.language_selector.bind('<<ComboboxSelected>>', self.change_language)
 
         self.toolbar = ttk.Frame(self.root)
         self.toolbar.pack(fill='x', padx=24, pady=(0, 12))
-        ttk.Button(self.toolbar, text='▶  Iniciar pesca', style='Accent.TButton',
+        self.localized.Button(self.toolbar, text='▶  Iniciar pesca', style='Accent.TButton',
                    command=self.start_delayed).pack(side='left')
-        ttk.Button(self.toolbar, text='■  Parar', command=self.stop_button).pack(side='left', padx=8)
-        self.area_control = ttk.Button(self.toolbar, text='Selecionar área', command=self.area_button)
+        self.localized.Button(self.toolbar, text='■  Parar', command=self.stop_button).pack(side='left', padx=8)
+        self.area_control = self.localized.Button(self.toolbar, text='Selecionar área', command=self.area_button)
         self.area_control.pack(side='left')
-        ttk.Button(self.toolbar, text='Atalhos', command=self.shortcuts_dialog).pack(side='right')
+        self.localized.Button(self.toolbar, text='Atalhos', command=self.shortcuts_dialog).pack(side='right')
 
-        self.summary = tk.Label(self.root, text='Pronto para pescar', anchor='w',
+        self.summary = self.localized.tk_label(self.root, text='Pronto para pescar', anchor='w',
                                 bg=theme.CARD, fg=theme.ACCENT, padx=16, pady=12,
                                 font=('Segoe UI', 11, 'bold'))
         self.summary.pack(fill='x', padx=24, pady=(0, 14))
@@ -73,7 +86,7 @@ class App(OriginalMacro):
         self.canvases = []
         for name in ('Pesca', 'Controle', 'Automação'):
             page = ttk.Frame(self.notebook)
-            self.notebook.add(page, text=name)
+            self.notebook.add(page, text=self.translator.translate(name))
             canvas = tk.Canvas(page, background=theme.BG, highlightthickness=0)
             bar = ttk.Scrollbar(page, orient='vertical', command=canvas.yview)
             canvas.configure(yscrollcommand=bar.set)
@@ -94,8 +107,8 @@ class App(OriginalMacro):
         def card(parent, title, description):
             frame = ttk.Frame(parent, style='Card.TFrame', padding=18)
             frame.pack(fill='both', expand=True, pady=(0, 12))
-            ttk.Label(frame, text=title, style='CardTitle.TLabel').pack(anchor='w')
-            hint = ttk.Label(frame, text=description, style='CardHint.TLabel', wraplength=520)
+            self.localized.Label(frame, text=title, style='CardTitle.TLabel').pack(anchor='w')
+            hint = self.localized.Label(frame, text=description, style='CardHint.TLabel', wraplength=520)
             hint.pack(anchor='w', fill='x', pady=(4, 14))
             hint.bind('<Configure>', lambda e, label=hint: label.configure(wraplength=max(150, e.width)))
             return frame
@@ -103,14 +116,14 @@ class App(OriginalMacro):
         def row(parent, label):
             frame = ttk.Frame(parent, style='Card.TFrame')
             frame.pack(fill='x', pady=5)
-            ttk.Label(frame, text=label, style='Card.TLabel').pack(side='left')
+            self.localized.Label(frame, text=label, style='Card.TLabel').pack(side='left')
             return frame
 
         def number(parent, label, field, value, stacked=False):
             if stacked:
                 line = ttk.Frame(parent, style='Card.TFrame')
                 line.pack(fill='x', pady=5)
-                ttk.Label(line, text=label, style='Card.TLabel').pack(anchor='w', pady=(0, 5))
+                self.localized.Label(line, text=label, style='Card.TLabel').pack(anchor='w', pady=(0, 5))
             else:
                 line = row(parent, label)
             widget = ttk.Entry(line, width=16, justify='right')
@@ -123,7 +136,7 @@ class App(OriginalMacro):
             if stacked:
                 line = ttk.Frame(parent, style='Card.TFrame')
                 line.pack(fill='x', pady=5)
-                ttk.Label(line, text=label, style='Card.TLabel').pack(anchor='w', pady=(0, 5))
+                self.localized.Label(line, text=label, style='Card.TLabel').pack(anchor='w', pady=(0, 5))
             else:
                 line = row(parent, label)
             variable = tk.StringVar(value=str(value))
@@ -132,11 +145,11 @@ class App(OriginalMacro):
             setattr(self, field, variable)
 
         def apply(parent, text, command):
-            ttk.Button(parent, text=text, command=command).pack(anchor='e', pady=(12, 0))
+            self.localized.Button(parent, text=text, command=command).pack(anchor='e', pady=(12, 0))
 
         def point(parent, label, attr, point_name):
             line = row(parent, label)
-            button = PointButton(line, text='Definir ponto', command=lambda: self.capture_point(point_name),
+            button = self.localized.point_button(line, text='Definir ponto', command=lambda: self.capture_point(point_name),
                                  bg='#22314a', fg=theme.TEXT, activebackground='#304766',
                                  activeforeground=theme.TEXT, relief='flat', padx=12, pady=7,
                                  cursor='hand2', font=('Segoe UI', 10))
@@ -159,9 +172,9 @@ class App(OriginalMacro):
         number(timing, 'Fim do minigame (s)', 'end_fish_timeout_entry', self.end_fish_timeout, stacked=True)
         apply(timing, 'Salvar tempos', self.save_timeouts)
         region = card(pesca, 'Área do minigame', 'Inclua o peixe branco inteiro na caixa verde. Clique novamente no botão para salvar a área.')
-        self.area_description = ttk.Label(region, style='CardHint.TLabel')
+        self.area_description = self.localized.Label(region, style='CardHint.TLabel')
         self.area_description.pack(anchor='w', pady=(0, 8))
-        ttk.Button(region, text='Ajustar área na tela', command=self.area_button).pack(anchor='w')
+        self.localized.Button(region, text='Ajustar área na tela', command=self.area_button).pack(anchor='w')
 
         controle = self.tabs['Controle']
         precision = card(controle, 'Precisão do acompanhamento', 'Se a pesca já funciona bem, mantenha os seus valores atuais.')
@@ -178,7 +191,7 @@ class App(OriginalMacro):
         buy = card(automation, 'Compra de iscas', 'Defina os pontos do menu de compra e a frequência de reposição.')
         self.auto_buy_frame = buy
         self.auto_buy_var = tk.BooleanVar(value=self.auto_buy_bait)
-        ttk.Checkbutton(buy, text='Comprar iscas automaticamente', variable=self.auto_buy_var,
+        self.localized.Checkbutton(buy, text='Comprar iscas automaticamente', variable=self.auto_buy_var,
                         command=self.toggle_auto_buy, style='Card.TCheckbutton').pack(anchor='w', pady=(0, 10))
         number(buy, 'Ciclos entre compras', 'loops_entry', self.loops_per_purchase)
         for label, attr, name in [('Água', 'water_btn', 'water'), ('Confirmar compra', 'yes_btn', 'yes'),
@@ -189,7 +202,7 @@ class App(OriginalMacro):
         store = card(automation, 'Guardar frutas', 'Configure o item e os cliques para armazenar as frutas.')
         self.auto_store_frame = store
         self.auto_store_var = tk.BooleanVar(value=self.auto_store_fruit)
-        ttk.Checkbutton(store, text='Guardar frutas automaticamente', variable=self.auto_store_var,
+        self.localized.Checkbutton(store, text='Guardar frutas automaticamente', variable=self.auto_store_var,
                         command=self.toggle_auto_store, style='Card.TCheckbutton').pack(anchor='w', pady=(0, 10))
         key(store, 'Tecla da fruta', 'fruit_key_var', self.fruit_key)
         apply(store, 'Salvar tecla da fruta', self.save_fruit_key)
@@ -200,7 +213,7 @@ class App(OriginalMacro):
         bait = card(automation, 'Selecionar isca', 'Marque onde escolher a isca e onde retornar à água.')
         self.auto_select_bait_frame = bait
         self.auto_select_bait_var = tk.BooleanVar(value=self.auto_select_bait)
-        ttk.Checkbutton(bait, text='Selecionar isca automaticamente', variable=self.auto_select_bait_var,
+        self.localized.Checkbutton(bait, text='Selecionar isca automaticamente', variable=self.auto_select_bait_var,
                         command=self.toggle_auto_select_bait, style='Card.TCheckbutton').pack(anchor='w', pady=(0, 10))
         point(bait, 'Escolher isca', 'bait_point_btn', 'bait')
         point(bait, 'Voltar à água', 'water_point_2_btn', 'water_2')
@@ -211,11 +224,23 @@ class App(OriginalMacro):
         self.update_water_point_2_button()
         self.update_water_point_3_button()
 
-        self.status_label = StatusLabel(self.root, text='Pronto. Seus ajustes atuais foram mantidos.',
+        self.status_label = self.localized.tk_label(self.root, text='Pronto. Seus ajustes atuais foram mantidos.',
                                         bg=theme.BG, fg=theme.MUTED, anchor='w', padx=24,
                                         pady=10, font=('Segoe UI', 9), wraplength=680)
         self.status_label.pack(fill='x', side='bottom')
         self.compact_mode = False
+
+    def change_language(self, event=None):
+        locale = {'English': 'en', 'Português': 'pt'}[self.language_var.get()]
+        try:
+            save_locale(self.preferences_path, locale)
+        except OSError as error:
+            self.language_var.set('English' if self.translator.locale == 'en' else 'Português')
+            self.messages.showerror('Idioma', f'Não foi possível salvar o idioma: {error}')
+            return
+        self.translator.set_locale(locale)
+        for tab, name in zip(self.notebook.tabs(), ('Pesca', 'Controle', 'Automação')):
+            self.notebook.tab(tab, text=self.translator.translate(name))
 
     def update_gui_size(self):
         # Window layout only; never touch fishing values when an option changes.
@@ -237,21 +262,21 @@ class App(OriginalMacro):
 
     def shortcuts_dialog(self):
         if self.is_running:
-            messagebox.showinfo('Atalhos', 'Pare a pesca antes de alterar os atalhos.')
+            self.messages.showinfo('Atalhos', 'Pare a pesca antes de alterar os atalhos.')
             return
         dialog = tk.Toplevel(self.root)
-        dialog.title('Atalhos de teclado')
+        self.translator.bind_title(dialog, 'Atalhos de teclado')
         dialog.attributes('-topmost', True)
         dialog.configure(bg=theme.BG)
         entries = {}
         for row, (action, label) in enumerate([('start_stop', 'Iniciar / parar'),
                                               ('change_area', 'Selecionar / salvar área'),
                                               ('exit', 'Encerrar')]):
-            tk.Label(dialog, text=label, bg=theme.BG, fg=theme.TEXT, font=('Segoe UI', 10)).grid(row=row, column=0, padx=12, pady=12)
+            self.localized.tk_label(dialog, text=label, bg=theme.BG, fg=theme.TEXT, font=('Segoe UI', 10)).grid(row=row, column=0, padx=12, pady=12)
             value = tk.StringVar(value=self.keybindings[action])
             ttk.Entry(dialog, textvariable=value).grid(row=row, column=1, padx=12)
             entries[action] = value
-        tk.Label(dialog, text='Ex.: INSERT, HOME, END, CTRL+G ou ALT+P', bg=theme.BG,
+        self.localized.tk_label(dialog, text='Ex.: INSERT, HOME, END, CTRL+G ou ALT+P', bg=theme.BG,
                  fg=theme.MUTED, font=('Segoe UI', 9)).grid(row=3, columnspan=2, padx=12, pady=8)
         def save():
             bindings = {key: value.get().strip().upper() for key, value in entries.items()}
@@ -272,8 +297,8 @@ class App(OriginalMacro):
                 # Original method recreates its controls with the new key labels.
                 self.update_button_labels()
             except (ValueError, KeyError) as error:
-                messagebox.showerror('Atalho inválido', str(error), parent=dialog)
-        ttk.Button(dialog, text='Salvar atalhos', command=save).grid(row=4, columnspan=2, pady=12)
+                self.messages.showerror('Atalho inválido', str(error), parent=dialog)
+        self.localized.Button(dialog, text='Salvar atalhos', command=save).grid(row=4, columnspan=2, pady=12)
 
     def start_delayed(self):
         if self.is_running or self.pending_start is not None or self.closing:
