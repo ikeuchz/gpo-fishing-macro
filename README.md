@@ -1,96 +1,52 @@
-# GPO Fishing Macro
+# GPO Fishing — ikeuchz
 
-Projeto de [ikeuchz](https://github.com/ikeuchz): macro de pesca para Grand Piece Online, com código Python editável e organizado para servir de base a novos macros.
+Macro de pesca para Grand Piece Online com uma interface nova sobre o **motor do primeiro executável fornecido**.
 
-Esta versão é uma nova implementação assistida por Codex, escrita em código-fonte a partir do comportamento desejado. Está em desenvolvimento: a detecção e o controle precisam ser calibrados e validados no jogo. O executável enviado anteriormente não é o resultado deste código.
+A implementação experimental anterior foi substituída. O código de pesca agora é o bytecode Python 3.14 recuperado daquele arquivo, preservado integralmente em `gpo_macro/assets/original_core.marshal`. A interface em `gpo_macro/app.py` usa a classe original por herança: não redefine o loop, a procura de cores, o controlador PD, o lançamento da vara ou as rotinas de iscas/frutas. Isso preserva a implementação original, mas não substitui a validação dentro do jogo.
 
-## Download da versão de teste
+## Download e uso
 
-Baixe [GPO-Fishing-Macro.exe](https://github.com/ikeuchz/gpo-fishing-macro/raw/refs/heads/main/GPO-Fishing-Macro.exe) e execute no Windows 64 bits. Este é o novo executável compilado a partir do código deste projeto, não o arquivo enviado anteriormente. Não requer instalação de Python.
+[Baixar o executável Windows 64 bits](https://github.com/ikeuchz/gpo-fishing-macro/raw/refs/heads/main/GPO-Fishing-Macro.exe)
 
-Há um relato de detecção pelo Microsoft Defender na versão anterior, ainda sem diagnóstico concluído. As mudanças de interface, atalhos e ícone não confirmam a segurança do executável; não desative a proteção para executá-lo.
+1. Abra o jogo em modo janela ou sem bordas. O painel fica no topo; **Compactar / expandir** reduz a janela para observar a pesca sem Alt+Tab.
+2. Em **Área / salvar área**, mova e redimensione a caixa verde para incluir o minigame inteiro, **incluindo o peixe branco que pode estar à esquerda da barra**. Clique novamente em **Área / salvar área** para salvar. A seleção e a moldura são as originais.
+3. Configure **Rod Key** com a tecla real da vara no inventário e **Not Rod Key** com outro item. Na captura enviada, a vara aparece no slot **5** e a espada no **4**: confira esses valores no seu jogo. Não deixe a tecla padrão `1` se sua vara estiver no `5`.
+4. Use **Iniciar em 3 segundos** e volte ao jogo, ou configure uma combinação como `CTRL+G` em **Atalhos**. Padrões para instalação nova: INSERT para iniciar/parar, HOME para área/salvar e END para sair.
+5. Para interromper, use **Parar / cancelar** ou o atalho configurado.
 
-A compilação do commit `81c2aa3` passou no [GitHub Actions](https://github.com/ikeuchz/gpo-fishing-macro/actions/runs/44157053762), incluindo os testes de interface no Windows. Ainda é uma versão de teste, sem validação da pesca dentro do Roblox.
+**O fluxo original foi restaurado:** iniciar equipa os itens e lança a vara; o loop aguarda a fisgada, controla o minigame, conclui o ciclo e relança conforme os tempos originais. Não é mais a versão manual experimental anterior. As setas exibidas, cores, ganhos, timeouts, seleção de isca, compra e armazenamento seguem os métodos originais. Os controles completos permanecem disponíveis na parte rolável do painel.
 
-## Executar pelo código no Windows
+Os ajustes são salvos no arquivo original **GPOsettings.json**, ao lado do executável. Pode reutilizar esse arquivo do primeiro macro. O antigo `settings.json` da implementação experimental não é usado, para evitar aplicar outro formato de configurações.
 
-Instale Python 3.12 de 64 bits com Tkinter (incluído no instalador padrão). Abra um terminal na pasta do projeto:
+A inicialização desta interface entra diretamente na classe de pesca; não chama o antigo launcher nem sua rotina de abertura/inscrição no YouTube. As definições originais permanecem no recurso recuperado, mas não são chamadas pelo novo launcher.
+
+Há um relato de bloqueio pelo Defender da versão experimental anterior, ainda sem diagnóstico concluído. O uso do motor original e as mudanças de interface não comprovam que o alerta foi resolvido. Não desative a proteção para executar o arquivo.
+
+## Executar pelo código
+
+Requer **Python 3.14 de 64 bits no Windows**, com Tkinter. Essa versão é necessária para ler o bytecode original.
 
 ```powershell
-py -3.12 -m venv .venv
+py -3.14 -m venv .venv
 .venv\Scripts\python -m pip install -r requirements.txt
 .venv\Scripts\python run.py
 ```
 
-1. Abra o jogo e mantenha sua resolução e escala da interface estáveis.
-2. Clique em **Selecionar área** e arraste sobre o minigame para selecionar a área na tela principal. Esc cancela. A área também pode ser digitada em pixels como `x, y, largura, altura`.
-3. Ajuste as teclas dos itens, salve as configurações e volte à janela do jogo.
-4. Clique em **Iniciar em 3 segundos** e volte ao jogo durante a contagem. Use **Parar / cancelar** para interromper. Você também pode configurar atalhos na aba **Atalhos**.
-
-O título da janela ativa deve conter `Roblox`, ou o texto configurado na interface. Se outra janela receber foco, o macro para e solta o mouse; use seu atalho configurado no jogo para retomar. Durante a execução, alterações da interface só passam a valer na próxima partida. Os atalhos padrão agora são **INSERT** (iniciar/parar), **HOME** (área) e **END** (sair). Na aba **Atalhos**, é possível trocar por combinações como **CTRL+G**, **ALT+P**, outras teclas de navegação ou F1–F12. Salve para aplicar; atalhos duplicados são rejeitados. Configurações antigas recebem os novos padrões automaticamente.
-
-### Acompanhar o peixe sem lançar a vara sozinho
-
-O lançamento automático agora vem **desligado**. Inicie o macro, volte ao jogo e lance a vara manualmente. Ele aguarda a leitura do minigame em três quadros consecutivos antes de atuar. Sem leitura, solta o mouse e não troca de item nem relança por timeout. A opção **Lançar vara automaticamente** na aba de rotinas é separada e só deve ser ativada se você quiser esse comportamento.
-
-Na seleção verde podem aparecer as duas barras. A leitura agora separa a barra de controle da barra de progresso. O campo **Barra de controle** usa `left` (esquerda) por padrão; troque por `right` se a barra com o peixe estiver à direita. A barra de progresso não entra no cálculo. A detecção ainda depende das cores azul/cinza/branco da sua interface; se não corresponderem, será preciso calibrar com uma captura real do minigame.
-
-A moldura verde permanece visível. Uma seta branca do lado de fora marca o **PEIXE**; uma seta verde-água marca **VOCÊ**, a posição estimada do marcador pela abertura da barra azul. Elas acompanham a leitura real, não são movimentos decorativos. Se a leitura sumir, as setas somem e o botão do mouse é solto. A moldura e as setas são transparentes a cliques e ficam fora da região analisada para não interferir na captura.
-
-### Ver o painel durante a pesca
-
-**Sempre visível** fica ativado por padrão. Use **Modo compacto / completo** para deixar apenas os controles e o status na tela. Mova o painel para fora do retângulo verde. O jogo deve estar em modo janela ou janela sem bordas: uma janela Tk pode não aparecer sobre tela cheia exclusiva. O macro continua parando se o jogo perder o foco; observar o painel não exige Alt+Tab. Para clicar nas configurações, pare e depois reinicie no jogo.
-
-O macro usa captura de tela para procurar a barra azul, o fundo cinza e o indicador branco de um minigame vertical. O controle mantém ou solta o botão esquerdo conforme a posição detectada e os ganhos proporcional/derivativo. Ajuste as tolerâncias se a detecção não reconhecer a interface. O contador indica ciclos terminados visualmente, não confirmação de itens no inventário.
-
-## Iscas e frutas
-
-As funções opcionais vêm desligadas. Na aba **Rotinas e pontos**, capture cada ponto com o botão de captura: informe o nome e posicione o cursor no local em até três segundos. Edite as sequências em JSON e salve antes de ativar.
-
-Os exemplos de compra e armazenamento são modelos configuráveis, não sequências já validadas para sua interface. Os pontos precisam corresponder aos botões do jogo, e as etapas devem reproduzir sua sequência manual.
-
-```json
-{
-  "points": {"shop": [400, 300], "confirm": [500, 400]},
-  "routines": {
-    "buy": [{"click": "shop"}, {"wait": 0.5}, {"click": "confirm"}],
-    "bait": [],
-    "store": []
-  }
-}
-```
-
-Ações disponíveis: `click` em um ponto nomeado, `key` para uma letra/número e `wait` em segundos. Uma rotina ativada precisa ter ações e todos os pontos necessários. Compra ocorre no início e a cada N ciclos; seleção de isca antes do lançamento; armazenamento após cada ciclo. As coordenadas são absolutas: recapture ao mover a interface ou mudar a resolução.
-
-Configurações ficam em `settings.json`, ao lado de `run.py` ou do executável. Esse arquivo local não é enviado ao GitHub.
+NumPy 2.3.5, MSS 10.1.0 e keyboard 0.13.5 correspondem às versões identificadas no arquivo original. A interface e o adaptador são código-fonte editável; o motor recuperado é bytecode, não uma recuperação integral do código-fonte original.
 
 ## Gerar o executável
 
-No Windows:
-
 ```powershell
 .venv\Scripts\python -m pip install -r requirements-build.txt
-.venv\Scripts\python -m PyInstaller --clean --noconfirm --onefile --windowed --name GPO-Fishing-Macro --collect-all mss --icon gpo_macro/assets/app.ico --add-data "gpo_macro/assets;gpo_macro/assets" run.py
+.venv\Scripts\python -m PyInstaller --clean --noconfirm --onefile --windowed --name GPO-Fishing-Macro --collect-all mss --hidden-import keyboard --hidden-import numpy --hidden-import win32api --hidden-import win32con --hidden-import win32gui --collect-all pynput --icon gpo_macro/assets/app.ico --add-data "gpo_macro/assets;gpo_macro/assets" run.py
 ```
 
-O arquivo gerado fica em `dist/GPO-Fishing-Macro.exe`. Não é necessário Python na máquina que receber esse executável.
+O arquivo é gerado em `dist/GPO-Fishing-Macro.exe`. O workflow **Windows executable**, na aba Actions, também compila e disponibiliza o artefato para download.
 
-O workflow **Windows executable**, em **Actions**, testa e compila a aplicação. Após uma execução bem-sucedida, baixe o ZIP **GPO-Fishing-Macro-Windows** na seção **Artifacts** da execução (o GitHub exige login para baixar esses artefatos). Compilar com sucesso não substitui um teste de pesca no jogo.
-
-## Estrutura para novos macros
-
-- `config.py`: parâmetros, validação e persistência.
-- `vision.py`: interpretação das imagens e controlador, sem eventos de mouse.
-- `engine.py`: ciclo de automação, sequências e interrupção.
-- `windows.py`: adaptador de teclado, mouse e janela ativa.
-- `app.py`: interface, seleção de área e captura de pontos.
-
-Para outro macro, adapte a detecção em `vision.py`, as etapas em `engine.py` e os parâmetros em `config.py`. Rotinas simples de cliques e teclas podem ser alteradas na interface sem modificar o Python.
-
-## Testes
+## Verificação
 
 ```powershell
 .venv\Scripts\python -m unittest discover -s tests -v
 ```
 
-Os testes usam imagens sintéticas e uma entrada simulada para verificar detecção, direção do controle, configurações e liberação do mouse ao parar, perder foco ou ocorrer erro. Não interagem com Roblox.
+Os testes verificam a integridade exata do recurso original, a identidade dos métodos de pesca herdados, a busca de cores, a sequência original de teclas/cliques sem enviar entradas reais e a construção da interface no Windows. Não afirmam sucesso no Roblox.
