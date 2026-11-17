@@ -4,7 +4,13 @@ Projeto de [ikeuchz](https://github.com/ikeuchz): macro de pesca para Grand Piec
 
 Esta versão é uma nova implementação assistida por Codex, escrita em código-fonte a partir do comportamento desejado. Está em desenvolvimento: a detecção e o controle precisam ser calibrados e validados no jogo. O executável enviado anteriormente não é o resultado deste código.
 
-## Executar no Windows
+## Download da versão de teste
+
+Baixe [GPO-Fishing-Macro.exe](https://github.com/ikeuchz/gpo-fishing-macro/raw/refs/heads/main/GPO-Fishing-Macro.exe) e execute no Windows 64 bits. Este é o novo executável compilado a partir do código deste projeto, não o arquivo enviado anteriormente. Não requer instalação de Python.
+
+A compilação do commit `912da1d` passou no [GitHub Actions](https://github.com/ikeuchz/gpo-fishing-macro/actions/runs/44138822252), incluindo os testes de interface no Windows. Ainda é uma versão de teste, sem validação da pesca dentro do Roblox.
+
+## Executar pelo código no Windows
 
 Instale Python 3.12 de 64 bits com Tkinter (incluído no instalador padrão). Abra um terminal na pasta do projeto:
 
