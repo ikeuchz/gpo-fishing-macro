@@ -1,0 +1,4987 @@
+[
+  {
+    "name": "struct",
+    "type": "m",
+    "size": 291
+  },
+  {
+    "name": "pyimod01_archive",
+    "type": "m",
+    "size": 5038
+  },
+  {
+    "name": "pyimod02_importers",
+    "type": "m",
+    "size": 32319
+  },
+  {
+    "name": "pyimod03_ctypes",
+    "type": "m",
+    "size": 6619
+  },
+  {
+    "name": "pyimod04_pywin32",
+    "type": "m",
+    "size": 1689
+  },
+  {
+    "name": "pyiboot01_bootstrap",
+    "type": "s",
+    "size": 1899
+  },
+  {
+    "name": "pyi_rth_inspect",
+    "type": "s",
+    "size": 2835
+  },
+  {
+    "name": "pyi_rth_pkgutil",
+    "type": "s",
+    "size": 1568
+  },
+  {
+    "name": "pyi_rth_multiprocessing",
+    "type": "s",
+    "size": 1919
+  },
+  {
+    "name": "pyi_rth__tkinter",
+    "type": "s",
+    "size": 1147
+  },
+  {
+    "name": "z",
+    "type": "s",
+    "size": 97172
+  },
+  {
+    "name": "VCRUNTIME140.dll",
+    "type": "b",
+    "size": 120400
+  },
+  {
+    "name": "VCRUNTIME140_1.dll",
+    "type": "b",
+    "size": 49776
+  },
+  {
+    "name": "_asyncio.pyd",
+    "type": "b",
+    "size": 78672
+  },
+  {
+    "name": "_bz2.pyd",
+    "type": "b",
+    "size": 87896
+  },
+  {
+    "name": "_ctypes.pyd",
+    "type": "b",
+    "size": 141656
+  },
+  {
+    "name": "_decimal.pyd",
+    "type": "b",
+    "size": 287576
+  },
+  {
+    "name": "_hashlib.pyd",
+    "type": "b",
+    "size": 69464
+  },
+  {
+    "name": "_lzma.pyd",
+    "type": "b",
+    "size": 161112
+  },
+  {
+    "name": "_multiprocessing.pyd",
+    "type": "b",
+    "size": 38744
+  },
+  {
+    "name": "_overlapped.pyd",
+    "type": "b",
+    "size": 58200
+  },
+  {
+    "name": "_queue.pyd",
+    "type": "b",
+    "size": 36696
+  },
+  {
+    "name": "_socket.pyd",
+    "type": "b",
+    "size": 87384
+  },
+  {
+    "name": "_ssl.pyd",
+    "type": "b",
+    "size": 183640
+  },
+  {
+    "name": "_tcl_data\\auto.tcl",
+    "type": "b",
+    "size": 21578
+  },
+  {
+    "name": "_tcl_data\\clock.tcl",
+    "type": "b",
+    "size": 133009
+  },
+  {
+    "name": "_tcl_data\\encoding\\ascii.enc",
+    "type": "b",
+    "size": 1110
+  },
+  {
+    "name": "_tcl_data\\encoding\\big5.enc",
+    "type": "b",
+    "size": 94389
+  },
+  {
+    "name": "_tcl_data\\encoding\\cns11643.enc",
+    "type": "b",
+    "size": 98634
+  },
+  {
+    "name": "_tcl_data\\encoding\\cp1250.enc",
+    "type": "b",
+    "size": 1111
+  },
+  {
+    "name": "_tcl_data\\encoding\\cp1251.enc",
+    "type": "b",
+    "size": 1111
+  },
+  {
+    "name": "_tcl_data\\encoding\\cp1252.enc",
+    "type": "b",
+    "size": 1111
+  },
+  {
+    "name": "_tcl_data\\encoding\\cp1253.enc",
+    "type": "b",
+    "size": 1111
+  },
+  {
+    "name": "_tcl_data\\encoding\\cp1254.enc",
+    "type": "b",
+    "size": 1111
+  },
+  {
+    "name": "_tcl_data\\encoding\\cp1255.enc",
+    "type": "b",
+    "size": 1111
+  },
+  {
+    "name": "_tcl_data\\encoding\\cp1256.enc",
+    "type": "b",
+    "size": 1111
+  },
+  {
+    "name": "_tcl_data\\encoding\\cp1257.enc",
+    "type": "b",
+    "size": 1111
+  },
+  {
+    "name": "_tcl_data\\encoding\\cp1258.enc",
+    "type": "b",
+    "size": 1111
+  },
+  {
+    "name": "_tcl_data\\encoding\\cp437.enc",
+    "type": "b",
+    "size": 1110
+  },
+  {
+    "name": "_tcl_data\\encoding\\cp737.enc",
+    "type": "b",
+    "size": 1110
+  },
+  {
+    "name": "_tcl_data\\encoding\\cp775.enc",
+    "type": "b",
+    "size": 1110
+  },
+  {
+    "name": "_tcl_data\\encoding\\cp850.enc",
+    "type": "b",
+    "size": 1110
+  },
+  {
+    "name": "_tcl_data\\encoding\\cp852.enc",
+    "type": "b",
+    "size": 1110
+  },
+  {
+    "name": "_tcl_data\\encoding\\cp855.enc",
+    "type": "b",
+    "size": 1110
+  },
+  {
+    "name": "_tcl_data\\encoding\\cp857.enc",
+    "type": "b",
+    "size": 1110
+  },
+  {
+    "name": "_tcl_data\\encoding\\cp860.enc",
+    "type": "b",
+    "size": 1110
+  },
+  {
+    "name": "_tcl_data\\encoding\\cp861.enc",
+    "type": "b",
+    "size": 1110
+  },
+  {
+    "name": "_tcl_data\\encoding\\cp862.enc",
+    "type": "b",
+    "size": 1110
+  },
+  {
+    "name": "_tcl_data\\encoding\\cp863.enc",
+    "type": "b",
+    "size": 1110
+  },
+  {
+    "name": "_tcl_data\\encoding\\cp864.enc",
+    "type": "b",
+    "size": 1110
+  },
+  {
+    "name": "_tcl_data\\encoding\\cp865.enc",
+    "type": "b",
+    "size": 1110
+  },
+  {
+    "name": "_tcl_data\\encoding\\cp866.enc",
+    "type": "b",
+    "size": 1110
+  },
+  {
+    "name": "_tcl_data\\encoding\\cp869.enc",
+    "type": "b",
+    "size": 1110
+  },
+  {
+    "name": "_tcl_data\\encoding\\cp874.enc",
+    "type": "b",
+    "size": 1110
+  },
+  {
+    "name": "_tcl_data\\encoding\\cp932.enc",
+    "type": "b",
+    "size": 49008
+  },
+  {
+    "name": "_tcl_data\\encoding\\cp936.enc",
+    "type": "b",
+    "size": 134671
+  },
+  {
+    "name": "_tcl_data\\encoding\\cp949.enc",
+    "type": "b",
+    "size": 132551
+  },
+  {
+    "name": "_tcl_data\\encoding\\cp950.enc",
+    "type": "b",
+    "size": 93330
+  },
+  {
+    "name": "_tcl_data\\encoding\\dingbats.enc",
+    "type": "b",
+    "size": 1113
+  },
+  {
+    "name": "_tcl_data\\encoding\\ebcdic.enc",
+    "type": "b",
+    "size": 1073
+  },
+  {
+    "name": "_tcl_data\\encoding\\euc-cn.enc",
+    "type": "b",
+    "size": 86971
+  },
+  {
+    "name": "_tcl_data\\encoding\\euc-jp.enc",
+    "type": "b",
+    "size": 83890
+  },
+  {
+    "name": "_tcl_data\\encoding\\euc-kr.enc",
+    "type": "b",
+    "size": 95451
+  },
+  {
+    "name": "_tcl_data\\encoding\\gb12345.enc",
+    "type": "b",
+    "size": 88033
+  },
+  {
+    "name": "_tcl_data\\encoding\\gb1988.enc",
+    "type": "b",
+    "size": 1111
+  },
+  {
+    "name": "_tcl_data\\encoding\\gb2312-raw.enc",
+    "type": "b",
+    "size": 85912
+  },
+  {
+    "name": "_tcl_data\\encoding\\gb2312.enc",
+    "type": "b",
+    "size": 86971
+  },
+  {
+    "name": "_tcl_data\\encoding\\iso2022-jp.enc",
+    "type": "b",
+    "size": 204
+  },
+  {
+    "name": "_tcl_data\\encoding\\iso2022-kr.enc",
+    "type": "b",
+    "size": 122
+  },
+  {
+    "name": "_tcl_data\\encoding\\iso2022.enc",
+    "type": "b",
+    "size": 240
+  },
+  {
+    "name": "_tcl_data\\encoding\\iso8859-1.enc",
+    "type": "b",
+    "size": 1114
+  },
+  {
+    "name": "_tcl_data\\encoding\\iso8859-10.enc",
+    "type": "b",
+    "size": 1115
+  },
+  {
+    "name": "_tcl_data\\encoding\\iso8859-11.enc",
+    "type": "b",
+    "size": 1115
+  },
+  {
+    "name": "_tcl_data\\encoding\\iso8859-13.enc",
+    "type": "b",
+    "size": 1115
+  },
+  {
+    "name": "_tcl_data\\encoding\\iso8859-14.enc",
+    "type": "b",
+    "size": 1115
+  },
+  {
+    "name": "_tcl_data\\encoding\\iso8859-15.enc",
+    "type": "b",
+    "size": 1115
+  },
+  {
+    "name": "_tcl_data\\encoding\\iso8859-16.enc",
+    "type": "b",
+    "size": 1115
+  },
+  {
+    "name": "_tcl_data\\encoding\\iso8859-2.enc",
+    "type": "b",
+    "size": 1114
+  },
+  {
+    "name": "_tcl_data\\encoding\\iso8859-3.enc",
+    "type": "b",
+    "size": 1114
+  },
+  {
+    "name": "_tcl_data\\encoding\\iso8859-4.enc",
+    "type": "b",
+    "size": 1114
+  },
+  {
+    "name": "_tcl_data\\encoding\\iso8859-5.enc",
+    "type": "b",
+    "size": 1114
+  },
+  {
+    "name": "_tcl_data\\encoding\\iso8859-6.enc",
+    "type": "b",
+    "size": 1114
+  },
+  {
+    "name": "_tcl_data\\encoding\\iso8859-7.enc",
+    "type": "b",
+    "size": 1114
+  },
+  {
+    "name": "_tcl_data\\encoding\\iso8859-8.enc",
+    "type": "b",
+    "size": 1114
+  },
+  {
+    "name": "_tcl_data\\encoding\\iso8859-9.enc",
+    "type": "b",
+    "size": 1114
+  },
+  {
+    "name": "_tcl_data\\encoding\\jis0201.enc",
+    "type": "b",
+    "size": 1112
+  },
+  {
+    "name": "_tcl_data\\encoding\\jis0208.enc",
+    "type": "b",
+    "size": 81772
+  },
+  {
+    "name": "_tcl_data\\encoding\\jis0212.enc",
+    "type": "b",
+    "size": 72133
+  },
+  {
+    "name": "_tcl_data\\encoding\\koi8-r.enc",
+    "type": "b",
+    "size": 1111
+  },
+  {
+    "name": "_tcl_data\\encoding\\koi8-ru.enc",
+    "type": "b",
+    "size": 1092
+  },
+  {
+    "name": "_tcl_data\\encoding\\koi8-t.enc",
+    "type": "b",
+    "size": 1091
+  },
+  {
+    "name": "_tcl_data\\encoding\\koi8-u.enc",
+    "type": "b",
+    "size": 1111
+  },
+  {
+    "name": "_tcl_data\\encoding\\ksc5601.enc",
+    "type": "b",
+    "size": 94393
+  },
+  {
+    "name": "_tcl_data\\encoding\\macCentEuro.enc",
+    "type": "b",
+    "size": 1116
+  },
+  {
+    "name": "_tcl_data\\encoding\\macCroatian.enc",
+    "type": "b",
+    "size": 1116
+  },
+  {
+    "name": "_tcl_data\\encoding\\macCyrillic.enc",
+    "type": "b",
+    "size": 1116
+  },
+  {
+    "name": "_tcl_data\\encoding\\macDingbats.enc",
+    "type": "b",
+    "size": 1116
+  },
+  {
+    "name": "_tcl_data\\encoding\\macGreek.enc",
+    "type": "b",
+    "size": 1113
+  },
+  {
+    "name": "_tcl_data\\encoding\\macIceland.enc",
+    "type": "b",
+    "size": 1115
+  },
+  {
+    "name": "_tcl_data\\encoding\\macJapan.enc",
+    "type": "b",
+    "size": 48813
+  },
+  {
+    "name": "_tcl_data\\encoding\\macRoman.enc",
+    "type": "b",
+    "size": 1113
+  },
+  {
+    "name": "_tcl_data\\encoding\\macRomania.enc",
+    "type": "b",
+    "size": 1115
+  },
+  {
+    "name": "_tcl_data\\encoding\\macThai.enc",
+    "type": "b",
+    "size": 1112
+  },
+  {
+    "name": "_tcl_data\\encoding\\macTurkish.enc",
+    "type": "b",
+    "size": 1115
+  },
+  {
+    "name": "_tcl_data\\encoding\\macUkraine.enc",
+    "type": "b",
+    "size": 1115
+  },
+  {
+    "name": "_tcl_data\\encoding\\shiftjis.enc",
+    "type": "b",
+    "size": 42552
+  },
+  {
+    "name": "_tcl_data\\encoding\\symbol.enc",
+    "type": "b",
+    "size": 1111
+  },
+  {
+    "name": "_tcl_data\\encoding\\tis-620.enc",
+    "type": "b",
+    "size": 1112
+  },
+  {
+    "name": "_tcl_data\\history.tcl",
+    "type": "b",
+    "size": 8236
+  },
+  {
+    "name": "_tcl_data\\http1.0\\http.tcl",
+    "type": "b",
+    "size": 10052
+  },
+  {
+    "name": "_tcl_data\\http1.0\\pkgIndex.tcl",
+    "type": "b",
+    "size": 746
+  },
+  {
+    "name": "_tcl_data\\init.tcl",
+    "type": "b",
+    "size": 25722
+  },
+  {
+    "name": "_tcl_data\\msgs\\af.msg",
+    "type": "b",
+    "size": 1038
+  },
+  {
+    "name": "_tcl_data\\msgs\\af_za.msg",
+    "type": "b",
+    "size": 257
+  },
+  {
+    "name": "_tcl_data\\msgs\\ar.msg",
+    "type": "b",
+    "size": 2018
+  },
+  {
+    "name": "_tcl_data\\msgs\\ar_in.msg",
+    "type": "b",
+    "size": 265
+  },
+  {
+    "name": "_tcl_data\\msgs\\ar_jo.msg",
+    "type": "b",
+    "size": 1851
+  },
+  {
+    "name": "_tcl_data\\msgs\\ar_lb.msg",
+    "type": "b",
+    "size": 1851
+  },
+  {
+    "name": "_tcl_data\\msgs\\ar_sy.msg",
+    "type": "b",
+    "size": 1851
+  },
+  {
+    "name": "_tcl_data\\msgs\\be.msg",
+    "type": "b",
+    "size": 2157
+  },
+  {
+    "name": "_tcl_data\\msgs\\bg.msg",
+    "type": "b",
+    "size": 1871
+  },
+  {
+    "name": "_tcl_data\\msgs\\bn.msg",
+    "type": "b",
+    "size": 2335
+  },
+  {
+    "name": "_tcl_data\\msgs\\bn_in.msg",
+    "type": "b",
+    "size": 265
+  },
+  {
+    "name": "_tcl_data\\msgs\\ca.msg",
+    "type": "b",
+    "size": 1152
+  },
+  {
+    "name": "_tcl_data\\msgs\\cs.msg",
+    "type": "b",
+    "size": 1354
+  },
+  {
+    "name": "_tcl_data\\msgs\\da.msg",
+    "type": "b",
+    "size": 1208
+  },
+  {
+    "name": "_tcl_data\\msgs\\de.msg",
+    "type": "b",
+    "size": 1276
+  },
+  {
+    "name": "_tcl_data\\msgs\\de_at.msg",
+    "type": "b",
+    "size": 847
+  },
+  {
+    "name": "_tcl_data\\msgs\\de_be.msg",
+    "type": "b",
+    "size": 1276
+  },
+  {
+    "name": "_tcl_data\\msgs\\el.msg",
+    "type": "b",
+    "size": 2304
+  },
+  {
+    "name": "_tcl_data\\msgs\\en_au.msg",
+    "type": "b",
+    "size": 307
+  },
+  {
+    "name": "_tcl_data\\msgs\\en_be.msg",
+    "type": "b",
+    "size": 312
+  },
+  {
+    "name": "_tcl_data\\msgs\\en_bw.msg",
+    "type": "b",
+    "size": 257
+  },
+  {
+    "name": "_tcl_data\\msgs\\en_ca.msg",
+    "type": "b",
+    "size": 295
+  },
+  {
+    "name": "_tcl_data\\msgs\\en_gb.msg",
+    "type": "b",
+    "size": 286
+  },
+  {
+    "name": "_tcl_data\\msgs\\en_hk.msg",
+    "type": "b",
+    "size": 329
+  },
+  {
+    "name": "_tcl_data\\msgs\\en_ie.msg",
+    "type": "b",
+    "size": 286
+  },
+  {
+    "name": "_tcl_data\\msgs\\en_in.msg",
+    "type": "b",
+    "size": 318
+  },
+  {
+    "name": "_tcl_data\\msgs\\en_nz.msg",
+    "type": "b",
+    "size": 307
+  },
+  {
+    "name": "_tcl_data\\msgs\\en_ph.msg",
+    "type": "b",
+    "size": 329
+  },
+  {
+    "name": "_tcl_data\\msgs\\en_sg.msg",
+    "type": "b",
+    "size": 257
+  },
+  {
+    "name": "_tcl_data\\msgs\\en_za.msg",
+    "type": "b",
+    "size": 251
+  },
+  {
+    "name": "_tcl_data\\msgs\\en_zw.msg",
+    "type": "b",
+    "size": 257
+  },
+  {
+    "name": "_tcl_data\\msgs\\eo.msg",
+    "type": "b",
+    "size": 1285
+  },
+  {
+    "name": "_tcl_data\\msgs\\es.msg",
+    "type": "b",
+    "size": 1232
+  },
+  {
+    "name": "_tcl_data\\msgs\\es_ar.msg",
+    "type": "b",
+    "size": 248
+  },
+  {
+    "name": "_tcl_data\\msgs\\es_bo.msg",
+    "type": "b",
+    "size": 257
+  },
+  {
+    "name": "_tcl_data\\msgs\\es_cl.msg",
+    "type": "b",
+    "size": 257
+  },
+  {
+    "name": "_tcl_data\\msgs\\es_co.msg",
+    "type": "b",
+    "size": 257
+  },
+  {
+    "name": "_tcl_data\\msgs\\es_cr.msg",
+    "type": "b",
+    "size": 257
+  },
+  {
+    "name": "_tcl_data\\msgs\\es_do.msg",
+    "type": "b",
+    "size": 257
+  },
+  {
+    "name": "_tcl_data\\msgs\\es_ec.msg",
+    "type": "b",
+    "size": 257
+  },
+  {
+    "name": "_tcl_data\\msgs\\es_gt.msg",
+    "type": "b",
+    "size": 257
+  },
+  {
+    "name": "_tcl_data\\msgs\\es_hn.msg",
+    "type": "b",
+    "size": 257
+  },
+  {
+    "name": "_tcl_data\\msgs\\es_mx.msg",
+    "type": "b",
+    "size": 257
+  },
+  {
+    "name": "_tcl_data\\msgs\\es_ni.msg",
+    "type": "b",
+    "size": 257
+  },
+  {
+    "name": "_tcl_data\\msgs\\es_pa.msg",
+    "type": "b",
+    "size": 257
+  },
+  {
+    "name": "_tcl_data\\msgs\\es_pe.msg",
+    "type": "b",
+    "size": 257
+  },
+  {
+    "name": "_tcl_data\\msgs\\es_pr.msg",
+    "type": "b",
+    "size": 257
+  },
+  {
+    "name": "_tcl_data\\msgs\\es_py.msg",
+    "type": "b",
+    "size": 257
+  },
+  {
+    "name": "_tcl_data\\msgs\\es_sv.msg",
+    "type": "b",
+    "size": 257
+  },
+  {
+    "name": "_tcl_data\\msgs\\es_uy.msg",
+    "type": "b",
+    "size": 257
+  },
+  {
+    "name": "_tcl_data\\msgs\\es_ve.msg",
+    "type": "b",
+    "size": 257
+  },
+  {
+    "name": "_tcl_data\\msgs\\et.msg",
+    "type": "b",
+    "size": 1258
+  },
+  {
+    "name": "_tcl_data\\msgs\\eu.msg",
+    "type": "b",
+    "size": 1032
+  },
+  {
+    "name": "_tcl_data\\msgs\\eu_es.msg",
+    "type": "b",
+    "size": 294
+  },
+  {
+    "name": "_tcl_data\\msgs\\fa.msg",
+    "type": "b",
+    "size": 1711
+  },
+  {
+    "name": "_tcl_data\\msgs\\fa_in.msg",
+    "type": "b",
+    "size": 2009
+  },
+  {
+    "name": "_tcl_data\\msgs\\fa_ir.msg",
+    "type": "b",
+    "size": 426
+  },
+  {
+    "name": "_tcl_data\\msgs\\fi.msg",
+    "type": "b",
+    "size": 1195
+  },
+  {
+    "name": "_tcl_data\\msgs\\fo.msg",
+    "type": "b",
+    "size": 1033
+  },
+  {
+    "name": "_tcl_data\\msgs\\fo_fo.msg",
+    "type": "b",
+    "size": 286
+  },
+  {
+    "name": "_tcl_data\\msgs\\fr.msg",
+    "type": "b",
+    "size": 1257
+  },
+  {
+    "name": "_tcl_data\\msgs\\fr_be.msg",
+    "type": "b",
+    "size": 286
+  },
+  {
+    "name": "_tcl_data\\msgs\\fr_ca.msg",
+    "type": "b",
+    "size": 286
+  },
+  {
+    "name": "_tcl_data\\msgs\\fr_ch.msg",
+    "type": "b",
+    "size": 288
+  },
+  {
+    "name": "_tcl_data\\msgs\\ga.msg",
+    "type": "b",
+    "size": 1188
+  },
+  {
+    "name": "_tcl_data\\msgs\\ga_ie.msg",
+    "type": "b",
+    "size": 286
+  },
+  {
+    "name": "_tcl_data\\msgs\\gl.msg",
+    "type": "b",
+    "size": 997
+  },
+  {
+    "name": "_tcl_data\\msgs\\gl_es.msg",
+    "type": "b",
+    "size": 257
+  },
+  {
+    "name": "_tcl_data\\msgs\\gv.msg",
+    "type": "b",
+    "size": 1084
+  },
+  {
+    "name": "_tcl_data\\msgs\\gv_gb.msg",
+    "type": "b",
+    "size": 257
+  },
+  {
+    "name": "_tcl_data\\msgs\\he.msg",
+    "type": "b",
+    "size": 1990
+  },
+  {
+    "name": "_tcl_data\\msgs\\hi.msg",
+    "type": "b",
+    "size": 1777
+  },
+  {
+    "name": "_tcl_data\\msgs\\hi_in.msg",
+    "type": "b",
+    "size": 257
+  },
+  {
+    "name": "_tcl_data\\msgs\\hr.msg",
+    "type": "b",
+    "size": 1171
+  },
+  {
+    "name": "_tcl_data\\msgs\\hu.msg",
+    "type": "b",
+    "size": 1381
+  },
+  {
+    "name": "_tcl_data\\msgs\\id.msg",
+    "type": "b",
+    "size": 961
+  },
+  {
+    "name": "_tcl_data\\msgs\\id_id.msg",
+    "type": "b",
+    "size": 257
+  },
+  {
+    "name": "_tcl_data\\msgs\\is.msg",
+    "type": "b",
+    "size": 1305
+  },
+  {
+    "name": "_tcl_data\\msgs\\it.msg",
+    "type": "b",
+    "size": 1294
+  },
+  {
+    "name": "_tcl_data\\msgs\\it_ch.msg",
+    "type": "b",
+    "size": 250
+  },
+  {
+    "name": "_tcl_data\\msgs\\ja.msg",
+    "type": "b",
+    "size": 1689
+  },
+  {
+    "name": "_tcl_data\\msgs\\kl.msg",
+    "type": "b",
+    "size": 1025
+  },
+  {
+    "name": "_tcl_data\\msgs\\kl_gl.msg",
+    "type": "b",
+    "size": 286
+  },
+  {
+    "name": "_tcl_data\\msgs\\ko.msg",
+    "type": "b",
+    "size": 1621
+  },
+  {
+    "name": "_tcl_data\\msgs\\ko_kr.msg",
+    "type": "b",
+    "size": 354
+  },
+  {
+    "name": "_tcl_data\\msgs\\kok.msg",
+    "type": "b",
+    "size": 1997
+  },
+  {
+    "name": "_tcl_data\\msgs\\kok_in.msg",
+    "type": "b",
+    "size": 260
+  },
+  {
+    "name": "_tcl_data\\msgs\\kw.msg",
+    "type": "b",
+    "size": 1013
+  },
+  {
+    "name": "_tcl_data\\msgs\\kw_gb.msg",
+    "type": "b",
+    "size": 257
+  },
+  {
+    "name": "_tcl_data\\msgs\\lt.msg",
+    "type": "b",
+    "size": 1307
+  },
+  {
+    "name": "_tcl_data\\msgs\\lv.msg",
+    "type": "b",
+    "size": 1271
+  },
+  {
+    "name": "_tcl_data\\msgs\\mk.msg",
+    "type": "b",
+    "size": 2157
+  },
+  {
+    "name": "_tcl_data\\msgs\\mr.msg",
+    "type": "b",
+    "size": 1846
+  },
+  {
+    "name": "_tcl_data\\msgs\\mr_in.msg",
+    "type": "b",
+    "size": 257
+  },
+  {
+    "name": "_tcl_data\\msgs\\ms.msg",
+    "type": "b",
+    "size": 957
+  },
+  {
+    "name": "_tcl_data\\msgs\\ms_my.msg",
+    "type": "b",
+    "size": 265
+  },
+  {
+    "name": "_tcl_data\\msgs\\mt.msg",
+    "type": "b",
+    "size": 717
+  },
+  {
+    "name": "_tcl_data\\msgs\\nb.msg",
+    "type": "b",
+    "size": 1209
+  },
+  {
+    "name": "_tcl_data\\msgs\\nl.msg",
+    "type": "b",
+    "size": 1129
+  },
+  {
+    "name": "_tcl_data\\msgs\\nl_be.msg",
+    "type": "b",
+    "size": 286
+  },
+  {
+    "name": "_tcl_data\\msgs\\nn.msg",
+    "type": "b",
+    "size": 1200
+  },
+  {
+    "name": "_tcl_data\\msgs\\pl.msg",
+    "type": "b",
+    "size": 1263
+  },
+  {
+    "name": "_tcl_data\\msgs\\pt.msg",
+    "type": "b",
+    "size": 1177
+  },
+  {
+    "name": "_tcl_data\\msgs\\pt_br.msg",
+    "type": "b",
+    "size": 286
+  },
+  {
+    "name": "_tcl_data\\msgs\\ro.msg",
+    "type": "b",
+    "size": 1224
+  },
+  {
+    "name": "_tcl_data\\msgs\\ru.msg",
+    "type": "b",
+    "size": 2091
+  },
+  {
+    "name": "_tcl_data\\msgs\\ru_ua.msg",
+    "type": "b",
+    "size": 248
+  },
+  {
+    "name": "_tcl_data\\msgs\\sh.msg",
+    "type": "b",
+    "size": 1212
+  },
+  {
+    "name": "_tcl_data\\msgs\\sk.msg",
+    "type": "b",
+    "size": 1255
+  },
+  {
+    "name": "_tcl_data\\msgs\\sl.msg",
+    "type": "b",
+    "size": 1216
+  },
+  {
+    "name": "_tcl_data\\msgs\\sq.msg",
+    "type": "b",
+    "size": 1321
+  },
+  {
+    "name": "_tcl_data\\msgs\\sr.msg",
+    "type": "b",
+    "size": 2087
+  },
+  {
+    "name": "_tcl_data\\msgs\\sv.msg",
+    "type": "b",
+    "size": 1219
+  },
+  {
+    "name": "_tcl_data\\msgs\\sw.msg",
+    "type": "b",
+    "size": 1040
+  },
+  {
+    "name": "_tcl_data\\msgs\\ta.msg",
+    "type": "b",
+    "size": 1874
+  },
+  {
+    "name": "_tcl_data\\msgs\\ta_in.msg",
+    "type": "b",
+    "size": 257
+  },
+  {
+    "name": "_tcl_data\\msgs\\te.msg",
+    "type": "b",
+    "size": 2149
+  },
+  {
+    "name": "_tcl_data\\msgs\\te_in.msg",
+    "type": "b",
+    "size": 419
+  },
+  {
+    "name": "_tcl_data\\msgs\\th.msg",
+    "type": "b",
+    "size": 2359
+  },
+  {
+    "name": "_tcl_data\\msgs\\tr.msg",
+    "type": "b",
+    "size": 1183
+  },
+  {
+    "name": "_tcl_data\\msgs\\uk.msg",
+    "type": "b",
+    "size": 2165
+  },
+  {
+    "name": "_tcl_data\\msgs\\vi.msg",
+    "type": "b",
+    "size": 1471
+  },
+  {
+    "name": "_tcl_data\\msgs\\zh.msg",
+    "type": "b",
+    "size": 3385
+  },
+  {
+    "name": "_tcl_data\\msgs\\zh_cn.msg",
+    "type": "b",
+    "size": 319
+  },
+  {
+    "name": "_tcl_data\\msgs\\zh_hk.msg",
+    "type": "b",
+    "size": 780
+  },
+  {
+    "name": "_tcl_data\\msgs\\zh_sg.msg",
+    "type": "b",
+    "size": 347
+  },
+  {
+    "name": "_tcl_data\\msgs\\zh_tw.msg",
+    "type": "b",
+    "size": 354
+  },
+  {
+    "name": "_tcl_data\\opt0.4\\optparse.tcl",
+    "type": "b",
+    "size": 33781
+  },
+  {
+    "name": "_tcl_data\\opt0.4\\pkgIndex.tcl",
+    "type": "b",
+    "size": 636
+  },
+  {
+    "name": "_tcl_data\\package.tcl",
+    "type": "b",
+    "size": 23983
+  },
+  {
+    "name": "_tcl_data\\parray.tcl",
+    "type": "b",
+    "size": 844
+  },
+  {
+    "name": "_tcl_data\\safe.tcl",
+    "type": "b",
+    "size": 42328
+  },
+  {
+    "name": "_tcl_data\\tclIndex",
+    "type": "b",
+    "size": 7432
+  },
+  {
+    "name": "_tcl_data\\tm.tcl",
+    "type": "b",
+    "size": 12236
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Abidjan",
+    "type": "b",
+    "size": 147
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Accra",
+    "type": "b",
+    "size": 183
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Addis_Ababa",
+    "type": "b",
+    "size": 189
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Algiers",
+    "type": "b",
+    "size": 1080
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Asmara",
+    "type": "b",
+    "size": 184
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Asmera",
+    "type": "b",
+    "size": 184
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Bamako",
+    "type": "b",
+    "size": 184
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Bangui",
+    "type": "b",
+    "size": 178
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Banjul",
+    "type": "b",
+    "size": 184
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Bissau",
+    "type": "b",
+    "size": 175
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Blantyre",
+    "type": "b",
+    "size": 183
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Brazzaville",
+    "type": "b",
+    "size": 183
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Bujumbura",
+    "type": "b",
+    "size": 184
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Cairo",
+    "type": "b",
+    "size": 8472
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Casablanca",
+    "type": "b",
+    "size": 5335
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Ceuta",
+    "type": "b",
+    "size": 7536
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Conakry",
+    "type": "b",
+    "size": 185
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Dakar",
+    "type": "b",
+    "size": 183
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Dar_es_Salaam",
+    "type": "b",
+    "size": 191
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Djibouti",
+    "type": "b",
+    "size": 186
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Douala",
+    "type": "b",
+    "size": 178
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\El_Aaiun",
+    "type": "b",
+    "size": 5049
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Freetown",
+    "type": "b",
+    "size": 186
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Gaborone",
+    "type": "b",
+    "size": 183
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Harare",
+    "type": "b",
+    "size": 181
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Johannesburg",
+    "type": "b",
+    "size": 309
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Juba",
+    "type": "b",
+    "size": 1127
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Kampala",
+    "type": "b",
+    "size": 185
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Khartoum",
+    "type": "b",
+    "size": 1131
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Kigali",
+    "type": "b",
+    "size": 181
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Kinshasa",
+    "type": "b",
+    "size": 180
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Lagos",
+    "type": "b",
+    "size": 232
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Libreville",
+    "type": "b",
+    "size": 182
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Lome",
+    "type": "b",
+    "size": 182
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Luanda",
+    "type": "b",
+    "size": 178
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Lubumbashi",
+    "type": "b",
+    "size": 185
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Lusaka",
+    "type": "b",
+    "size": 181
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Malabo",
+    "type": "b",
+    "size": 178
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Maputo",
+    "type": "b",
+    "size": 149
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Maseru",
+    "type": "b",
+    "size": 199
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Mbabane",
+    "type": "b",
+    "size": 200
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Mogadishu",
+    "type": "b",
+    "size": 187
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Monrovia",
+    "type": "b",
+    "size": 208
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Nairobi",
+    "type": "b",
+    "size": 268
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Ndjamena",
+    "type": "b",
+    "size": 208
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Niamey",
+    "type": "b",
+    "size": 178
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Nouakchott",
+    "type": "b",
+    "size": 188
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Ouagadougou",
+    "type": "b",
+    "size": 189
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Porto-Novo",
+    "type": "b",
+    "size": 182
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Sao_Tome",
+    "type": "b",
+    "size": 234
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Timbuktu",
+    "type": "b",
+    "size": 186
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Tripoli",
+    "type": "b",
+    "size": 954
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Tunis",
+    "type": "b",
+    "size": 1111
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Africa\\Windhoek",
+    "type": "b",
+    "size": 1646
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Adak",
+    "type": "b",
+    "size": 8447
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Anchorage",
+    "type": "b",
+    "size": 8685
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Anguilla",
+    "type": "b",
+    "size": 202
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Antigua",
+    "type": "b",
+    "size": 201
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Araguaina",
+    "type": "b",
+    "size": 1727
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Argentina\\Buenos_Aires",
+    "type": "b",
+    "size": 1987
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Argentina\\Catamarca",
+    "type": "b",
+    "size": 2015
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Argentina\\ComodRivadavia",
+    "type": "b",
+    "size": 242
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Argentina\\Cordoba",
+    "type": "b",
+    "size": 1982
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Argentina\\Jujuy",
+    "type": "b",
+    "size": 1980
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Argentina\\La_Rioja",
+    "type": "b",
+    "size": 2043
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Argentina\\Mendoza",
+    "type": "b",
+    "size": 2015
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Argentina\\Rio_Gallegos",
+    "type": "b",
+    "size": 2018
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Argentina\\Salta",
+    "type": "b",
+    "size": 1951
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Argentina\\San_Juan",
+    "type": "b",
+    "size": 2043
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Argentina\\San_Luis",
+    "type": "b",
+    "size": 2019
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Argentina\\Tucuman",
+    "type": "b",
+    "size": 2042
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Argentina\\Ushuaia",
+    "type": "b",
+    "size": 2013
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Aruba",
+    "type": "b",
+    "size": 199
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Asuncion",
+    "type": "b",
+    "size": 7691
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Atikokan",
+    "type": "b",
+    "size": 187
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Atka",
+    "type": "b",
+    "size": 177
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Bahia",
+    "type": "b",
+    "size": 1949
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Bahia_Banderas",
+    "type": "b",
+    "size": 2042
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Barbados",
+    "type": "b",
+    "size": 648
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Belem",
+    "type": "b",
+    "size": 1001
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Belize",
+    "type": "b",
+    "size": 3284
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Blanc-Sablon",
+    "type": "b",
+    "size": 206
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Boa_Vista",
+    "type": "b",
+    "size": 1164
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Bogota",
+    "type": "b",
+    "size": 243
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Boise",
+    "type": "b",
+    "size": 8605
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Buenos_Aires",
+    "type": "b",
+    "size": 239
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Cambridge_Bay",
+    "type": "b",
+    "size": 8154
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Campo_Grande",
+    "type": "b",
+    "size": 2827
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Cancun",
+    "type": "b",
+    "size": 1442
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Caracas",
+    "type": "b",
+    "size": 276
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Catamarca",
+    "type": "b",
+    "size": 227
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Cayenne",
+    "type": "b",
+    "size": 183
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Cayman",
+    "type": "b",
+    "size": 185
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Chicago",
+    "type": "b",
+    "size": 11372
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Chihuahua",
+    "type": "b",
+    "size": 2040
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Ciudad_Juarez",
+    "type": "b",
+    "size": 6657
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Coral_Harbour",
+    "type": "b",
+    "size": 192
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Cordoba",
+    "type": "b",
+    "size": 219
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Costa_Rica",
+    "type": "b",
+    "size": 431
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Creston",
+    "type": "b",
+    "size": 189
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Cuiaba",
+    "type": "b",
+    "size": 2821
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Curacao",
+    "type": "b",
+    "size": 201
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Danmarkshavn",
+    "type": "b",
+    "size": 1095
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Dawson",
+    "type": "b",
+    "size": 3028
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Dawson_Creek",
+    "type": "b",
+    "size": 1940
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Denver",
+    "type": "b",
+    "size": 8920
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Detroit",
+    "type": "b",
+    "size": 8430
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Dominica",
+    "type": "b",
+    "size": 202
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Edmonton",
+    "type": "b",
+    "size": 8600
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Eirunepe",
+    "type": "b",
+    "size": 1194
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\El_Salvador",
+    "type": "b",
+    "size": 279
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Ensenada",
+    "type": "b",
+    "size": 190
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Fort_Nelson",
+    "type": "b",
+    "size": 4578
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Fort_Wayne",
+    "type": "b",
+    "size": 231
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Fortaleza",
+    "type": "b",
+    "size": 1380
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Glace_Bay",
+    "type": "b",
+    "size": 8372
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Godthab",
+    "type": "b",
+    "size": 180
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Goose_Bay",
+    "type": "b",
+    "size": 10353
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Grand_Turk",
+    "type": "b",
+    "size": 7522
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Grenada",
+    "type": "b",
+    "size": 201
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Guadeloupe",
+    "type": "b",
+    "size": 204
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Guatemala",
+    "type": "b",
+    "size": 399
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Guayaquil",
+    "type": "b",
+    "size": 246
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Guyana",
+    "type": "b",
+    "size": 242
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Halifax",
+    "type": "b",
+    "size": 11124
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Havana",
+    "type": "b",
+    "size": 8729
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Hermosillo",
+    "type": "b",
+    "size": 589
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Indiana\\Indianapolis",
+    "type": "b",
+    "size": 7230
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Indiana\\Knox",
+    "type": "b",
+    "size": 8755
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Indiana\\Marengo",
+    "type": "b",
+    "size": 7273
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Indiana\\Petersburg",
+    "type": "b",
+    "size": 7611
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Indiana\\Tell_City",
+    "type": "b",
+    "size": 7100
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Indiana\\Vevay",
+    "type": "b",
+    "size": 6563
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Indiana\\Vincennes",
+    "type": "b",
+    "size": 7226
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Indiana\\Winamac",
+    "type": "b",
+    "size": 7410
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Indianapolis",
+    "type": "b",
+    "size": 233
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Inuvik",
+    "type": "b",
+    "size": 8053
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Iqaluit",
+    "type": "b",
+    "size": 8086
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Jamaica",
+    "type": "b",
+    "size": 847
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Jujuy",
+    "type": "b",
+    "size": 211
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Juneau",
+    "type": "b",
+    "size": 8682
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Kentucky\\Louisville",
+    "type": "b",
+    "size": 9553
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Kentucky\\Monticello",
+    "type": "b",
+    "size": 8558
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Knox_IN",
+    "type": "b",
+    "size": 204
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Kralendijk",
+    "type": "b",
+    "size": 204
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\La_Paz",
+    "type": "b",
+    "size": 217
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Lima",
+    "type": "b",
+    "size": 450
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Los_Angeles",
+    "type": "b",
+    "size": 9726
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Louisville",
+    "type": "b",
+    "size": 228
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Lower_Princes",
+    "type": "b",
+    "size": 207
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Maceio",
+    "type": "b",
+    "size": 1492
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Managua",
+    "type": "b",
+    "size": 611
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Manaus",
+    "type": "b",
+    "size": 1132
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Marigot",
+    "type": "b",
+    "size": 201
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Martinique",
+    "type": "b",
+    "size": 251
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Matamoros",
+    "type": "b",
+    "size": 6745
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Mazatlan",
+    "type": "b",
+    "size": 2036
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Mendoza",
+    "type": "b",
+    "size": 219
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Menominee",
+    "type": "b",
+    "size": 8410
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Merida",
+    "type": "b",
+    "size": 1877
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Metlakatla",
+    "type": "b",
+    "size": 6705
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Mexico_City",
+    "type": "b",
+    "size": 2261
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Miquelon",
+    "type": "b",
+    "size": 6852
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Moncton",
+    "type": "b",
+    "size": 10507
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Monterrey",
+    "type": "b",
+    "size": 2100
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Montevideo",
+    "type": "b",
+    "size": 2800
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Montreal",
+    "type": "b",
+    "size": 190
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Montserrat",
+    "type": "b",
+    "size": 204
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Nassau",
+    "type": "b",
+    "size": 188
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\New_York",
+    "type": "b",
+    "size": 11373
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Nipigon",
+    "type": "b",
+    "size": 189
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Nome",
+    "type": "b",
+    "size": 8680
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Noronha",
+    "type": "b",
+    "size": 1354
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\North_Dakota\\Beulah",
+    "type": "b",
+    "size": 8557
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\North_Dakota\\Center",
+    "type": "b",
+    "size": 8557
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\North_Dakota\\New_Salem",
+    "type": "b",
+    "size": 8560
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Nuuk",
+    "type": "b",
+    "size": 7111
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Ojinaga",
+    "type": "b",
+    "size": 6874
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Panama",
+    "type": "b",
+    "size": 186
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Pangnirtung",
+    "type": "b",
+    "size": 193
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Paramaribo",
+    "type": "b",
+    "size": 249
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Phoenix",
+    "type": "b",
+    "size": 496
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Port-au-Prince",
+    "type": "b",
+    "size": 6613
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Port_of_Spain",
+    "type": "b",
+    "size": 207
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Porto_Acre",
+    "type": "b",
+    "size": 201
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Porto_Velho",
+    "type": "b",
+    "size": 1021
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Puerto_Rico",
+    "type": "b",
+    "size": 283
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Punta_Arenas",
+    "type": "b",
+    "size": 3614
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Rainy_River",
+    "type": "b",
+    "size": 196
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Rankin_Inlet",
+    "type": "b",
+    "size": 8029
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Recife",
+    "type": "b",
+    "size": 1377
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Regina",
+    "type": "b",
+    "size": 1781
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Resolute",
+    "type": "b",
+    "size": 8025
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Rio_Branco",
+    "type": "b",
+    "size": 1080
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Rosario",
+    "type": "b",
+    "size": 219
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Santa_Isabel",
+    "type": "b",
+    "size": 194
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Santarem",
+    "type": "b",
+    "size": 1048
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Santiago",
+    "type": "b",
+    "size": 8590
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Santo_Domingo",
+    "type": "b",
+    "size": 616
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Sao_Paulo",
+    "type": "b",
+    "size": 2808
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Scoresbysund",
+    "type": "b",
+    "size": 6902
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Shiprock",
+    "type": "b",
+    "size": 187
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Sitka",
+    "type": "b",
+    "size": 8651
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\St_Barthelemy",
+    "type": "b",
+    "size": 207
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\St_Johns",
+    "type": "b",
+    "size": 11289
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\St_Kitts",
+    "type": "b",
+    "size": 202
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\St_Lucia",
+    "type": "b",
+    "size": 202
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\St_Thomas",
+    "type": "b",
+    "size": 203
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\St_Vincent",
+    "type": "b",
+    "size": 204
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Swift_Current",
+    "type": "b",
+    "size": 874
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Tegucigalpa",
+    "type": "b",
+    "size": 341
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Thule",
+    "type": "b",
+    "size": 6890
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Thunder_Bay",
+    "type": "b",
+    "size": 193
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Tijuana",
+    "type": "b",
+    "size": 8941
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Toronto",
+    "type": "b",
+    "size": 11248
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Tortola",
+    "type": "b",
+    "size": 201
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Vancouver",
+    "type": "b",
+    "size": 9815
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Virgin",
+    "type": "b",
+    "size": 200
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Whitehorse",
+    "type": "b",
+    "size": 3033
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Winnipeg",
+    "type": "b",
+    "size": 9695
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Yakutat",
+    "type": "b",
+    "size": 8683
+  },
+  {
+    "name": "_tcl_data\\tzdata\\America\\Yellowknife",
+    "type": "b",
+    "size": 196
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Antarctica\\Casey",
+    "type": "b",
+    "size": 611
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Antarctica\\Davis",
+    "type": "b",
+    "size": 318
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Antarctica\\DumontDUrville",
+    "type": "b",
+    "size": 214
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Antarctica\\Macquarie",
+    "type": "b",
+    "size": 8447
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Antarctica\\Mawson",
+    "type": "b",
+    "size": 178
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Antarctica\\McMurdo",
+    "type": "b",
+    "size": 195
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Antarctica\\Palmer",
+    "type": "b",
+    "size": 2531
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Antarctica\\Rothera",
+    "type": "b",
+    "size": 150
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Antarctica\\South_Pole",
+    "type": "b",
+    "size": 198
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Antarctica\\Syowa",
+    "type": "b",
+    "size": 178
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Antarctica\\Troll",
+    "type": "b",
+    "size": 5370
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Antarctica\\Vostok",
+    "type": "b",
+    "size": 231
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Arctic\\Longyearbyen",
+    "type": "b",
+    "size": 187
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Aden",
+    "type": "b",
+    "size": 171
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Almaty",
+    "type": "b",
+    "size": 1614
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Amman",
+    "type": "b",
+    "size": 2681
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Anadyr",
+    "type": "b",
+    "size": 2019
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Aqtau",
+    "type": "b",
+    "size": 1612
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Aqtobe",
+    "type": "b",
+    "size": 1613
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Ashgabat",
+    "type": "b",
+    "size": 852
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Ashkhabad",
+    "type": "b",
+    "size": 182
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Atyrau",
+    "type": "b",
+    "size": 1613
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Baghdad",
+    "type": "b",
+    "size": 1649
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Bahrain",
+    "type": "b",
+    "size": 171
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Baku",
+    "type": "b",
+    "size": 2080
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Bangkok",
+    "type": "b",
+    "size": 180
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Barnaul",
+    "type": "b",
+    "size": 2049
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Beirut",
+    "type": "b",
+    "size": 8024
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Bishkek",
+    "type": "b",
+    "size": 1616
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Brunei",
+    "type": "b",
+    "size": 176
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Calcutta",
+    "type": "b",
+    "size": 178
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Chita",
+    "type": "b",
+    "size": 2019
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Choibalsan",
+    "type": "b",
+    "size": 192
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Chongqing",
+    "type": "b",
+    "size": 182
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Chungking",
+    "type": "b",
+    "size": 182
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Colombo",
+    "type": "b",
+    "size": 352
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Dacca",
+    "type": "b",
+    "size": 169
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Damascus",
+    "type": "b",
+    "size": 3691
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Dhaka",
+    "type": "b",
+    "size": 351
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Dili",
+    "type": "b",
+    "size": 231
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Dubai",
+    "type": "b",
+    "size": 147
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Dushanbe",
+    "type": "b",
+    "size": 796
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Famagusta",
+    "type": "b",
+    "size": 7596
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Gaza",
+    "type": "b",
+    "size": 10227
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Harbin",
+    "type": "b",
+    "size": 179
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Hebron",
+    "type": "b",
+    "size": 10202
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Ho_Chi_Minh",
+    "type": "b",
+    "size": 387
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Hong_Kong",
+    "type": "b",
+    "size": 2226
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Hovd",
+    "type": "b",
+    "size": 1533
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Irkutsk",
+    "type": "b",
+    "size": 2023
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Istanbul",
+    "type": "b",
+    "size": 187
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Jakarta",
+    "type": "b",
+    "size": 356
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Jayapura",
+    "type": "b",
+    "size": 209
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Jerusalem",
+    "type": "b",
+    "size": 8135
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Kabul",
+    "type": "b",
+    "size": 176
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Kamchatka",
+    "type": "b",
+    "size": 1994
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Karachi",
+    "type": "b",
+    "size": 447
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Kashgar",
+    "type": "b",
+    "size": 174
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Kathmandu",
+    "type": "b",
+    "size": 179
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Katmandu",
+    "type": "b",
+    "size": 184
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Khandyga",
+    "type": "b",
+    "size": 2051
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Kolkata",
+    "type": "b",
+    "size": 330
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Krasnoyarsk",
+    "type": "b",
+    "size": 1996
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Kuala_Lumpur",
+    "type": "b",
+    "size": 188
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Kuching",
+    "type": "b",
+    "size": 649
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Kuwait",
+    "type": "b",
+    "size": 173
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Macao",
+    "type": "b",
+    "size": 169
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Macau",
+    "type": "b",
+    "size": 2212
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Magadan",
+    "type": "b",
+    "size": 2021
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Makassar",
+    "type": "b",
+    "size": 241
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Manila",
+    "type": "b",
+    "size": 421
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Muscat",
+    "type": "b",
+    "size": 170
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Nicosia",
+    "type": "b",
+    "size": 7625
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Novokuznetsk",
+    "type": "b",
+    "size": 1997
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Novosibirsk",
+    "type": "b",
+    "size": 2053
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Omsk",
+    "type": "b",
+    "size": 1989
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Oral",
+    "type": "b",
+    "size": 1611
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Phnom_Penh",
+    "type": "b",
+    "size": 180
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Pontianak",
+    "type": "b",
+    "size": 358
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Pyongyang",
+    "type": "b",
+    "size": 273
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Qatar",
+    "type": "b",
+    "size": 174
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Qostanay",
+    "type": "b",
+    "size": 1644
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Qyzylorda",
+    "type": "b",
+    "size": 1617
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Rangoon",
+    "type": "b",
+    "size": 174
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Riyadh",
+    "type": "b",
+    "size": 147
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Saigon",
+    "type": "b",
+    "size": 188
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Sakhalin",
+    "type": "b",
+    "size": 2049
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Samarkand",
+    "type": "b",
+    "size": 853
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Seoul",
+    "type": "b",
+    "size": 985
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Shanghai",
+    "type": "b",
+    "size": 981
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Singapore",
+    "type": "b",
+    "size": 357
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Srednekolymsk",
+    "type": "b",
+    "size": 1998
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Taipei",
+    "type": "b",
+    "size": 1344
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Tashkent",
+    "type": "b",
+    "size": 852
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Tbilisi",
+    "type": "b",
+    "size": 1675
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Tehran",
+    "type": "b",
+    "size": 2150
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Tel_Aviv",
+    "type": "b",
+    "size": 184
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Thimbu",
+    "type": "b",
+    "size": 176
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Thimphu",
+    "type": "b",
+    "size": 176
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Tokyo",
+    "type": "b",
+    "size": 388
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Tomsk",
+    "type": "b",
+    "size": 2048
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Ujung_Pandang",
+    "type": "b",
+    "size": 186
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Ulaanbaatar",
+    "type": "b",
+    "size": 1540
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Ulan_Bator",
+    "type": "b",
+    "size": 192
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Urumqi",
+    "type": "b",
+    "size": 148
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Ust-Nera",
+    "type": "b",
+    "size": 1992
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Vientiane",
+    "type": "b",
+    "size": 179
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Vladivostok",
+    "type": "b",
+    "size": 1996
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Yakutsk",
+    "type": "b",
+    "size": 1992
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Yangon",
+    "type": "b",
+    "size": 237
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Yekaterinburg",
+    "type": "b",
+    "size": 2029
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Asia\\Yerevan",
+    "type": "b",
+    "size": 1964
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Atlantic\\Azores",
+    "type": "b",
+    "size": 9517
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Atlantic\\Bermuda",
+    "type": "b",
+    "size": 8784
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Atlantic\\Canary",
+    "type": "b",
+    "size": 6855
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Atlantic\\Cape_Verde",
+    "type": "b",
+    "size": 242
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Atlantic\\Faeroe",
+    "type": "b",
+    "size": 186
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Atlantic\\Faroe",
+    "type": "b",
+    "size": 6796
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Atlantic\\Jan_Mayen",
+    "type": "b",
+    "size": 186
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Atlantic\\Madeira",
+    "type": "b",
+    "size": 9510
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Atlantic\\Reykjavik",
+    "type": "b",
+    "size": 189
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Atlantic\\South_Georgia",
+    "type": "b",
+    "size": 159
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Atlantic\\St_Helena",
+    "type": "b",
+    "size": 189
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Atlantic\\Stanley",
+    "type": "b",
+    "size": 2187
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Australia\\ACT",
+    "type": "b",
+    "size": 190
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Australia\\Adelaide",
+    "type": "b",
+    "size": 8372
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Australia\\Brisbane",
+    "type": "b",
+    "size": 674
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Australia\\Broken_Hill",
+    "type": "b",
+    "size": 8437
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Australia\\Canberra",
+    "type": "b",
+    "size": 195
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Australia\\Currie",
+    "type": "b",
+    "size": 193
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Australia\\Darwin",
+    "type": "b",
+    "size": 437
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Australia\\Eucla",
+    "type": "b",
+    "size": 699
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Australia\\Hobart",
+    "type": "b",
+    "size": 8734
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Australia\\LHI",
+    "type": "b",
+    "size": 199
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Australia\\Lindeman",
+    "type": "b",
+    "size": 824
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Australia\\Lord_Howe",
+    "type": "b",
+    "size": 7047
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Australia\\Melbourne",
+    "type": "b",
+    "size": 8341
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Australia\\NSW",
+    "type": "b",
+    "size": 190
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Australia\\North",
+    "type": "b",
+    "size": 192
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Australia\\Perth",
+    "type": "b",
+    "size": 739
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Australia\\Queensland",
+    "type": "b",
+    "size": 203
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Australia\\South",
+    "type": "b",
+    "size": 198
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Australia\\Sydney",
+    "type": "b",
+    "size": 8338
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Australia\\Tasmania",
+    "type": "b",
+    "size": 195
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Australia\\Victoria",
+    "type": "b",
+    "size": 204
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Australia\\West",
+    "type": "b",
+    "size": 188
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Australia\\Yancowinna",
+    "type": "b",
+    "size": 212
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Brazil\\Acre",
+    "type": "b",
+    "size": 194
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Brazil\\DeNoronha",
+    "type": "b",
+    "size": 190
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Brazil\\East",
+    "type": "b",
+    "size": 191
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Brazil\\West",
+    "type": "b",
+    "size": 182
+  },
+  {
+    "name": "_tcl_data\\tzdata\\CET",
+    "type": "b",
+    "size": 177
+  },
+  {
+    "name": "_tcl_data\\tzdata\\CST6CDT",
+    "type": "b",
+    "size": 181
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Canada\\Atlantic",
+    "type": "b",
+    "size": 189
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Canada\\Central",
+    "type": "b",
+    "size": 191
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Canada\\Eastern",
+    "type": "b",
+    "size": 188
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Canada\\Mountain",
+    "type": "b",
+    "size": 192
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Canada\\Newfoundland",
+    "type": "b",
+    "size": 196
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Canada\\Pacific",
+    "type": "b",
+    "size": 194
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Canada\\Saskatchewan",
+    "type": "b",
+    "size": 190
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Canada\\Yukon",
+    "type": "b",
+    "size": 195
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Chile\\Continental",
+    "type": "b",
+    "size": 194
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Chile\\EasterIsland",
+    "type": "b",
+    "size": 189
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Cuba",
+    "type": "b",
+    "size": 175
+  },
+  {
+    "name": "_tcl_data\\tzdata\\EET",
+    "type": "b",
+    "size": 171
+  },
+  {
+    "name": "_tcl_data\\tzdata\\EST",
+    "type": "b",
+    "size": 174
+  },
+  {
+    "name": "_tcl_data\\tzdata\\EST5EDT",
+    "type": "b",
+    "size": 184
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Egypt",
+    "type": "b",
+    "size": 170
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Eire",
+    "type": "b",
+    "size": 172
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Etc\\GMT",
+    "type": "b",
+    "size": 110
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Etc\\GMT+0",
+    "type": "b",
+    "size": 159
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Etc\\GMT+1",
+    "type": "b",
+    "size": 115
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Etc\\GMT+10",
+    "type": "b",
+    "size": 117
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Etc\\GMT+11",
+    "type": "b",
+    "size": 117
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Etc\\GMT+12",
+    "type": "b",
+    "size": 117
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Etc\\GMT+2",
+    "type": "b",
+    "size": 115
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Etc\\GMT+3",
+    "type": "b",
+    "size": 116
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Etc\\GMT+4",
+    "type": "b",
+    "size": 116
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Etc\\GMT+5",
+    "type": "b",
+    "size": 116
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Etc\\GMT+6",
+    "type": "b",
+    "size": 116
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Etc\\GMT+7",
+    "type": "b",
+    "size": 116
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Etc\\GMT+8",
+    "type": "b",
+    "size": 116
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Etc\\GMT+9",
+    "type": "b",
+    "size": 116
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Etc\\GMT-0",
+    "type": "b",
+    "size": 159
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Etc\\GMT-1",
+    "type": "b",
+    "size": 114
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Etc\\GMT-10",
+    "type": "b",
+    "size": 116
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Etc\\GMT-11",
+    "type": "b",
+    "size": 116
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Etc\\GMT-12",
+    "type": "b",
+    "size": 116
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Etc\\GMT-13",
+    "type": "b",
+    "size": 116
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Etc\\GMT-14",
+    "type": "b",
+    "size": 116
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Etc\\GMT-2",
+    "type": "b",
+    "size": 114
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Etc\\GMT-3",
+    "type": "b",
+    "size": 115
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Etc\\GMT-4",
+    "type": "b",
+    "size": 115
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Etc\\GMT-5",
+    "type": "b",
+    "size": 115
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Etc\\GMT-6",
+    "type": "b",
+    "size": 115
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Etc\\GMT-7",
+    "type": "b",
+    "size": 115
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Etc\\GMT-8",
+    "type": "b",
+    "size": 115
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Etc\\GMT-9",
+    "type": "b",
+    "size": 115
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Etc\\GMT0",
+    "type": "b",
+    "size": 158
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Etc\\Greenwich",
+    "type": "b",
+    "size": 163
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Etc\\UCT",
+    "type": "b",
+    "size": 157
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Etc\\UTC",
+    "type": "b",
+    "size": 110
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Etc\\Universal",
+    "type": "b",
+    "size": 163
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Etc\\Zulu",
+    "type": "b",
+    "size": 158
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Amsterdam",
+    "type": "b",
+    "size": 190
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Andorra",
+    "type": "b",
+    "size": 6927
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Astrakhan",
+    "type": "b",
+    "size": 1997
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Athens",
+    "type": "b",
+    "size": 7954
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Belfast",
+    "type": "b",
+    "size": 182
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Belgrade",
+    "type": "b",
+    "size": 7309
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Berlin",
+    "type": "b",
+    "size": 8020
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Bratislava",
+    "type": "b",
+    "size": 185
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Brussels",
+    "type": "b",
+    "size": 9223
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Bucharest",
+    "type": "b",
+    "size": 7974
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Budapest",
+    "type": "b",
+    "size": 8287
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Busingen",
+    "type": "b",
+    "size": 183
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Chisinau",
+    "type": "b",
+    "size": 8096
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Copenhagen",
+    "type": "b",
+    "size": 185
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Dublin",
+    "type": "b",
+    "size": 9810
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Gibraltar",
+    "type": "b",
+    "size": 9509
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Guernsey",
+    "type": "b",
+    "size": 183
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Helsinki",
+    "type": "b",
+    "size": 7368
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Isle_of_Man",
+    "type": "b",
+    "size": 186
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Istanbul",
+    "type": "b",
+    "size": 3678
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Jersey",
+    "type": "b",
+    "size": 181
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Kaliningrad",
+    "type": "b",
+    "size": 2511
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Kiev",
+    "type": "b",
+    "size": 173
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Kirov",
+    "type": "b",
+    "size": 2010
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Kyiv",
+    "type": "b",
+    "size": 7455
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Lisbon",
+    "type": "b",
+    "size": 9958
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Ljubljana",
+    "type": "b",
+    "size": 190
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\London",
+    "type": "b",
+    "size": 10211
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Luxembourg",
+    "type": "b",
+    "size": 191
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Madrid",
+    "type": "b",
+    "size": 8517
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Malta",
+    "type": "b",
+    "size": 8724
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Mariehamn",
+    "type": "b",
+    "size": 190
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Minsk",
+    "type": "b",
+    "size": 2176
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Monaco",
+    "type": "b",
+    "size": 178
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Moscow",
+    "type": "b",
+    "size": 2430
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Nicosia",
+    "type": "b",
+    "size": 179
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Oslo",
+    "type": "b",
+    "size": 179
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Paris",
+    "type": "b",
+    "size": 9152
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Podgorica",
+    "type": "b",
+    "size": 190
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Prague",
+    "type": "b",
+    "size": 8038
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Riga",
+    "type": "b",
+    "size": 7658
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Rome",
+    "type": "b",
+    "size": 8813
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Samara",
+    "type": "b",
+    "size": 2050
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\San_Marino",
+    "type": "b",
+    "size": 179
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Sarajevo",
+    "type": "b",
+    "size": 189
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Saratov",
+    "type": "b",
+    "size": 1995
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Simferopol",
+    "type": "b",
+    "size": 2389
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Skopje",
+    "type": "b",
+    "size": 187
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Sofia",
+    "type": "b",
+    "size": 7654
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Stockholm",
+    "type": "b",
+    "size": 184
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Tallinn",
+    "type": "b",
+    "size": 7549
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Tirane",
+    "type": "b",
+    "size": 7675
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Tiraspol",
+    "type": "b",
+    "size": 189
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Ulyanovsk",
+    "type": "b",
+    "size": 2051
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Uzhgorod",
+    "type": "b",
+    "size": 177
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Vaduz",
+    "type": "b",
+    "size": 180
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Vatican",
+    "type": "b",
+    "size": 176
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Vienna",
+    "type": "b",
+    "size": 7930
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Vilnius",
+    "type": "b",
+    "size": 7485
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Volgograd",
+    "type": "b",
+    "size": 2104
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Warsaw",
+    "type": "b",
+    "size": 8662
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Zagreb",
+    "type": "b",
+    "size": 187
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Zaporozhye",
+    "type": "b",
+    "size": 179
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Europe\\Zurich",
+    "type": "b",
+    "size": 7305
+  },
+  {
+    "name": "_tcl_data\\tzdata\\GB",
+    "type": "b",
+    "size": 170
+  },
+  {
+    "name": "_tcl_data\\tzdata\\GB-Eire",
+    "type": "b",
+    "size": 175
+  },
+  {
+    "name": "_tcl_data\\tzdata\\GMT",
+    "type": "b",
+    "size": 153
+  },
+  {
+    "name": "_tcl_data\\tzdata\\GMT+0",
+    "type": "b",
+    "size": 155
+  },
+  {
+    "name": "_tcl_data\\tzdata\\GMT-0",
+    "type": "b",
+    "size": 155
+  },
+  {
+    "name": "_tcl_data\\tzdata\\GMT0",
+    "type": "b",
+    "size": 154
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Greenwich",
+    "type": "b",
+    "size": 159
+  },
+  {
+    "name": "_tcl_data\\tzdata\\HST",
+    "type": "b",
+    "size": 180
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Hongkong",
+    "type": "b",
+    "size": 179
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Iceland",
+    "type": "b",
+    "size": 178
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Indian\\Antananarivo",
+    "type": "b",
+    "size": 190
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Indian\\Chagos",
+    "type": "b",
+    "size": 178
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Indian\\Christmas",
+    "type": "b",
+    "size": 181
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Indian\\Cocos",
+    "type": "b",
+    "size": 174
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Indian\\Comoro",
+    "type": "b",
+    "size": 184
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Indian\\Kerguelen",
+    "type": "b",
+    "size": 190
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Indian\\Mahe",
+    "type": "b",
+    "size": 170
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Indian\\Maldives",
+    "type": "b",
+    "size": 182
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Indian\\Mauritius",
+    "type": "b",
+    "size": 267
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Indian\\Mayotte",
+    "type": "b",
+    "size": 185
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Indian\\Reunion",
+    "type": "b",
+    "size": 173
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Iran",
+    "type": "b",
+    "size": 166
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Israel",
+    "type": "b",
+    "size": 177
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Jamaica",
+    "type": "b",
+    "size": 181
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Japan",
+    "type": "b",
+    "size": 164
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Kwajalein",
+    "type": "b",
+    "size": 189
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Libya",
+    "type": "b",
+    "size": 176
+  },
+  {
+    "name": "_tcl_data\\tzdata\\MET",
+    "type": "b",
+    "size": 177
+  },
+  {
+    "name": "_tcl_data\\tzdata\\MST",
+    "type": "b",
+    "size": 177
+  },
+  {
+    "name": "_tcl_data\\tzdata\\MST7MDT",
+    "type": "b",
+    "size": 178
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Mexico\\BajaNorte",
+    "type": "b",
+    "size": 190
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Mexico\\BajaSur",
+    "type": "b",
+    "size": 191
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Mexico\\General",
+    "type": "b",
+    "size": 200
+  },
+  {
+    "name": "_tcl_data\\tzdata\\NZ",
+    "type": "b",
+    "size": 179
+  },
+  {
+    "name": "_tcl_data\\tzdata\\NZ-CHAT",
+    "type": "b",
+    "size": 181
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Navajo",
+    "type": "b",
+    "size": 177
+  },
+  {
+    "name": "_tcl_data\\tzdata\\PRC",
+    "type": "b",
+    "size": 171
+  },
+  {
+    "name": "_tcl_data\\tzdata\\PST8PDT",
+    "type": "b",
+    "size": 193
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Apia",
+    "type": "b",
+    "size": 882
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Auckland",
+    "type": "b",
+    "size": 8772
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Bougainville",
+    "type": "b",
+    "size": 276
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Chatham",
+    "type": "b",
+    "size": 7406
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Chuuk",
+    "type": "b",
+    "size": 202
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Easter",
+    "type": "b",
+    "size": 7941
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Efate",
+    "type": "b",
+    "size": 766
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Enderbury",
+    "type": "b",
+    "size": 188
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Fakaofo",
+    "type": "b",
+    "size": 183
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Fiji",
+    "type": "b",
+    "size": 957
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Funafuti",
+    "type": "b",
+    "size": 187
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Galapagos",
+    "type": "b",
+    "size": 243
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Gambier",
+    "type": "b",
+    "size": 154
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Guadalcanal",
+    "type": "b",
+    "size": 156
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Guam",
+    "type": "b",
+    "size": 732
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Honolulu",
+    "type": "b",
+    "size": 344
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Johnston",
+    "type": "b",
+    "size": 193
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Kanton",
+    "type": "b",
+    "size": 205
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Kiritimati",
+    "type": "b",
+    "size": 214
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Kosrae",
+    "type": "b",
+    "size": 386
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Kwajalein",
+    "type": "b",
+    "size": 298
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Majuro",
+    "type": "b",
+    "size": 185
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Marquesas",
+    "type": "b",
+    "size": 156
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Midway",
+    "type": "b",
+    "size": 194
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Nauru",
+    "type": "b",
+    "size": 236
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Niue",
+    "type": "b",
+    "size": 180
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Norfolk",
+    "type": "b",
+    "size": 4964
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Noumea",
+    "type": "b",
+    "size": 319
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Pago_Pago",
+    "type": "b",
+    "size": 188
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Palau",
+    "type": "b",
+    "size": 182
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Pitcairn",
+    "type": "b",
+    "size": 184
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Pohnpei",
+    "type": "b",
+    "size": 201
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Ponape",
+    "type": "b",
+    "size": 200
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Port_Moresby",
+    "type": "b",
+    "size": 189
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Rarotonga",
+    "type": "b",
+    "size": 940
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Saipan",
+    "type": "b",
+    "size": 179
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Samoa",
+    "type": "b",
+    "size": 193
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Tahiti",
+    "type": "b",
+    "size": 153
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Tarawa",
+    "type": "b",
+    "size": 151
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Tongatapu",
+    "type": "b",
+    "size": 438
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Truk",
+    "type": "b",
+    "size": 201
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Wake",
+    "type": "b",
+    "size": 183
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Wallis",
+    "type": "b",
+    "size": 185
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Pacific\\Yap",
+    "type": "b",
+    "size": 200
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Poland",
+    "type": "b",
+    "size": 174
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Portugal",
+    "type": "b",
+    "size": 176
+  },
+  {
+    "name": "_tcl_data\\tzdata\\ROC",
+    "type": "b",
+    "size": 165
+  },
+  {
+    "name": "_tcl_data\\tzdata\\ROK",
+    "type": "b",
+    "size": 162
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Singapore",
+    "type": "b",
+    "size": 180
+  },
+  {
+    "name": "_tcl_data\\tzdata\\SystemV\\AST4",
+    "type": "b",
+    "size": 201
+  },
+  {
+    "name": "_tcl_data\\tzdata\\SystemV\\AST4ADT",
+    "type": "b",
+    "size": 192
+  },
+  {
+    "name": "_tcl_data\\tzdata\\SystemV\\CST6",
+    "type": "b",
+    "size": 186
+  },
+  {
+    "name": "_tcl_data\\tzdata\\SystemV\\CST6CDT",
+    "type": "b",
+    "size": 192
+  },
+  {
+    "name": "_tcl_data\\tzdata\\SystemV\\EST5",
+    "type": "b",
+    "size": 204
+  },
+  {
+    "name": "_tcl_data\\tzdata\\SystemV\\EST5EDT",
+    "type": "b",
+    "size": 195
+  },
+  {
+    "name": "_tcl_data\\tzdata\\SystemV\\HST10",
+    "type": "b",
+    "size": 193
+  },
+  {
+    "name": "_tcl_data\\tzdata\\SystemV\\MST7",
+    "type": "b",
+    "size": 189
+  },
+  {
+    "name": "_tcl_data\\tzdata\\SystemV\\MST7MDT",
+    "type": "b",
+    "size": 189
+  },
+  {
+    "name": "_tcl_data\\tzdata\\SystemV\\PST8",
+    "type": "b",
+    "size": 192
+  },
+  {
+    "name": "_tcl_data\\tzdata\\SystemV\\PST8PDT",
+    "type": "b",
+    "size": 204
+  },
+  {
+    "name": "_tcl_data\\tzdata\\SystemV\\YST9",
+    "type": "b",
+    "size": 189
+  },
+  {
+    "name": "_tcl_data\\tzdata\\SystemV\\YST9YDT",
+    "type": "b",
+    "size": 198
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Turkey",
+    "type": "b",
+    "size": 180
+  },
+  {
+    "name": "_tcl_data\\tzdata\\UCT",
+    "type": "b",
+    "size": 153
+  },
+  {
+    "name": "_tcl_data\\tzdata\\US\\Alaska",
+    "type": "b",
+    "size": 189
+  },
+  {
+    "name": "_tcl_data\\tzdata\\US\\Aleutian",
+    "type": "b",
+    "size": 176
+  },
+  {
+    "name": "_tcl_data\\tzdata\\US\\Arizona",
+    "type": "b",
+    "size": 184
+  },
+  {
+    "name": "_tcl_data\\tzdata\\US\\Central",
+    "type": "b",
+    "size": 184
+  },
+  {
+    "name": "_tcl_data\\tzdata\\US\\East-Indiana",
+    "type": "b",
+    "size": 228
+  },
+  {
+    "name": "_tcl_data\\tzdata\\US\\Eastern",
+    "type": "b",
+    "size": 187
+  },
+  {
+    "name": "_tcl_data\\tzdata\\US\\Hawaii",
+    "type": "b",
+    "size": 186
+  },
+  {
+    "name": "_tcl_data\\tzdata\\US\\Indiana-Starke",
+    "type": "b",
+    "size": 206
+  },
+  {
+    "name": "_tcl_data\\tzdata\\US\\Michigan",
+    "type": "b",
+    "size": 185
+  },
+  {
+    "name": "_tcl_data\\tzdata\\US\\Mountain",
+    "type": "b",
+    "size": 182
+  },
+  {
+    "name": "_tcl_data\\tzdata\\US\\Pacific",
+    "type": "b",
+    "size": 196
+  },
+  {
+    "name": "_tcl_data\\tzdata\\US\\Samoa",
+    "type": "b",
+    "size": 188
+  },
+  {
+    "name": "_tcl_data\\tzdata\\UTC",
+    "type": "b",
+    "size": 153
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Universal",
+    "type": "b",
+    "size": 159
+  },
+  {
+    "name": "_tcl_data\\tzdata\\W-SU",
+    "type": "b",
+    "size": 172
+  },
+  {
+    "name": "_tcl_data\\tzdata\\WET",
+    "type": "b",
+    "size": 171
+  },
+  {
+    "name": "_tcl_data\\tzdata\\Zulu",
+    "type": "b",
+    "size": 154
+  },
+  {
+    "name": "_tcl_data\\word.tcl",
+    "type": "b",
+    "size": 5051
+  },
+  {
+    "name": "_tk_data\\bgerror.tcl",
+    "type": "b",
+    "size": 8806
+  },
+  {
+    "name": "_tk_data\\button.tcl",
+    "type": "b",
+    "size": 21612
+  },
+  {
+    "name": "_tk_data\\choosedir.tcl",
+    "type": "b",
+    "size": 10009
+  },
+  {
+    "name": "_tk_data\\clrpick.tcl",
+    "type": "b",
+    "size": 22039
+  },
+  {
+    "name": "_tk_data\\comdlg.tcl",
+    "type": "b",
+    "size": 8690
+  },
+  {
+    "name": "_tk_data\\console.tcl",
+    "type": "b",
+    "size": 33364
+  },
+  {
+    "name": "_tk_data\\dialog.tcl",
+    "type": "b",
+    "size": 5988
+  },
+  {
+    "name": "_tk_data\\entry.tcl",
+    "type": "b",
+    "size": 18942
+  },
+  {
+    "name": "_tk_data\\focus.tcl",
+    "type": "b",
+    "size": 5035
+  },
+  {
+    "name": "_tk_data\\fontchooser.tcl",
+    "type": "b",
+    "size": 18292
+  },
+  {
+    "name": "_tk_data\\iconlist.tcl",
+    "type": "b",
+    "size": 17456
+  },
+  {
+    "name": "_tk_data\\icons.tcl",
+    "type": "b",
+    "size": 11037
+  },
+  {
+    "name": "_tk_data\\images\\README",
+    "type": "b",
+    "size": 329
+  },
+  {
+    "name": "_tk_data\\images\\logo.eps",
+    "type": "b",
+    "size": 34991
+  },
+  {
+    "name": "_tk_data\\images\\logo100.gif",
+    "type": "b",
+    "size": 2341
+  },
+  {
+    "name": "_tk_data\\images\\logo64.gif",
+    "type": "b",
+    "size": 1670
+  },
+  {
+    "name": "_tk_data\\images\\logoLarge.gif",
+    "type": "b",
+    "size": 11000
+  },
+  {
+    "name": "_tk_data\\images\\logoMed.gif",
+    "type": "b",
+    "size": 3889
+  },
+  {
+    "name": "_tk_data\\images\\pwrdLogo.eps",
+    "type": "b",
+    "size": 29706
+  },
+  {
+    "name": "_tk_data\\images\\pwrdLogo100.gif",
+    "type": "b",
+    "size": 1615
+  },
+  {
+    "name": "_tk_data\\images\\pwrdLogo150.gif",
+    "type": "b",
+    "size": 2489
+  },
+  {
+    "name": "_tk_data\\images\\pwrdLogo175.gif",
+    "type": "b",
+    "size": 2981
+  },
+  {
+    "name": "_tk_data\\images\\pwrdLogo200.gif",
+    "type": "b",
+    "size": 3491
+  },
+  {
+    "name": "_tk_data\\images\\pwrdLogo75.gif",
+    "type": "b",
+    "size": 1171
+  },
+  {
+    "name": "_tk_data\\images\\tai-ku.gif",
+    "type": "b",
+    "size": 5473
+  },
+  {
+    "name": "_tk_data\\license.terms",
+    "type": "b",
+    "size": 2307
+  },
+  {
+    "name": "_tk_data\\listbox.tcl",
+    "type": "b",
+    "size": 15255
+  },
+  {
+    "name": "_tk_data\\megawidget.tcl",
+    "type": "b",
+    "size": 9862
+  },
+  {
+    "name": "_tk_data\\menu.tcl",
+    "type": "b",
+    "size": 40215
+  },
+  {
+    "name": "_tk_data\\mkpsenc.tcl",
+    "type": "b",
+    "size": 30840
+  },
+  {
+    "name": "_tk_data\\msgbox.tcl",
+    "type": "b",
+    "size": 16786
+  },
+  {
+    "name": "_tk_data\\msgs\\cs.msg",
+    "type": "b",
+    "size": 4235
+  },
+  {
+    "name": "_tk_data\\msgs\\da.msg",
+    "type": "b",
+    "size": 3987
+  },
+  {
+    "name": "_tk_data\\msgs\\de.msg",
+    "type": "b",
+    "size": 4914
+  },
+  {
+    "name": "_tk_data\\msgs\\el.msg",
+    "type": "b",
+    "size": 8784
+  },
+  {
+    "name": "_tk_data\\msgs\\en.msg",
+    "type": "b",
+    "size": 3377
+  },
+  {
+    "name": "_tk_data\\msgs\\en_gb.msg",
+    "type": "b",
+    "size": 66
+  },
+  {
+    "name": "_tk_data\\msgs\\eo.msg",
+    "type": "b",
+    "size": 4035
+  },
+  {
+    "name": "_tk_data\\msgs\\es.msg",
+    "type": "b",
+    "size": 4024
+  },
+  {
+    "name": "_tk_data\\msgs\\fi.msg",
+    "type": "b",
+    "size": 4693
+  },
+  {
+    "name": "_tk_data\\msgs\\fr.msg",
+    "type": "b",
+    "size": 3877
+  },
+  {
+    "name": "_tk_data\\msgs\\hu.msg",
+    "type": "b",
+    "size": 4678
+  },
+  {
+    "name": "_tk_data\\msgs\\it.msg",
+    "type": "b",
+    "size": 3765
+  },
+  {
+    "name": "_tk_data\\msgs\\nl.msg",
+    "type": "b",
+    "size": 4557
+  },
+  {
+    "name": "_tk_data\\msgs\\pl.msg",
+    "type": "b",
+    "size": 4932
+  },
+  {
+    "name": "_tk_data\\msgs\\pt.msg",
+    "type": "b",
+    "size": 3987
+  },
+  {
+    "name": "_tk_data\\msgs\\ru.msg",
+    "type": "b",
+    "size": 8620
+  },
+  {
+    "name": "_tk_data\\msgs\\sv.msg",
+    "type": "b",
+    "size": 3908
+  },
+  {
+    "name": "_tk_data\\msgs\\zh_cn.msg",
+    "type": "b",
+    "size": 4948
+  },
+  {
+    "name": "_tk_data\\obsolete.tcl",
+    "type": "b",
+    "size": 5772
+  },
+  {
+    "name": "_tk_data\\optMenu.tcl",
+    "type": "b",
+    "size": 1629
+  },
+  {
+    "name": "_tk_data\\palette.tcl",
+    "type": "b",
+    "size": 8418
+  },
+  {
+    "name": "_tk_data\\panedwindow.tcl",
+    "type": "b",
+    "size": 5370
+  },
+  {
+    "name": "_tk_data\\pkgIndex.tcl",
+    "type": "b",
+    "size": 376
+  },
+  {
+    "name": "_tk_data\\safetk.tcl",
+    "type": "b",
+    "size": 7632
+  },
+  {
+    "name": "_tk_data\\scale.tcl",
+    "type": "b",
+    "size": 8693
+  },
+  {
+    "name": "_tk_data\\scrlbar.tcl",
+    "type": "b",
+    "size": 13188
+  },
+  {
+    "name": "_tk_data\\spinbox.tcl",
+    "type": "b",
+    "size": 16543
+  },
+  {
+    "name": "_tk_data\\tclIndex",
+    "type": "b",
+    "size": 24443
+  },
+  {
+    "name": "_tk_data\\tearoff.tcl",
+    "type": "b",
+    "size": 4625
+  },
+  {
+    "name": "_tk_data\\text.tcl",
+    "type": "b",
+    "size": 35183
+  },
+  {
+    "name": "_tk_data\\tk.tcl",
+    "type": "b",
+    "size": 24322
+  },
+  {
+    "name": "_tk_data\\tkfbox.tcl",
+    "type": "b",
+    "size": 39606
+  },
+  {
+    "name": "_tk_data\\ttk\\altTheme.tcl",
+    "type": "b",
+    "size": 4901
+  },
+  {
+    "name": "_tk_data\\ttk\\aquaTheme.tcl",
+    "type": "b",
+    "size": 3809
+  },
+  {
+    "name": "_tk_data\\ttk\\button.tcl",
+    "type": "b",
+    "size": 3014
+  },
+  {
+    "name": "_tk_data\\ttk\\clamTheme.tcl",
+    "type": "b",
+    "size": 5858
+  },
+  {
+    "name": "_tk_data\\ttk\\classicTheme.tcl",
+    "type": "b",
+    "size": 4354
+  },
+  {
+    "name": "_tk_data\\ttk\\combobox.tcl",
+    "type": "b",
+    "size": 12708
+  },
+  {
+    "name": "_tk_data\\ttk\\cursors.tcl",
+    "type": "b",
+    "size": 4674
+  },
+  {
+    "name": "_tk_data\\ttk\\defaults.tcl",
+    "type": "b",
+    "size": 5004
+  },
+  {
+    "name": "_tk_data\\ttk\\entry.tcl",
+    "type": "b",
+    "size": 18006
+  },
+  {
+    "name": "_tk_data\\ttk\\fonts.tcl",
+    "type": "b",
+    "size": 5639
+  },
+  {
+    "name": "_tk_data\\ttk\\menubutton.tcl",
+    "type": "b",
+    "size": 6408
+  },
+  {
+    "name": "_tk_data\\ttk\\notebook.tcl",
+    "type": "b",
+    "size": 5863
+  },
+  {
+    "name": "_tk_data\\ttk\\panedwindow.tcl",
+    "type": "b",
+    "size": 2161
+  },
+  {
+    "name": "_tk_data\\ttk\\progress.tcl",
+    "type": "b",
+    "size": 1138
+  },
+  {
+    "name": "_tk_data\\ttk\\scale.tcl",
+    "type": "b",
+    "size": 2787
+  },
+  {
+    "name": "_tk_data\\ttk\\scrollbar.tcl",
+    "type": "b",
+    "size": 3284
+  },
+  {
+    "name": "_tk_data\\ttk\\sizegrip.tcl",
+    "type": "b",
+    "size": 2502
+  },
+  {
+    "name": "_tk_data\\ttk\\spinbox.tcl",
+    "type": "b",
+    "size": 5003
+  },
+  {
+    "name": "_tk_data\\ttk\\treeview.tcl",
+    "type": "b",
+    "size": 10180
+  },
+  {
+    "name": "_tk_data\\ttk\\ttk.tcl",
+    "type": "b",
+    "size": 5509
+  },
+  {
+    "name": "_tk_data\\ttk\\utils.tcl",
+    "type": "b",
+    "size": 8621
+  },
+  {
+    "name": "_tk_data\\ttk\\vistaTheme.tcl",
+    "type": "b",
+    "size": 10692
+  },
+  {
+    "name": "_tk_data\\ttk\\winTheme.tcl",
+    "type": "b",
+    "size": 3848
+  },
+  {
+    "name": "_tk_data\\ttk\\xpTheme.tcl",
+    "type": "b",
+    "size": 3090
+  },
+  {
+    "name": "_tk_data\\unsupported.tcl",
+    "type": "b",
+    "size": 10521
+  },
+  {
+    "name": "_tk_data\\xmfbox.tcl",
+    "type": "b",
+    "size": 26991
+  },
+  {
+    "name": "_tkinter.pyd",
+    "type": "b",
+    "size": 69464
+  },
+  {
+    "name": "_wmi.pyd",
+    "type": "b",
+    "size": 40280
+  },
+  {
+    "name": "_zstd.pyd",
+    "type": "b",
+    "size": 503640
+  },
+  {
+    "name": "base_library.zip",
+    "type": "b",
+    "size": 1389034
+  },
+  {
+    "name": "charset_normalizer\\md.cp314-win_amd64.pyd",
+    "type": "b",
+    "size": 10752
+  },
+  {
+    "name": "charset_normalizer\\md__mypyc.cp314-win_amd64.pyd",
+    "type": "b",
+    "size": 123392
+  },
+  {
+    "name": "libcrypto-3.dll",
+    "type": "b",
+    "size": 5229424
+  },
+  {
+    "name": "libffi-8.dll",
+    "type": "b",
+    "size": 39696
+  },
+  {
+    "name": "libssl-3.dll",
+    "type": "b",
+    "size": 794992
+  },
+  {
+    "name": "numpy-2.3.5.dist-info\\DELVEWHEEL",
+    "type": "b",
+    "size": 462
+  },
+  {
+    "name": "numpy-2.3.5.dist-info\\INSTALLER",
+    "type": "b",
+    "size": 4
+  },
+  {
+    "name": "numpy-2.3.5.dist-info\\LICENSE.txt",
+    "type": "b",
+    "size": 46841
+  },
+  {
+    "name": "numpy-2.3.5.dist-info\\METADATA",
+    "type": "b",
+    "size": 60935
+  },
+  {
+    "name": "numpy-2.3.5.dist-info\\RECORD",
+    "type": "b",
+    "size": 110571
+  },
+  {
+    "name": "numpy-2.3.5.dist-info\\REQUESTED",
+    "type": "b",
+    "size": 0
+  },
+  {
+    "name": "numpy-2.3.5.dist-info\\WHEEL",
+    "type": "b",
+    "size": 85
+  },
+  {
+    "name": "numpy-2.3.5.dist-info\\entry_points.txt",
+    "type": "b",
+    "size": 220
+  },
+  {
+    "name": "numpy.libs\\libscipy_openblas64_-9e3e5a4229c1ca39f10dc82bba9e2b2b.dll",
+    "type": "b",
+    "size": 20403712
+  },
+  {
+    "name": "numpy.libs\\msvcp140-a4c2229bdc2a2a630acdc095b4d86008.dll",
+    "type": "b",
+    "size": 575056
+  },
+  {
+    "name": "numpy\\_core\\_multiarray_tests.cp314-win_amd64.pyd",
+    "type": "b",
+    "size": 63488
+  },
+  {
+    "name": "numpy\\_core\\_multiarray_umath.cp314-win_amd64.pyd",
+    "type": "b",
+    "size": 4541440
+  },
+  {
+    "name": "numpy\\fft\\_pocketfft_umath.cp314-win_amd64.pyd",
+    "type": "b",
+    "size": 276480
+  },
+  {
+    "name": "numpy\\linalg\\_umath_linalg.cp314-win_amd64.pyd",
+    "type": "b",
+    "size": 112128
+  },
+  {
+    "name": "numpy\\random\\_bounded_integers.cp314-win_amd64.pyd",
+    "type": "b",
+    "size": 215040
+  },
+  {
+    "name": "numpy\\random\\_common.cp314-win_amd64.pyd",
+    "type": "b",
+    "size": 165376
+  },
+  {
+    "name": "numpy\\random\\_generator.cp314-win_amd64.pyd",
+    "type": "b",
+    "size": 597504
+  },
+  {
+    "name": "numpy\\random\\_mt19937.cp314-win_amd64.pyd",
+    "type": "b",
+    "size": 84992
+  },
+  {
+    "name": "numpy\\random\\_pcg64.cp314-win_amd64.pyd",
+    "type": "b",
+    "size": 94208
+  },
+  {
+    "name": "numpy\\random\\_philox.cp314-win_amd64.pyd",
+    "type": "b",
+    "size": 78848
+  },
+  {
+    "name": "numpy\\random\\_sfc64.cp314-win_amd64.pyd",
+    "type": "b",
+    "size": 58880
+  },
+  {
+    "name": "numpy\\random\\bit_generator.cp314-win_amd64.pyd",
+    "type": "b",
+    "size": 160768
+  },
+  {
+    "name": "numpy\\random\\mtrand.cp314-win_amd64.pyd",
+    "type": "b",
+    "size": 489984
+  },
+  {
+    "name": "psutil\\_psutil_windows.pyd",
+    "type": "b",
+    "size": 69120
+  },
+  {
+    "name": "pyexpat.pyd",
+    "type": "b",
+    "size": 216920
+  },
+  {
+    "name": "python3.dll",
+    "type": "b",
+    "size": 74064
+  },
+  {
+    "name": "python314.dll",
+    "type": "b",
+    "size": 6760280
+  },
+  {
+    "name": "pywin32_system32\\pywintypes314.dll",
+    "type": "b",
+    "size": 136704
+  },
+  {
+    "name": "select.pyd",
+    "type": "b",
+    "size": 33624
+  },
+  {
+    "name": "tcl86t.dll",
+    "type": "b",
+    "size": 1842008
+  },
+  {
+    "name": "tcl8\\8.4\\platform-1.0.19.tm",
+    "type": "b",
+    "size": 11708
+  },
+  {
+    "name": "tcl8\\8.4\\platform\\shell-1.1.4.tm",
+    "type": "b",
+    "size": 6242
+  },
+  {
+    "name": "tcl8\\8.5\\msgcat-1.6.1.tm",
+    "type": "b",
+    "size": 35120
+  },
+  {
+    "name": "tcl8\\8.5\\tcltest-2.5.8.tm",
+    "type": "b",
+    "size": 105163
+  },
+  {
+    "name": "tcl8\\8.6\\http-2.9.8.tm",
+    "type": "b",
+    "size": 118283
+  },
+  {
+    "name": "tk86t.dll",
+    "type": "b",
+    "size": 1591640
+  },
+  {
+    "name": "unicodedata.pyd",
+    "type": "b",
+    "size": 758104
+  },
+  {
+    "name": "win32\\win32api.pyd",
+    "type": "b",
+    "size": 135680
+  },
+  {
+    "name": "win32\\win32gui.pyd",
+    "type": "b",
+    "size": 222208
+  },
+  {
+    "name": "win32\\win32pdh.pyd",
+    "type": "b",
+    "size": 34816
+  },
+  {
+    "name": "zlib1.dll",
+    "type": "b",
+    "size": 148312
+  },
+  {
+    "name": "pyi-contents-directory _internal",
+    "type": "o",
+    "size": 0
+  },
+  {
+    "name": "PYZ.pyz",
+    "type": "z",
+    "size": 5208050
+  }
+]

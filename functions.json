@@ -1,0 +1,2275 @@
+[
+  {
+    "name": "<module>",
+    "line": 1,
+    "arguments": [],
+    "names": [
+      "tkinter",
+      "tk",
+      "messagebox",
+      "json",
+      "os",
+      "sys",
+      "threading",
+      "time",
+      "pathlib",
+      "Path",
+      "keyboard",
+      "mss",
+      "numpy",
+      "np",
+      "win32api",
+      "win32con",
+      "win32gui",
+      "pynput",
+      "mouse",
+      "pynput_mouse",
+      "webbrowser",
+      "AreaSelector",
+      "GPOFishingMacro",
+      "auto_subscribe_to_youtube",
+      "show_terms_and_conditions",
+      "main",
+      "__name__"
+    ],
+    "constants": [
+      0,
+      null,
+      "AreaSelector",
+      "GPOFishingMacro",
+      "__main__"
+    ]
+  },
+  {
+    "name": "AreaSelector",
+    "line": 19,
+    "arguments": [],
+    "names": [
+      "__name__",
+      "__module__",
+      "__qualname__",
+      "__firstlineno__",
+      "__doc__",
+      "__init__",
+      "on_mouse_move",
+      "on_mouse_down",
+      "on_mouse_drag",
+      "on_mouse_up",
+      "close",
+      "__static_attributes__",
+      "__classdictcell__"
+    ],
+    "constants": [
+      "AreaSelector",
+      "Transparent draggable and resizable area selector box",
+      null
+    ]
+  },
+  {
+    "name": "AreaSelector.__init__",
+    "line": 22,
+    "arguments": [
+      "self",
+      "parent",
+      "initial_box",
+      "callback"
+    ],
+    "names": [
+      "callback",
+      "parent",
+      "tk",
+      "Toplevel",
+      "window",
+      "attributes",
+      "overrideredirect",
+      "x1",
+      "y1",
+      "x2",
+      "y2",
+      "geometry",
+      "configure",
+      "Canvas",
+      "canvas",
+      "pack",
+      "dragging",
+      "resizing",
+      "resize_edge",
+      "start_x",
+      "start_y",
+      "resize_threshold",
+      "bind",
+      "on_mouse_down",
+      "on_mouse_drag",
+      "on_mouse_up",
+      "on_mouse_move"
+    ],
+    "constants": [
+      "-alpha",
+      0.6,
+      "-topmost",
+      true,
+      "x1",
+      "y1",
+      "x2",
+      "y2",
+      "x",
+      "+",
+      "green",
+      "lime",
+      "both",
+      false,
+      null,
+      "<Button-1>",
+      "<B1-Motion>",
+      "<ButtonRelease-1>",
+      "<Motion>"
+    ]
+  },
+  {
+    "name": "AreaSelector.on_mouse_move",
+    "line": 60,
+    "arguments": [
+      "self",
+      "event"
+    ],
+    "names": [
+      "x",
+      "y",
+      "window",
+      "winfo_width",
+      "winfo_height",
+      "resize_threshold",
+      "canvas",
+      "config"
+    ],
+    "constants": [
+      "Change cursor based on position",
+      "top_left_corner",
+      "top_right_corner",
+      "bottom_left_corner",
+      "bottom_right_corner",
+      "sb_h_double_arrow",
+      "sb_v_double_arrow",
+      "fleur",
+      null
+    ]
+  },
+  {
+    "name": "AreaSelector.on_mouse_down",
+    "line": 87,
+    "arguments": [
+      "self",
+      "event"
+    ],
+    "names": [
+      "x",
+      "start_x",
+      "y",
+      "start_y",
+      "window",
+      "winfo_width",
+      "winfo_height",
+      "resize_threshold",
+      "resizing",
+      "resize_edge",
+      "dragging"
+    ],
+    "constants": [
+      "Start dragging or resizing",
+      true,
+      "left",
+      "right",
+      "top",
+      "bottom",
+      null
+    ]
+  },
+  {
+    "name": "AreaSelector.on_mouse_drag",
+    "line": 113,
+    "arguments": [
+      "self",
+      "event"
+    ],
+    "names": [
+      "dragging",
+      "x",
+      "start_x",
+      "y",
+      "start_y",
+      "window",
+      "winfo_x",
+      "winfo_y",
+      "geometry",
+      "resizing",
+      "winfo_width",
+      "winfo_height",
+      "resize_edge"
+    ],
+    "constants": [
+      "Handle dragging or resizing",
+      "+",
+      "left",
+      "right",
+      "top",
+      "bottom",
+      "x",
+      null
+    ]
+  },
+  {
+    "name": "AreaSelector.on_mouse_up",
+    "line": 161,
+    "arguments": [
+      "self",
+      "event"
+    ],
+    "names": [
+      "dragging",
+      "resizing",
+      "resize_edge"
+    ],
+    "constants": [
+      "Stop dragging or resizing",
+      false,
+      null
+    ]
+  },
+  {
+    "name": "AreaSelector.close",
+    "line": 167,
+    "arguments": [
+      "self"
+    ],
+    "names": [
+      "window",
+      "winfo_x",
+      "winfo_y",
+      "winfo_width",
+      "winfo_height",
+      "callback",
+      "destroy"
+    ],
+    "constants": [
+      "Close the area selector and return coordinates",
+      "x1",
+      "y1",
+      "x2",
+      "y2",
+      null
+    ]
+  },
+  {
+    "name": "GPOFishingMacro",
+    "line": 179,
+    "arguments": [],
+    "names": [
+      "__name__",
+      "__module__",
+      "__qualname__",
+      "__firstlineno__",
+      "__init__",
+      "load_settings",
+      "save_settings",
+      "create_widgets",
+      "save_timeouts",
+      "save_rod_keys",
+      "save_fruit_key",
+      "save_pd_gains",
+      "save_color_tolerances",
+      "toggle_auto_buy",
+      "toggle_auto_store",
+      "toggle_auto_select_bait",
+      "update_gui_size",
+      "capture_point",
+      "update_point_buttons",
+      "update_store_fruit_button",
+      "update_bait_point_button",
+      "update_water_point_2_button",
+      "update_water_point_3_button",
+      "save_auto_buy_settings",
+      "save_auto_store_settings",
+      "save_auto_select_bait_settings",
+      "perform_auto_buy",
+      "perform_store_fruit",
+      "find_color_positions",
+      "cast_rod",
+      "main_loop",
+      "show_scan_outline",
+      "hide_scan_outline",
+      "get_arrow_coords_horizontal_left",
+      "update_or_create_arrow",
+      "toggle_start_stop",
+      "change_area",
+      "on_area_selected",
+      "exit_app",
+      "rebind_key",
+      "update_button_labels",
+      "setup_hotkeys",
+      "refresh_hotkeys",
+      "__static_attributes__",
+      "__classdictcell__"
+    ],
+    "constants": [
+      "GPOFishingMacro",
+      null
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.__init__",
+    "line": 180,
+    "arguments": [
+      "self",
+      "root"
+    ],
+    "names": [
+      "root",
+      "title",
+      "geometry",
+      "resizable",
+      "attributes",
+      "getattr",
+      "sys",
+      "Path",
+      "executable",
+      "parent",
+      "settings_dir",
+      "__file__",
+      "settings_file",
+      "ctypes",
+      "windll",
+      "user32",
+      "GetSystemMetrics",
+      "default_bindings",
+      "area_selector",
+      "int",
+      "area_box",
+      "bite_timeout",
+      "end_fish_timeout",
+      "rod_key",
+      "not_rod_key",
+      "fruit_key",
+      "kp",
+      "kd",
+      "blue_tolerance",
+      "white_tolerance",
+      "gray_tolerance",
+      "auto_buy_bait",
+      "loops_per_purchase",
+      "water_point",
+      "yes_point",
+      "no_point",
+      "number_point",
+      "auto_store_fruit",
+      "store_fruit_point",
+      "water_point_3",
+      "auto_select_bait",
+      "bait_point",
+      "water_point_2",
+      "load_settings",
+      "keybindings",
+      "is_running",
+      "area_change_enabled",
+      "main_thread",
+      "scan_outline",
+      "scan_outline_canvas",
+      "arrow_overlay",
+      "arrow_canvas",
+      "arrow_ids",
+      "previous_error",
+      "is_clicking",
+      "has_cast",
+      "waiting_for_bite",
+      "waiting_for_bite_time",
+      "color_not_found_time",
+      "fish_caught_count",
+      "create_widgets",
+      "setup_hotkeys"
+    ],
+    "constants": [
+      "GPO Fishing Macro",
+      "380x480",
+      false,
+      "-topmost",
+      true,
+      "frozen",
+      "GPOsettings.json",
+      null,
+      "start_stop",
+      "F1",
+      "change_area",
+      "F2",
+      "exit",
+      "F3",
+      "x1",
+      0.50625,
+      "y1",
+      0.37917,
+      "x2",
+      0.60547,
+      "y2",
+      0.66875,
+      30.0,
+      2.0,
+      "1",
+      "2",
+      "3",
+      0.05,
+      1.0,
+      0.3918,
+      0.2951,
+      0.4129,
+      0.909,
+      0.5902,
+      0.9049,
+      0.5031,
+      0.9076,
+      0.4996,
+      0.7993,
+      0.4086,
+      0.2688,
+      0.5012,
+      0.7375,
+      0.2944,
+      "white",
+      "biggest"
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.load_settings",
+    "line": 303,
+    "arguments": [
+      "self"
+    ],
+    "names": [
+      "settings_file",
+      "exists",
+      "open",
+      "json",
+      "load",
+      "area_box",
+      "get",
+      "bite_timeout",
+      "end_fish_timeout",
+      "rod_key",
+      "not_rod_key",
+      "fruit_key",
+      "kp",
+      "kd",
+      "blue_tolerance",
+      "white_tolerance",
+      "gray_tolerance",
+      "auto_buy_bait",
+      "loops_per_purchase",
+      "tuple",
+      "water_point",
+      "yes_point",
+      "no_point",
+      "number_point",
+      "auto_store_fruit",
+      "store_fruit_point",
+      "water_point_3",
+      "auto_select_bait",
+      "bait_point",
+      "water_point_2",
+      "default_bindings",
+      "Exception",
+      "messagebox",
+      "showwarning",
+      "ctypes",
+      "windll",
+      "user32",
+      "GetSystemMetrics",
+      "int",
+      "copy"
+    ],
+    "constants": [
+      "Load keybindings, area box, and timeouts from JSON file",
+      "r",
+      "area_box",
+      "bite_timeout",
+      15.0,
+      "end_fish_timeout",
+      2.0,
+      "rod_key",
+      "1",
+      "not_rod_key",
+      "2",
+      "fruit_key",
+      "3",
+      "kp",
+      0.1,
+      "kd",
+      0.5,
+      "blue_tolerance",
+      "white_tolerance",
+      "gray_tolerance",
+      "auto_buy_bait",
+      false,
+      "loops_per_purchase",
+      "water_point",
+      "yes_point",
+      "no_point",
+      "number_point",
+      "auto_store_fruit",
+      "store_fruit_point",
+      "water_point_3",
+      "auto_select_bait",
+      "bait_point",
+      "water_point_2",
+      "keybindings",
+      null,
+      "Settings",
+      "Could not load settings: ",
+      "\nUsing defaults.",
+      30.0,
+      0.05,
+      1.0,
+      0.3918,
+      0.2951,
+      0.4129,
+      0.909,
+      0.5902,
+      0.9049,
+      0.5031,
+      0.9076,
+      0.4996,
+      0.7993,
+      0.4086,
+      0.2688,
+      0.5012,
+      0.7375,
+      0.2944
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.save_settings",
+    "line": 387,
+    "arguments": [
+      "self"
+    ],
+    "names": [
+      "keybindings",
+      "area_box",
+      "bite_timeout",
+      "end_fish_timeout",
+      "rod_key",
+      "not_rod_key",
+      "fruit_key",
+      "kp",
+      "kd",
+      "blue_tolerance",
+      "white_tolerance",
+      "gray_tolerance",
+      "auto_buy_bait",
+      "loops_per_purchase",
+      "water_point",
+      "yes_point",
+      "no_point",
+      "number_point",
+      "auto_store_fruit",
+      "store_fruit_point",
+      "water_point_3",
+      "auto_select_bait",
+      "bait_point",
+      "water_point_2",
+      "open",
+      "settings_file",
+      "json",
+      "dump",
+      "Exception",
+      "messagebox",
+      "showerror"
+    ],
+    "constants": [
+      "Save keybindings, area box, and timeouts to JSON file",
+      "keybindings",
+      "area_box",
+      "bite_timeout",
+      "end_fish_timeout",
+      "rod_key",
+      "not_rod_key",
+      "fruit_key",
+      "kp",
+      "kd",
+      "blue_tolerance",
+      "white_tolerance",
+      "gray_tolerance",
+      "auto_buy_bait",
+      "loops_per_purchase",
+      "water_point",
+      "yes_point",
+      "no_point",
+      "number_point",
+      "auto_store_fruit",
+      "store_fruit_point",
+      "water_point_3",
+      "auto_select_bait",
+      "bait_point",
+      "water_point_2",
+      "w",
+      null,
+      true,
+      "Error",
+      "Could not save settings: ",
+      false
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.create_widgets",
+    "line": 423,
+    "arguments": [
+      "self"
+    ],
+    "names": [
+      "tk",
+      "Canvas",
+      "root",
+      "canvas",
+      "Scrollbar",
+      "yview",
+      "scrollbar",
+      "Frame",
+      "scrollable_frame",
+      "bind",
+      "create_window",
+      "configure",
+      "set",
+      "pack",
+      "bind_all",
+      "Label",
+      "Button",
+      "keybindings",
+      "toggle_start_stop",
+      "change_area",
+      "exit_app",
+      "Entry",
+      "bite_timeout_entry",
+      "insert",
+      "str",
+      "bite_timeout",
+      "save_timeouts",
+      "end_fish_timeout_entry",
+      "end_fish_timeout",
+      "StringVar",
+      "rod_key",
+      "rod_key_var",
+      "OptionMenu",
+      "config",
+      "not_rod_key",
+      "not_rod_key_var",
+      "save_rod_keys",
+      "kp_entry",
+      "kp",
+      "kd_entry",
+      "kd",
+      "save_pd_gains",
+      "blue_tolerance_entry",
+      "blue_tolerance",
+      "white_tolerance_entry",
+      "white_tolerance",
+      "gray_tolerance_entry",
+      "gray_tolerance",
+      "save_color_tolerances",
+      "BooleanVar",
+      "auto_buy_bait",
+      "auto_buy_var",
+      "Checkbutton",
+      "toggle_auto_buy",
+      "auto_store_fruit",
+      "auto_store_var",
+      "toggle_auto_store",
+      "auto_select_bait",
+      "auto_select_bait_var",
+      "toggle_auto_select_bait",
+      "auto_buy_frame",
+      "loops_entry",
+      "loops_per_purchase",
+      "water_btn",
+      "yes_btn",
+      "no_btn",
+      "number_btn",
+      "save_auto_buy_settings",
+      "update_point_buttons",
+      "auto_store_frame",
+      "fruit_key",
+      "fruit_key_var",
+      "save_fruit_key",
+      "store_fruit_btn",
+      "water_point_3_btn",
+      "save_auto_store_settings",
+      "update_store_fruit_button",
+      "update_water_point_3_button",
+      "auto_select_bait_frame",
+      "bait_point_btn",
+      "water_point_2_btn",
+      "save_auto_select_bait_settings",
+      "update_bait_point_button",
+      "update_water_point_2_button",
+      "status_label",
+      "geometry",
+      "update_gui_size"
+    ],
+    "constants": [
+      "Create the GUI widgets",
+      "vertical",
+      "<Configure>",
+      "nw",
+      "left",
+      "both",
+      true,
+      "right",
+      "y",
+      "<MouseWheel>",
+      "GPO Fishing Macro",
+      "Start/Stop (",
+      "start_stop",
+      ")",
+      "Rebind",
+      "Change Area (",
+      "change_area",
+      "Exit (",
+      "exit",
+      "Bite Timeout (s):",
+      "Save",
+      "End Fish Timeout (s):",
+      "Rod:",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "0",
+      "Not Rod:",
+      "Kp:",
+      "Kd:",
+      "Blue Tolerance:",
+      "White Tolerance:",
+      "Gray Tolerance:",
+      "Auto Buy Common Bait",
+      "Auto Store Fruit",
+      "Auto Select Bait",
+      "Loops Per Purchase:",
+      "Water Point: Not Set",
+      "Yes Point: Not Set",
+      "No Point: Not Set",
+      "Number Point: Not Set",
+      "Save Auto Buy Settings",
+      "Fruit Key:",
+      "Store Fruit Point: Not Set",
+      "Water Point 3: Not Set",
+      "Save Auto Store Settings",
+      "Bait Point: Not Set",
+      "Water Point 2: Not Set",
+      "Save Auto Select Bait Settings",
+      "Status: Stopped",
+      "380x650",
+      null
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.create_widgets.<locals>.<lambda>",
+    "line": 432,
+    "arguments": [
+      "e"
+    ],
+    "names": [
+      "canvas",
+      "configure",
+      "bbox"
+    ],
+    "constants": [
+      "all"
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.create_widgets.<locals>._on_mousewheel",
+    "line": 442,
+    "arguments": [
+      "event"
+    ],
+    "names": [
+      "canvas",
+      "yview_scroll",
+      "int",
+      "delta"
+    ],
+    "constants": [
+      1,
+      "units",
+      null,
+      -1
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.create_widgets.<locals>.<lambda>",
+    "line": 454,
+    "arguments": [],
+    "names": [
+      "rebind_key"
+    ],
+    "constants": [
+      "start_stop"
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.create_widgets.<locals>.<lambda>",
+    "line": 462,
+    "arguments": [],
+    "names": [
+      "rebind_key"
+    ],
+    "constants": [
+      "change_area"
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.create_widgets.<locals>.<lambda>",
+    "line": 470,
+    "arguments": [],
+    "names": [
+      "rebind_key"
+    ],
+    "constants": [
+      "exit"
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.create_widgets.<locals>.<lambda>",
+    "line": 575,
+    "arguments": [],
+    "names": [
+      "capture_point"
+    ],
+    "constants": [
+      "water"
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.create_widgets.<locals>.<lambda>",
+    "line": 582,
+    "arguments": [],
+    "names": [
+      "capture_point"
+    ],
+    "constants": [
+      "yes"
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.create_widgets.<locals>.<lambda>",
+    "line": 589,
+    "arguments": [],
+    "names": [
+      "capture_point"
+    ],
+    "constants": [
+      "no"
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.create_widgets.<locals>.<lambda>",
+    "line": 596,
+    "arguments": [],
+    "names": [
+      "capture_point"
+    ],
+    "constants": [
+      "number"
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.create_widgets.<locals>.<lambda>",
+    "line": 625,
+    "arguments": [],
+    "names": [
+      "capture_point"
+    ],
+    "constants": [
+      "store_fruit"
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.create_widgets.<locals>.<lambda>",
+    "line": 632,
+    "arguments": [],
+    "names": [
+      "capture_point"
+    ],
+    "constants": [
+      "water_3"
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.create_widgets.<locals>.<lambda>",
+    "line": 652,
+    "arguments": [],
+    "names": [
+      "capture_point"
+    ],
+    "constants": [
+      "bait"
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.create_widgets.<locals>.<lambda>",
+    "line": 659,
+    "arguments": [],
+    "names": [
+      "capture_point"
+    ],
+    "constants": [
+      "water_2"
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.save_timeouts",
+    "line": 692,
+    "arguments": [
+      "self"
+    ],
+    "names": [
+      "float",
+      "bite_timeout_entry",
+      "get",
+      "bite_timeout",
+      "end_fish_timeout_entry",
+      "end_fish_timeout",
+      "save_settings",
+      "status_label",
+      "config",
+      "root",
+      "after",
+      "ValueError",
+      "messagebox",
+      "showerror"
+    ],
+    "constants": [
+      "Save timeout values from entry fields",
+      "Timeouts saved!",
+      2000,
+      "Error",
+      "Invalid timeout value. Please enter numbers only.",
+      null
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.save_timeouts.<locals>.<lambda>",
+    "line": 699,
+    "arguments": [],
+    "names": [
+      "status_label",
+      "config",
+      "is_running"
+    ],
+    "constants": [
+      "Status: Running",
+      "Status: Stopped"
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.save_rod_keys",
+    "line": 705,
+    "arguments": [
+      "self"
+    ],
+    "names": [
+      "rod_key_var",
+      "get",
+      "rod_key",
+      "not_rod_key_var",
+      "not_rod_key",
+      "save_settings",
+      "status_label",
+      "config",
+      "root",
+      "after"
+    ],
+    "constants": [
+      "Save rod key values from dropdowns",
+      "Rod keys saved!",
+      2000,
+      null
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.save_rod_keys.<locals>.<lambda>",
+    "line": 711,
+    "arguments": [],
+    "names": [
+      "status_label",
+      "config",
+      "is_running"
+    ],
+    "constants": [
+      "Status: Running",
+      "Status: Stopped"
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.save_fruit_key",
+    "line": 715,
+    "arguments": [
+      "self"
+    ],
+    "names": [
+      "fruit_key_var",
+      "get",
+      "fruit_key",
+      "save_settings",
+      "status_label",
+      "config",
+      "root",
+      "after"
+    ],
+    "constants": [
+      "Save fruit key value from dropdown",
+      "Fruit key saved!",
+      2000,
+      null
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.save_fruit_key.<locals>.<lambda>",
+    "line": 720,
+    "arguments": [],
+    "names": [
+      "status_label",
+      "config",
+      "is_running"
+    ],
+    "constants": [
+      "Status: Running",
+      "Status: Stopped"
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.save_pd_gains",
+    "line": 724,
+    "arguments": [
+      "self"
+    ],
+    "names": [
+      "float",
+      "kp_entry",
+      "get",
+      "kp",
+      "kd_entry",
+      "kd",
+      "save_settings",
+      "status_label",
+      "config",
+      "root",
+      "after",
+      "ValueError",
+      "messagebox",
+      "showerror"
+    ],
+    "constants": [
+      "Save PD controller gains from entry fields",
+      "PD gains saved!",
+      2000,
+      "Error",
+      "Invalid PD gain value. Please enter numbers only.",
+      null
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.save_pd_gains.<locals>.<lambda>",
+    "line": 731,
+    "arguments": [],
+    "names": [
+      "status_label",
+      "config",
+      "is_running"
+    ],
+    "constants": [
+      "Status: Running",
+      "Status: Stopped"
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.save_color_tolerances",
+    "line": 737,
+    "arguments": [
+      "self"
+    ],
+    "names": [
+      "int",
+      "blue_tolerance_entry",
+      "get",
+      "blue_tolerance",
+      "white_tolerance_entry",
+      "white_tolerance",
+      "gray_tolerance_entry",
+      "gray_tolerance",
+      "save_settings",
+      "status_label",
+      "config",
+      "root",
+      "after",
+      "ValueError",
+      "messagebox",
+      "showerror"
+    ],
+    "constants": [
+      "Save color tolerances from entry fields",
+      "Color tolerances saved!",
+      2000,
+      "Error",
+      "Invalid tolerance value. Please enter integers only.",
+      null
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.save_color_tolerances.<locals>.<lambda>",
+    "line": 745,
+    "arguments": [],
+    "names": [
+      "status_label",
+      "config",
+      "is_running"
+    ],
+    "constants": [
+      "Status: Running",
+      "Status: Stopped"
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.toggle_auto_buy",
+    "line": 751,
+    "arguments": [
+      "self"
+    ],
+    "names": [
+      "auto_buy_var",
+      "get",
+      "auto_buy_bait",
+      "update_gui_size",
+      "save_settings"
+    ],
+    "constants": [
+      "Toggle the visibility of auto buy settings",
+      null
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.toggle_auto_store",
+    "line": 757,
+    "arguments": [
+      "self"
+    ],
+    "names": [
+      "auto_store_var",
+      "get",
+      "auto_store_fruit",
+      "update_gui_size",
+      "save_settings"
+    ],
+    "constants": [
+      "Toggle the visibility of auto store settings",
+      null
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.toggle_auto_select_bait",
+    "line": 763,
+    "arguments": [
+      "self"
+    ],
+    "names": [
+      "auto_select_bait_var",
+      "get",
+      "auto_select_bait",
+      "update_gui_size",
+      "save_settings"
+    ],
+    "constants": [
+      "Toggle the visibility of auto select bait settings",
+      null
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.update_gui_size",
+    "line": 769,
+    "arguments": [
+      "self"
+    ],
+    "names": [
+      "auto_buy_bait",
+      "auto_buy_frame",
+      "winfo_manager",
+      "pack",
+      "status_label",
+      "pack_forget",
+      "auto_store_fruit",
+      "auto_store_frame",
+      "auto_select_bait",
+      "auto_select_bait_frame",
+      "root",
+      "geometry"
+    ],
+    "constants": [
+      "Update GUI size based on which settings are visible",
+      "380x600",
+      null
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.capture_point",
+    "line": 794,
+    "arguments": [
+      "self",
+      "point_name"
+    ],
+    "names": [
+      "status_label",
+      "config",
+      "title",
+      "pynput_mouse",
+      "Listener",
+      "start"
+    ],
+    "constants": [
+      "Start a listener to capture the next mouse click for a point",
+      "Click anywhere to set ",
+      " Point...",
+      null
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.capture_point.<locals>._on_click",
+    "line": 798,
+    "arguments": [
+      "x",
+      "y",
+      "button",
+      "pressed"
+    ],
+    "names": [
+      "water_point",
+      "yes_point",
+      "no_point",
+      "number_point",
+      "store_fruit_point",
+      "bait_point",
+      "water_point_2",
+      "water_point_3",
+      "root",
+      "after",
+      "update_point_buttons",
+      "update_store_fruit_button",
+      "update_bait_point_button",
+      "update_water_point_2_button",
+      "update_water_point_3_button"
+    ],
+    "constants": [
+      "water",
+      "yes",
+      "no",
+      "number",
+      "store_fruit",
+      "bait",
+      "water_2",
+      "water_3",
+      2000,
+      false,
+      null
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.capture_point.<locals>._on_click.<locals>.<lambda>",
+    "line": 824,
+    "arguments": [],
+    "names": [
+      "status_label",
+      "config",
+      "title"
+    ],
+    "constants": [
+      " Point set: (",
+      ", ",
+      ")"
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.capture_point.<locals>._on_click.<locals>.<lambda>",
+    "line": 826,
+    "arguments": [],
+    "names": [
+      "status_label",
+      "config",
+      "is_running"
+    ],
+    "constants": [
+      "Status: Running",
+      "Status: Stopped"
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.update_point_buttons",
+    "line": 834,
+    "arguments": [
+      "self"
+    ],
+    "names": [
+      "water_point",
+      "water_btn",
+      "config",
+      "yes_point",
+      "yes_btn",
+      "no_point",
+      "no_btn",
+      "number_point",
+      "number_btn"
+    ],
+    "constants": [
+      "Update button labels to show current point coordinates",
+      "Water Point: ",
+      "Yes Point: ",
+      "No Point: ",
+      "Number Point: ",
+      null
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.update_store_fruit_button",
+    "line": 845,
+    "arguments": [
+      "self"
+    ],
+    "names": [
+      "store_fruit_point",
+      "store_fruit_btn",
+      "config"
+    ],
+    "constants": [
+      "Update the store fruit button label to show current point coordinate",
+      "Store Fruit Point: ",
+      null
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.update_bait_point_button",
+    "line": 850,
+    "arguments": [
+      "self"
+    ],
+    "names": [
+      "bait_point",
+      "bait_point_btn",
+      "config"
+    ],
+    "constants": [
+      "Update the bait point button label to show current point coordinate",
+      "Bait Point: ",
+      null
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.update_water_point_2_button",
+    "line": 855,
+    "arguments": [
+      "self"
+    ],
+    "names": [
+      "water_point_2",
+      "water_point_2_btn",
+      "config"
+    ],
+    "constants": [
+      "Update the water point 2 button label to show current point coordinate",
+      "Water Point 2: ",
+      null
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.update_water_point_3_button",
+    "line": 860,
+    "arguments": [
+      "self"
+    ],
+    "names": [
+      "water_point_3",
+      "water_point_3_btn",
+      "config"
+    ],
+    "constants": [
+      "Update the water point 3 button label to show current point coordinate",
+      "Water Point 3: ",
+      null
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.save_auto_buy_settings",
+    "line": 865,
+    "arguments": [
+      "self"
+    ],
+    "names": [
+      "int",
+      "loops_entry",
+      "get",
+      "loops_per_purchase",
+      "save_settings",
+      "status_label",
+      "config",
+      "root",
+      "after",
+      "ValueError",
+      "messagebox",
+      "showerror"
+    ],
+    "constants": [
+      "Save auto buy settings",
+      "Auto buy settings saved!",
+      2000,
+      "Error",
+      "Invalid loops value. Please enter a number.",
+      null
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.save_auto_buy_settings.<locals>.<lambda>",
+    "line": 871,
+    "arguments": [],
+    "names": [
+      "status_label",
+      "config",
+      "is_running"
+    ],
+    "constants": [
+      "Status: Running",
+      "Status: Stopped"
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.save_auto_store_settings",
+    "line": 877,
+    "arguments": [
+      "self"
+    ],
+    "names": [
+      "store_fruit_point",
+      "water_point_3",
+      "messagebox",
+      "showwarning",
+      "save_settings",
+      "status_label",
+      "config",
+      "root",
+      "after"
+    ],
+    "constants": [
+      "Save auto store fruit settings",
+      "Warning",
+      "Please set both store fruit point and water point 3 before saving.",
+      null,
+      "Auto Store settings saved!",
+      2000
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.save_auto_store_settings.<locals>.<lambda>",
+    "line": 884,
+    "arguments": [],
+    "names": [
+      "status_label",
+      "config",
+      "is_running"
+    ],
+    "constants": [
+      "Status: Running",
+      "Status: Stopped"
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.save_auto_select_bait_settings",
+    "line": 888,
+    "arguments": [
+      "self"
+    ],
+    "names": [
+      "bait_point",
+      "water_point_2",
+      "messagebox",
+      "showwarning",
+      "save_settings",
+      "status_label",
+      "config",
+      "root",
+      "after"
+    ],
+    "constants": [
+      "Save auto select bait settings",
+      "Warning",
+      "Please set both bait point and water point 2 before saving.",
+      null,
+      "Auto Select Bait settings saved!",
+      2000
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.save_auto_select_bait_settings.<locals>.<lambda>",
+    "line": 895,
+    "arguments": [],
+    "names": [
+      "status_label",
+      "config",
+      "is_running"
+    ],
+    "constants": [
+      "Status: Running",
+      "Status: Stopped"
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.perform_auto_buy",
+    "line": 899,
+    "arguments": [
+      "self"
+    ],
+    "names": [
+      "auto_buy_bait",
+      "all",
+      "water_point",
+      "yes_point",
+      "no_point",
+      "number_point",
+      "print",
+      "keyboard",
+      "press",
+      "release",
+      "time",
+      "sleep",
+      "win32api",
+      "SetCursorPos",
+      "mouse_event",
+      "win32con",
+      "MOUSEEVENTF_MOVE",
+      "MOUSEEVENTF_LEFTDOWN",
+      "MOUSEEVENTF_LEFTUP",
+      "write",
+      "str",
+      "loops_per_purchase"
+    ],
+    "constants": [
+      "Perform the auto-buy sequence",
+      null,
+      "Starting auto-buy sequence...",
+      "e",
+      2.0,
+      0.05,
+      1.0,
+      "Auto-buy sequence completed!"
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.perform_store_fruit",
+    "line": 991,
+    "arguments": [
+      "self"
+    ],
+    "names": [
+      "store_fruit_point",
+      "print",
+      "fruit_key",
+      "keyboard",
+      "press",
+      "release",
+      "time",
+      "sleep",
+      "win32api",
+      "SetCursorPos",
+      "mouse_event",
+      "win32con",
+      "MOUSEEVENTF_MOVE",
+      "MOUSEEVENTF_LEFTDOWN",
+      "MOUSEEVENTF_LEFTUP",
+      "water_point_3"
+    ],
+    "constants": [
+      "Press fruit key and click on the store fruit point to store fruit",
+      "Store fruit point not set!",
+      null,
+      "Storing fruit - pressing key ",
+      " and clicking at ",
+      0.5,
+      0.05,
+      2.0,
+      "backspace",
+      0.1,
+      "Store fruit completed!"
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.find_color_positions",
+    "line": 1034,
+    "arguments": [
+      "self",
+      "image_array",
+      "target_color",
+      "tolerance"
+    ],
+    "names": [
+      "np",
+      "abs",
+      "argwhere",
+      "len",
+      "min",
+      "max"
+    ],
+    "constants": [
+      "Find the leftmost and rightmost positions of a target color in the image"
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.cast_rod",
+    "line": 1072,
+    "arguments": [
+      "self"
+    ],
+    "names": [
+      "print",
+      "keyboard",
+      "press",
+      "not_rod_key",
+      "release",
+      "time",
+      "sleep",
+      "rod_key",
+      "auto_select_bait",
+      "bait_point",
+      "water_point_2",
+      "win32api",
+      "SetCursorPos",
+      "mouse_event",
+      "win32con",
+      "MOUSEEVENTF_MOVE",
+      "MOUSEEVENTF_LEFTDOWN",
+      "MOUSEEVENTF_LEFTUP"
+    ],
+    "constants": [
+      "Cast the fishing rod with proper key sequence",
+      "Casting rod...",
+      0.3,
+      0.1,
+      "Auto selecting bait...",
+      0.05,
+      null
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.main_loop",
+    "line": 1119,
+    "arguments": [
+      "self"
+    ],
+    "names": [
+      "has_cast",
+      "cast_rod",
+      "waiting_for_bite",
+      "time",
+      "waiting_for_bite_time",
+      "print",
+      "sleep",
+      "mss",
+      "is_running",
+      "area_box",
+      "grab",
+      "np",
+      "array",
+      "find_color_positions",
+      "blue_tolerance",
+      "int",
+      "gray_tolerance",
+      "abs",
+      "argwhere",
+      "len",
+      "min",
+      "max",
+      "white_tolerance",
+      "color_not_found_time",
+      "white_y_top",
+      "white_y_bottom",
+      "white_middle_y",
+      "white_double_height",
+      "range",
+      "shape",
+      "any",
+      "append",
+      "biggest_section_y",
+      "previous_error",
+      "kp",
+      "kd",
+      "arrow_canvas",
+      "update_or_create_arrow",
+      "is_clicking",
+      "win32api",
+      "mouse_event",
+      "win32con",
+      "MOUSEEVENTF_LEFTDOWN",
+      "MOUSEEVENTF_LEFTUP",
+      "bite_timeout",
+      "end_fish_timeout",
+      "fish_caught_count",
+      "loops_per_purchase",
+      "arrow_ids",
+      "delete",
+      "auto_store_fruit",
+      "store_fruit_point",
+      "perform_store_fruit",
+      "auto_buy_bait",
+      "perform_auto_buy",
+      "Exception"
+    ],
+    "constants": [
+      "Main macro loop - runs continuously when is_running is True",
+      true,
+      "Waiting for bite...",
+      0.5,
+      "x1",
+      "y1",
+      "x2",
+      "y2",
+      "top",
+      "left",
+      "width",
+      "height",
+      "Fish detected! Starting minigame...",
+      false,
+      null,
+      "Biggest: ",
+      ", White: ",
+      ", PD: ",
+      ".2f",
+      "white",
+      "biggest",
+      "red",
+      "Biggest: None, White: ",
+      0.01,
+      "Bite Timeout (",
+      "s) - Re-casting rod...",
+      "Target color not found in area",
+      "End Fish Timeout (",
+      "Fish caught: ",
+      "/",
+      "Storing fruit...",
+      "Reached ",
+      " fish - Purchasing more bait...",
+      "Error in main loop: ",
+      0.1
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.main_loop.<locals>.<lambda>",
+    "line": 1273,
+    "arguments": [
+      "s"
+    ],
+    "names": [],
+    "constants": [
+      1
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.show_scan_outline",
+    "line": 1393,
+    "arguments": [
+      "self"
+    ],
+    "names": [
+      "scan_outline",
+      "tk",
+      "Toplevel",
+      "root",
+      "attributes",
+      "overrideredirect",
+      "area_box",
+      "geometry",
+      "Canvas",
+      "scan_outline_canvas",
+      "pack",
+      "create_line",
+      "wm_attributes",
+      "arrow_overlay",
+      "configure",
+      "arrow_canvas"
+    ],
+    "constants": [
+      "Show outline of the scanning area",
+      null,
+      "-alpha",
+      0.7,
+      "-topmost",
+      true,
+      "x1",
+      "y1",
+      "x2",
+      "y2",
+      "x",
+      "+",
+      "black",
+      "both",
+      "lime",
+      "-transparentcolor"
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.hide_scan_outline",
+    "line": 1438,
+    "arguments": [
+      "self"
+    ],
+    "names": [
+      "scan_outline",
+      "destroy",
+      "scan_outline_canvas",
+      "arrow_overlay",
+      "arrow_canvas",
+      "arrow_ids"
+    ],
+    "constants": [
+      "Hide the scan outline and arrow overlay",
+      null,
+      "white",
+      "biggest"
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.get_arrow_coords_horizontal_left",
+    "line": 1450,
+    "arguments": [
+      "self",
+      "x_relative",
+      "y_relative"
+    ],
+    "names": [],
+    "constants": [
+      "Get coordinates for left-pointing arrow (pointing to the left edge of cropped area)"
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.update_or_create_arrow",
+    "line": 1459,
+    "arguments": [
+      "self",
+      "arrow_key",
+      "y_screen",
+      "x_screen",
+      "color"
+    ],
+    "names": [
+      "arrow_canvas",
+      "area_box",
+      "get_arrow_coords_horizontal_left",
+      "arrow_ids",
+      "coords",
+      "itemconfig",
+      "create_polygon"
+    ],
+    "constants": [
+      "Update or create an arrow at the given screen coordinates",
+      null,
+      "x1",
+      "y1"
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.toggle_start_stop",
+    "line": 1481,
+    "arguments": [
+      "self"
+    ],
+    "names": [
+      "is_running",
+      "status_label",
+      "config",
+      "has_cast",
+      "waiting_for_bite",
+      "waiting_for_bite_time",
+      "color_not_found_time",
+      "fish_caught_count",
+      "auto_buy_bait",
+      "perform_auto_buy",
+      "show_scan_outline",
+      "threading",
+      "Thread",
+      "main_loop",
+      "main_thread",
+      "start",
+      "hide_scan_outline",
+      "is_clicking",
+      "win32api",
+      "mouse_event",
+      "win32con",
+      "MOUSEEVENTF_LEFTUP",
+      "previous_error"
+    ],
+    "constants": [
+      "Toggle the start/stop state",
+      "Status: Running",
+      false,
+      null,
+      true,
+      "Status: Stopped"
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.change_area",
+    "line": 1516,
+    "arguments": [
+      "self"
+    ],
+    "names": [
+      "area_selector",
+      "area_change_enabled",
+      "status_label",
+      "config",
+      "AreaSelector",
+      "root",
+      "area_box",
+      "on_area_selected",
+      "close",
+      "after"
+    ],
+    "constants": [
+      "Toggle area selector on/off",
+      null,
+      true,
+      "Drag area box (Press F2 to save)",
+      false,
+      "Area saved!",
+      2000
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.change_area.<locals>.<lambda>",
+    "line": 1529,
+    "arguments": [],
+    "names": [
+      "status_label",
+      "config",
+      "is_running"
+    ],
+    "constants": [
+      "Status: Running",
+      "Status: Stopped"
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.on_area_selected",
+    "line": 1533,
+    "arguments": [
+      "self",
+      "coords"
+    ],
+    "names": [
+      "area_box",
+      "save_settings",
+      "print"
+    ],
+    "constants": [
+      "Called when area selection is complete",
+      "Area Box saved: ",
+      null
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.exit_app",
+    "line": 1539,
+    "arguments": [
+      "self"
+    ],
+    "names": [
+      "is_running",
+      "keyboard",
+      "unhook_all",
+      "root",
+      "quit",
+      "destroy",
+      "sys",
+      "exit"
+    ],
+    "constants": [
+      "Exit the application",
+      false,
+      null
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.rebind_key",
+    "line": 1547,
+    "arguments": [
+      "self",
+      "action"
+    ],
+    "names": [
+      "status_label",
+      "config",
+      "replace",
+      "title",
+      "keyboard",
+      "on_press"
+    ],
+    "constants": [
+      "Rebind a key for an action - clean approach like uma.py",
+      "Press a key for ",
+      "_",
+      " ",
+      "...",
+      "blue",
+      false,
+      null
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.rebind_key.<locals>.on_key_event",
+    "line": 1551,
+    "arguments": [
+      "event"
+    ],
+    "names": [
+      "name",
+      "upper",
+      "keybindings",
+      "save_settings",
+      "status_label",
+      "config",
+      "update_button_labels",
+      "refresh_hotkeys",
+      "root",
+      "after",
+      "keyboard",
+      "unhook"
+    ],
+    "constants": [
+      "Rebound to ",
+      "green",
+      2000,
+      null
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.rebind_key.<locals>.on_key_event.<locals>.<lambda>",
+    "line": 1561,
+    "arguments": [],
+    "names": [
+      "status_label",
+      "config",
+      "is_running"
+    ],
+    "constants": [
+      "Status: Running",
+      "Status: Stopped",
+      "green",
+      "red"
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.update_button_labels",
+    "line": 1572,
+    "arguments": [
+      "self"
+    ],
+    "names": [
+      "root",
+      "winfo_children",
+      "destroy",
+      "create_widgets"
+    ],
+    "constants": [
+      "Update GUI after rebinding - recreate widgets",
+      null
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.setup_hotkeys",
+    "line": 1580,
+    "arguments": [
+      "self"
+    ],
+    "names": [
+      "keyboard",
+      "unhook_all",
+      "add_hotkey",
+      "keybindings",
+      "lower",
+      "toggle_start_stop",
+      "change_area",
+      "exit_app",
+      "Exception",
+      "print"
+    ],
+    "constants": [
+      "Setup global hotkeys that work even when minimized",
+      "start_stop",
+      "change_area",
+      "exit",
+      "Error setting up hotkeys: ",
+      null
+    ]
+  },
+  {
+    "name": "GPOFishingMacro.refresh_hotkeys",
+    "line": 1594,
+    "arguments": [
+      "self"
+    ],
+    "names": [
+      "setup_hotkeys"
+    ],
+    "constants": [
+      "Refresh hotkeys after rebinding",
+      null
+    ]
+  },
+  {
+    "name": "auto_subscribe_to_youtube",
+    "line": 1599,
+    "arguments": [],
+    "names": [
+      "print",
+      "webbrowser",
+      "open",
+      "time",
+      "win32gui",
+      "EnumWindows",
+      "sleep",
+      "Exception",
+      "IsIconic",
+      "ShowWindow",
+      "win32con",
+      "SW_RESTORE",
+      "SetForegroundWindow",
+      "keyboard",
+      "press_and_release"
+    ],
+    "constants": [
+      "\nAttempt to auto-subscribe to YouTube channel.\nOpens browser with subscribe link and attempts automated subscription.\n",
+      "https://www.youtube.com/@AsphaltCake?sub_confirmation=1",
+      "AUTO-SUBSCRIBE TO YOUTUBE CHANNEL",
+      "🌐 Opening YouTube channel in browser...",
+      "⏳ Waiting for browser to load...",
+      false,
+      true,
+      "✅ Browser window found: ",
+      0.2,
+      "⚠️ Error checking for browser: ",
+      null,
+      "⚠️ Browser window not detected, continuing anyway...",
+      "⏳ Waiting for YouTube page to load...",
+      3.5,
+      "🖱️ Attempting to focus browser...",
+      0.5,
+      "⚠️ Could not focus browser: ",
+      "🧭 Navigating to Subscribe button...",
+      "tab",
+      "enter",
+      "✅ Subscribe sequence executed!",
+      "⚠️ Error during navigation: ",
+      "❌ Closing YouTube tab...",
+      "ctrl+w",
+      0.3,
+      "⚠️ Error closing tab: ",
+      "✅ Auto-subscribe sequence completed!",
+      "❌ Auto-subscribe failed: ",
+      "Continuing to main application...",
+      "==================================================",
+      "\n==================================================",
+      "==================================================\n"
+    ]
+  },
+  {
+    "name": "auto_subscribe_to_youtube.<locals>.window_enum_callback",
+    "line": 1623,
+    "arguments": [
+      "hwnd",
+      "windows"
+    ],
+    "names": [
+      "win32gui",
+      "IsWindowVisible",
+      "GetWindowText",
+      "any",
+      "append"
+    ],
+    "constants": [
+      "Chrome",
+      true,
+      false
+    ]
+  },
+  {
+    "name": "auto_subscribe_to_youtube.<locals>.window_enum_callback.<locals>.<genexpr>",
+    "line": 1627,
+    "arguments": [
+      ".0"
+    ],
+    "names": [
+      "lower"
+    ],
+    "constants": [
+      null
+    ]
+  },
+  {
+    "name": "show_terms_and_conditions",
+    "line": 1697,
+    "arguments": [],
+    "names": [
+      "tk",
+      "Tk",
+      "withdraw",
+      "messagebox",
+      "askyesno",
+      "destroy"
+    ],
+    "constants": [
+      "Show terms of use dialog on first launch - must accept to continue",
+      "═════════════════════════════════════════════════════\n           GPO FISHING MACRO - TERMS OF USE\n                    by AsphaltCake\n═════════════════════════════════════════════════════\n\n⚠️ IMPORTANT NOTICE ⚠️\n\nThis application is NOT a virus or malware!\n  • Fishing automation tool for Roblox GPO\n  • Antivirus may flag it (automates mouse/keyboard - this is normal)\n  • Safe to use - built with Python 3.14 & PyInstaller\n  • You can decompile it if you want to verify the code\n  • No data collection or malicious behavior\n\n═════════════════════════════════════════════════════\n\nBY USING THIS SOFTWARE:\n  ✓ You understand this is automation software\n  ✓ You will NOT redistribute as your own work\n  ✓ You will credit AsphaltCake if sharing/modifying\n\n═════════════════════════════════════════════════════\n\nON FIRST LAUNCH:\n  • Opens YouTube (AsphaltCake's channel) in browser\n  • Auto-clicks Subscribe button to support the creator\n  • Closes browser tab automatically\n\n═════════════════════════════════════════════════════\n\nACCEPT: Agree to terms & continue (auto-subscribes)\nDECLINE: Exit application\n\nCreator: AsphaltCake (@AsphaltCake on YouTube)",
+      "Terms of Use - GPO Fishing Macro",
+      "info"
+    ]
+  },
+  {
+    "name": "main",
+    "line": 1750,
+    "arguments": [],
+    "names": [
+      "getattr",
+      "sys",
+      "Path",
+      "executable",
+      "parent",
+      "__file__",
+      "exists",
+      "print",
+      "show_terms_and_conditions",
+      "exit",
+      "auto_subscribe_to_youtube",
+      "Exception",
+      "time",
+      "sleep",
+      "tk",
+      "Tk",
+      "GPOFishingMacro",
+      "mainloop"
+    ],
+    "constants": [
+      "frozen",
+      false,
+      "GPOsettings.json",
+      "\n🎉 First launch detected - showing terms...",
+      "User declined terms - exiting application...",
+      "Terms accepted - proceeding with auto-subscribe...",
+      "Auto-subscribe error (non-critical): ",
+      null,
+      0.5
+    ]
+  }
+]
