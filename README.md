@@ -10,7 +10,7 @@ Baixe [GPO-Fishing-Macro.exe](https://github.com/ikeuchz/gpo-fishing-macro/raw/r
 
 Há um relato de detecção pelo Microsoft Defender na versão anterior, ainda sem diagnóstico concluído. As mudanças de interface, atalhos e ícone não confirmam a segurança do executável; não desative a proteção para executá-lo.
 
-A compilação do commit `77b8986` passou no [GitHub Actions](https://github.com/ikeuchz/gpo-fishing-macro/actions/runs/44154476707), incluindo os testes de interface no Windows. Ainda é uma versão de teste, sem validação da pesca dentro do Roblox.
+A compilação do commit `81c2aa3` passou no [GitHub Actions](https://github.com/ikeuchz/gpo-fishing-macro/actions/runs/44157053762), incluindo os testes de interface no Windows. Ainda é uma versão de teste, sem validação da pesca dentro do Roblox.
 
 ## Executar pelo código no Windows
 
