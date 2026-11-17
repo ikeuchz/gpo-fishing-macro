@@ -247,12 +247,12 @@ class App(OriginalMacro):
         for row, (action, label) in enumerate([('start_stop', 'Iniciar / parar'),
                                               ('change_area', 'Selecionar / salvar área'),
                                               ('exit', 'Encerrar')]):
-            tk.Label(dialog, text=label, bg=theme.BG, fg=theme.TEXT).grid(row=row, column=0, padx=12, pady=12)
+            tk.Label(dialog, text=label, bg=theme.BG, fg=theme.TEXT, font=('Segoe UI', 10)).grid(row=row, column=0, padx=12, pady=12)
             value = tk.StringVar(value=self.keybindings[action])
             ttk.Entry(dialog, textvariable=value).grid(row=row, column=1, padx=12)
             entries[action] = value
         tk.Label(dialog, text='Ex.: INSERT, HOME, END, CTRL+G ou ALT+P', bg=theme.BG,
-                 fg=theme.MUTED).grid(row=3, columnspan=2, padx=12, pady=8)
+                 fg=theme.MUTED, font=('Segoe UI', 9)).grid(row=3, columnspan=2, padx=12, pady=8)
         def save():
             bindings = {key: value.get().strip().upper() for key, value in entries.items()}
             try:

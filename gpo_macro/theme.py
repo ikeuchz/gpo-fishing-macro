@@ -9,7 +9,6 @@ ACCENT = '#45dbc2'
 
 def apply(root):
     root.configure(bg=BG)
-    root.option_add('*Font', ('Segoe UI', 10))
     style = ttk.Style(root)
     style.theme_use('clam')
     style.configure('.', background=BG, foreground=TEXT, font=('Segoe UI', 10))
@@ -37,3 +36,10 @@ def apply(root):
     style.map('Card.TCheckbutton', background=[('active', CARD)])
     style.configure('TCombobox', fieldbackground='#0e1728', foreground=TEXT, padding=6)
     style.map('TCombobox', fieldbackground=[('readonly', '#0e1728')], foreground=[('readonly', TEXT)])
+    style.configure('TEntry', bordercolor='#2b3b52', lightcolor='#2b3b52', darkcolor='#2b3b52', borderwidth=1)
+    style.map('TEntry', bordercolor=[('focus', ACCENT)])
+    style.configure('TCombobox', bordercolor='#2b3b52', lightcolor='#2b3b52', darkcolor='#2b3b52', arrowcolor=ACCENT)
+    style.map('TCombobox', bordercolor=[('focus', ACCENT)])
+    style.configure('TNotebook', bordercolor=BG, lightcolor=BG, darkcolor=BG)
+    style.configure('TNotebook.Tab', bordercolor=BG, lightcolor=BG, darkcolor=BG)
+    style.configure('Vertical.TScrollbar', bordercolor=BG, lightcolor=BG, darkcolor=BG, arrowcolor=ACCENT)
