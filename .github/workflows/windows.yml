@@ -26,17 +26,23 @@ jobs:
         run: |
           $app = Start-Process -FilePath "dist/GPO-Fishing-Macro.exe" -PassThru
           try {
-            Start-Sleep -Seconds 12
-            $app.Refresh()
-            if ($app.HasExited) { throw "Application exited during startup." }
-            if ($app.MainWindowTitle -notlike "GPO Fishing*") {
-              throw "Expected main window, got: $($app.MainWindowTitle)"
+            $window = $null
+            for ($attempt = 0; $attempt -lt 30; $attempt++) {
+              Start-Sleep -Seconds 2
+              $app.Refresh()
+              if ($app.HasExited) { throw "Application exited during startup." }
+              # One-file PyInstaller uses a parent bootloader and a GUI child.
+              $window = Get-Process -Name 'GPO-Fishing-Macro' -ErrorAction SilentlyContinue |
+                Where-Object { $_.MainWindowTitle -like 'GPO Fishing*' } |
+                Select-Object -First 1
+              if ($window) { break }
             }
-            $null = $app.CloseMainWindow()
+            if (-not $window) { throw "Expected main application window was not found." }
+            $null = $window.CloseMainWindow()
             if (-not $app.WaitForExit(15000)) { throw "Application did not close." }
             if ($app.ExitCode -ne 0) { throw "Nonzero application exit code: $($app.ExitCode)" }
           } finally {
-            if (-not $app.HasExited) { $app.Kill() }
+            if (-not $app.HasExited) { $app.Kill($true) }
           }
       - uses: actions/upload-artifact@v4
         with:
