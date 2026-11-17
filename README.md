@@ -8,6 +8,8 @@ A implementação experimental anterior foi substituída. O código de pesca ago
 
 A interface é inteiramente em **português**, incluindo os avisos e as mensagens de captura de pontos. Esta versão tem idioma único, sem seletor.
 
+![Interface em português](docs/interface.png)
+
 - **Pesca**: itens, tempos e área do minigame.
 - **Controle**: precisão do acompanhamento e tolerâncias de cor.
 - **Automação**: compra e seleção de iscas, armazenamento de frutas e seus pontos de clique.
@@ -61,4 +63,4 @@ O arquivo é gerado em `dist/GPO-Fishing-Macro.exe`. O workflow **Windows execut
 
 Os testes verificam a integridade exata do recurso original, a identidade dos métodos de pesca herdados, a busca de cores, a sequência original de teclas/cliques sem enviar entradas reais e a construção da interface no Windows. Não afirmam sucesso no Roblox.
 
-A [compilação verificada no Windows](https://github.com/ikeuchz/gpo-fishing-macro/actions/runs/44160370209) também abriu o executável final, identificou sua janela e o fechou normalmente. O recurso do motor dentro do `.exe` foi conferido contra o bytecode extraído do primeiro arquivo. Isso não equivale a um teste de pesca no Roblox.
+A [compilação verificada no Windows](https://github.com/ikeuchz/gpo-fishing-macro/actions/runs/44164527329) também abriu o executável final, identificou sua janela e o fechou normalmente. O recurso do motor dentro do `.exe` foi conferido contra o bytecode extraído do primeiro arquivo. Isso não equivale a um teste de pesca no Roblox.
