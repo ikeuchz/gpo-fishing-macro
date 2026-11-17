@@ -1,0 +1,28 @@
+name: Windows executable
+on:
+  push:
+    paths:
+      - 'gpo_macro/**'
+      - 'tests/**'
+      - 'run.py'
+      - 'requirements*.txt'
+      - '.github/workflows/windows.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements-build.txt
+      - run: python -m unittest discover -s tests -v
+      - run: python -m PyInstaller --clean --noconfirm --onefile --windowed --name GPO-Fishing-Macro --collect-all mss run.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: GPO-Fishing-Macro-Windows
+          path: dist/GPO-Fishing-Macro.exe
+          if-no-files-found: error

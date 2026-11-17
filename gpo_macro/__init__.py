@@ -1,0 +1,1 @@
+"""Editable fishing automation components."""
