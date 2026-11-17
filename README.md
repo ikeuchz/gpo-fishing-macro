@@ -4,15 +4,25 @@ Macro de pesca para Grand Piece Online com uma interface nova sobre o **motor do
 
 A implementação experimental anterior foi substituída. O código de pesca agora é o bytecode Python 3.14 recuperado daquele arquivo, preservado integralmente em `gpo_macro/assets/original_core.marshal`. A interface em `gpo_macro/app.py` usa a classe original por herança: não redefine o loop, a procura de cores, o controlador PD, o lançamento da vara ou as rotinas de iscas/frutas. Isso preserva a implementação original, mas não substitui a validação dentro do jogo.
 
+## Interface
+
+A interface é inteiramente em **português**, incluindo os avisos e as mensagens de captura de pontos. Esta versão tem idioma único, sem seletor.
+
+- **Pesca**: itens, tempos e área do minigame.
+- **Controle**: precisão do acompanhamento e tolerâncias de cor.
+- **Automação**: compra e seleção de iscas, armazenamento de frutas e seus pontos de clique.
+
+Os controles foram reorganizados, mas continuam chamando as funções originais. As configurações existentes em `GPOsettings.json` são mantidas. Cada cartão tem seu botão **Salvar** para aplicar ajustes.
+
 ## Download e uso
 
 [Baixar o executável Windows 64 bits](https://github.com/ikeuchz/gpo-fishing-macro/raw/refs/heads/main/GPO-Fishing-Macro.exe)
 
-1. Abra o jogo em modo janela ou sem bordas. O painel fica no topo; **Compactar / expandir** reduz a janela para observar a pesca sem Alt+Tab.
-2. Em **Área / salvar área**, mova e redimensione a caixa verde para incluir o minigame inteiro, **incluindo o peixe branco que pode estar à esquerda da barra**. Clique novamente em **Área / salvar área** para salvar. A seleção e a moldura são as originais.
-3. Configure **Rod Key** com a tecla real da vara no inventário e **Not Rod Key** com outro item. Na captura enviada, a vara aparece no slot **5** e a espada no **4**: confira esses valores no seu jogo. Não deixe a tecla padrão `1` se sua vara estiver no `5`.
-4. Use **Iniciar em 3 segundos** e volte ao jogo, ou configure uma combinação como `CTRL+G` em **Atalhos**. Padrões para instalação nova: INSERT para iniciar/parar, HOME para área/salvar e END para sair.
-5. Para interromper, use **Parar / cancelar** ou o atalho configurado.
+1. Abra o jogo em modo janela ou sem bordas. O painel fica no topo; **Modo compacto / Expandir painel** reduz a janela para observar a pesca sem Alt+Tab.
+2. Em **Selecionar área**, mova e redimensione a caixa verde para incluir o minigame inteiro, **incluindo o peixe branco que pode estar à esquerda da barra**. Clique em **Salvar área** para confirmar. A seleção e a moldura são as originais.
+3. Na aba **Pesca**, configure **Vara de pesca** com a tecla real da vara no inventário e **Outro item** com a tecla de outro item. Clique em **Salvar itens**. Na captura enviada, a vara aparece no slot **5** e a espada no **4**: confira esses valores no seu jogo. Não deixe a tecla padrão `1` se sua vara estiver no `5`.
+4. Use **Iniciar pesca** (contagem de 3 segundos) e volte ao jogo, ou configure uma combinação como `CTRL+G` em **Atalhos**. Padrões para instalação nova: INSERT para iniciar/parar, HOME para área/salvar e END para sair.
+5. Para interromper, use **Parar** ou o atalho configurado.
 
 **O fluxo original foi restaurado:** iniciar equipa os itens e lança a vara; o loop aguarda a fisgada, controla o minigame, conclui o ciclo e relança conforme os tempos originais. Não é mais a versão manual experimental anterior. As setas exibidas, cores, ganhos, timeouts, seleção de isca, compra e armazenamento seguem os métodos originais. Os controles completos permanecem disponíveis na parte rolável do painel.
 

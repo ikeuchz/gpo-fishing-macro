@@ -38,6 +38,18 @@ jobs:
               if ($window) { break }
             }
             if (-not $window) { throw "Expected main application window was not found." }
+            try {
+              Add-Type -AssemblyName System.Drawing
+              Add-Type 'using System; using System.Runtime.InteropServices; public static class PreviewCapture { [StructLayout(LayoutKind.Sequential)] public struct Rect { public int Left, Top, Right, Bottom; } [DllImport("user32.dll")] public static extern bool GetWindowRect(IntPtr hwnd, out Rect rect); }'
+              $rect = New-Object PreviewCapture+Rect
+              $null = [PreviewCapture]::GetWindowRect($window.MainWindowHandle, [ref]$rect)
+              $bitmap = [System.Drawing.Bitmap]::new(($rect.Right-$rect.Left), ($rect.Bottom-$rect.Top))
+              $graphics = [System.Drawing.Graphics]::FromImage($bitmap)
+              $graphics.CopyFromScreen($rect.Left, $rect.Top, 0, 0, $bitmap.Size)
+              $bitmap.Save("$pwd/dist/interface.png", [System.Drawing.Imaging.ImageFormat]::Png)
+              $graphics.Dispose()
+              $bitmap.Dispose()
+            } catch { Write-Warning "Preview unavailable: $_" }
             $null = $window.CloseMainWindow()
             if (-not $app.WaitForExit(15000)) { throw "Application did not close." }
             if ($app.ExitCode -ne 0) { throw "Nonzero application exit code: $($app.ExitCode)" }
@@ -49,3 +61,8 @@ jobs:
           name: GPO-Fishing-Macro-Windows
           path: dist/GPO-Fishing-Macro.exe
           if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Interface-preview
+          path: dist/interface.png
+          if-no-files-found: warn
