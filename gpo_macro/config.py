@@ -1,12 +1,16 @@
 from dataclasses import asdict, dataclass, field
 import json
 import math
+from .hotkeys import parse_shortcut
 from pathlib import Path
 
 
 @dataclass
 class Settings:
     area: list[int] = field(default_factory=lambda: [970, 410, 190, 310])
+    start_hotkey: str = 'INSERT'
+    area_hotkey: str = 'HOME'
+    exit_hotkey: str = 'END'
     rod_key: str = '1'
     other_key: str = '2'
     bite_timeout: float = 30.0
@@ -32,6 +36,10 @@ class Settings:
     })
 
     def validate(self):
+        shortcuts = [parse_shortcut(value) for value in
+                     (self.start_hotkey, self.area_hotkey, self.exit_hotkey)]
+        if len(set(shortcuts)) != 3:
+            raise ValueError('Escolha três atalhos diferentes para iniciar, área e sair.')
         if not isinstance(self.points, dict) or not isinstance(self.routines, dict):
             raise ValueError('points e routines devem ser objetos JSON.')
         if any(type(v) is not bool for v in (self.auto_buy, self.auto_store, self.auto_bait)):

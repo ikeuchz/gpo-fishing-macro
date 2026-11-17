@@ -21,11 +21,11 @@ py -3.12 -m venv .venv
 ```
 
 1. Abra o jogo e mantenha sua resolução e escala da interface estáveis.
-2. Pressione F2 e arraste sobre o minigame para selecionar a área na tela principal. Esc cancela. A área também pode ser digitada em pixels como `x, y, largura, altura`.
+2. Clique em **Selecionar área** e arraste sobre o minigame para selecionar a área na tela principal. Esc cancela. A área também pode ser digitada em pixels como `x, y, largura, altura`.
 3. Ajuste as teclas dos itens, salve as configurações e volte à janela do jogo.
-4. Pressione F1 para iniciar ou parar. F3 encerra a aplicação.
+4. Clique em **Iniciar em 3 segundos** e volte ao jogo durante a contagem. Use **Parar / cancelar** para interromper. Você também pode configurar atalhos na aba **Atalhos**.
 
-O título da janela ativa deve conter `Roblox`, ou o texto configurado na interface. Se outra janela receber foco, o macro para e solta o mouse; pressione F1 novamente no jogo para retomar. Durante a execução, alterações da interface só passam a valer na próxima partida. Os atalhos globais F1/F2/F3 são fixos nesta versão.
+O título da janela ativa deve conter `Roblox`, ou o texto configurado na interface. Se outra janela receber foco, o macro para e solta o mouse; use seu atalho configurado no jogo para retomar. Durante a execução, alterações da interface só passam a valer na próxima partida. Os atalhos padrão agora são **INSERT** (iniciar/parar), **HOME** (área) e **END** (sair). Na aba **Atalhos**, é possível trocar por combinações como **CTRL+G**, **ALT+P**, outras teclas de navegação ou F1–F12. Salve para aplicar; atalhos duplicados são rejeitados. Configurações antigas recebem os novos padrões automaticamente.
 
 O macro usa captura de tela para procurar a barra azul, o fundo cinza e o indicador branco de um minigame vertical. O controle mantém ou solta o botão esquerdo conforme a posição detectada e os ganhos proporcional/derivativo. Ajuste as tolerâncias se a detecção não reconhecer a interface. O contador indica ciclos terminados visualmente, não confirmação de itens no inventário.
 
@@ -56,7 +56,7 @@ No Windows:
 
 ```powershell
 .venv\Scripts\python -m pip install -r requirements-build.txt
-.venv\Scripts\python -m PyInstaller --clean --noconfirm --onefile --windowed --name GPO-Fishing-Macro --collect-all mss run.py
+.venv\Scripts\python -m PyInstaller --clean --noconfirm --onefile --windowed --name GPO-Fishing-Macro --collect-all mss --icon gpo_macro/assets/app.ico --add-data "gpo_macro/assets;gpo_macro/assets" run.py
 ```
 
 O arquivo gerado fica em `dist/GPO-Fishing-Macro.exe`. Não é necessário Python na máquina que receber esse executável.

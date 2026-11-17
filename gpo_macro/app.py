@@ -9,13 +9,25 @@ from tkinter import messagebox, simpledialog, ttk
 from .config import Settings
 from .engine import Engine
 from .windows import WindowsInput
+from .hotkeys import active_shortcuts
+from . import theme
 
 
 class App:
     def __init__(self, root):
         self.root = root
         root.title('GPO Fishing Macro — ikeuchz')
-        root.geometry('660x720')
+        root.geometry('820x820')
+        root.minsize(700, 600)
+        theme.apply(root)
+        assets = Path(__file__).resolve().parent / 'assets'
+        icon = assets / 'app.ico'
+        if sys.platform == 'win32' and icon.exists():
+            root.iconbitmap(str(icon))
+        png = assets / 'app.png'
+        if png.exists():
+            self.icon = tk.PhotoImage(file=str(png))
+            root.iconphoto(True, self.icon)
         self.path = (Path(sys.executable).parent if getattr(sys, 'frozen', False)
                      else Path(__file__).resolve().parent.parent) / 'settings.json'
         self.inputs = WindowsInput()
@@ -26,18 +38,47 @@ class App:
         self.closing = False
         self.capture_pending = False
         self.keys = set()
+        self.start_pending = None
         try:
             self.settings = Settings.load(self.path)
         except (ValueError, TypeError, OSError, KeyError) as error:
             messagebox.showwarning('Configuração', f'Não foi possível carregar as configurações:\n{error}')
             self.settings = Settings()
-        self.status = tk.StringVar(value='Configure a área. Com o jogo em foco, pressione F1.')
-        ttk.Label(root, textvariable=self.status, wraplength=630).pack(padx=12, pady=10)
-        ttk.Label(root, text='F1 iniciar/parar · F2 selecionar área · F3 encerrar').pack()
+        header = ttk.Frame(root)
+        header.pack(fill='x', padx=24, pady=(22, 16))
+        if hasattr(self, 'icon'):
+            ttk.Label(header, image=self.icon).pack(side='left', padx=(0, 15))
+        heading = ttk.Frame(header)
+        heading.pack(side='left')
+        ttk.Label(heading, text='GPO Fishing', style='Title.TLabel').pack(anchor='w')
+        ttk.Label(heading, text='IKEUCHZ  /  PESCA E AUTOMAÇÃO', style='Muted.TLabel').pack(anchor='w')
+        self.status = tk.StringVar(value='Pronto para configurar sua próxima sessão.')
+        ttk.Label(root, textvariable=self.status, style='Status.TLabel', wraplength=720).pack(fill='x', padx=24, pady=(0, 12))
+        controls = ttk.Frame(root)
+        controls.pack(fill='x', padx=24, pady=(0, 8))
+        ttk.Button(controls, text='▶  Iniciar em 3 segundos', style='Accent.TButton', command=self.start_from_button).pack(side='left')
+        ttk.Button(controls, text='■  Parar / cancelar', command=self.stop_from_button).pack(side='left', padx=8)
+        ttk.Button(controls, text='Selecionar área', command=self.select_area).pack(side='right')
+        self.shortcut_hint = tk.StringVar()
+        ttk.Label(root, textvariable=self.shortcut_hint, style='Muted.TLabel').pack(anchor='w', padx=24, pady=(0, 10))
+        self.update_shortcut_hint()
         notebook = ttk.Notebook(root)
         notebook.pack(fill='both', expand=True, padx=12, pady=10)
-        main = ttk.Frame(notebook)
-        notebook.add(main, text='Pesca')
+        page = ttk.Frame(notebook)
+        notebook.add(page, text='Configurações de pesca')
+        viewport = tk.Canvas(page, bg=theme.BG, highlightthickness=0)
+        scrollbar = ttk.Scrollbar(page, orient='vertical', command=viewport.yview)
+        viewport.configure(yscrollcommand=scrollbar.set)
+        scrollbar.pack(side='right', fill='y')
+        viewport.pack(side='left', fill='both', expand=True)
+        main = ttk.Frame(viewport)
+        window = viewport.create_window((0, 0), window=main, anchor='nw')
+        main.bind('<Configure>', lambda e: viewport.configure(scrollregion=viewport.bbox('all')))
+        viewport.bind('<Configure>', lambda e: viewport.itemconfigure(window, width=e.width))
+        def wheel(event):
+            if str(event.widget).startswith(str(page)):
+                viewport.yview_scroll(-int(event.delta / 120), 'units')
+        root.bind('<MouseWheel>', wheel, add='+')
         self.fields = {}
         fields = [('area', 'Área: x, y, largura, altura'), ('rod_key', 'Tecla da vara'),
                   ('other_key', 'Tecla de outro item'), ('bite_timeout', 'Espera pela fisgada (s)'),
@@ -53,7 +94,18 @@ class App:
             self.fields[name] = variable
             ttk.Entry(main, textvariable=variable, width=25).grid(row=row, column=1, sticky='ew', padx=8)
         main.columnconfigure(1, weight=1)
-        ttk.Button(main, text='Selecionar área (F2)', command=self.select_area).grid(row=len(fields), column=0, pady=10)
+        ttk.Button(main, text='Selecionar área na tela', command=self.select_area).grid(row=len(fields), column=0, pady=10)
+        shortcuts = ttk.Frame(notebook)
+        notebook.add(shortcuts, text='Atalhos')
+        ttk.Label(shortcuts, text='Escolha as teclas que existem no seu teclado.', font=('Segoe UI', 13, 'bold')).pack(anchor='w', padx=18, pady=(20, 10))
+        ttk.Label(shortcuts, text='Exemplos: INSERT, HOME, END, CTRL+G, ALT+P ou F1.\nSalve para aplicar. Não é necessário usar teclas F.', style='Muted.TLabel').pack(anchor='w', padx=18, pady=(0, 18))
+        for name, label in [('start_hotkey', 'Iniciar / parar'), ('area_hotkey', 'Selecionar área'), ('exit_hotkey', 'Encerrar aplicativo')]:
+            row = ttk.Frame(shortcuts)
+            row.pack(fill='x', padx=18, pady=8)
+            ttk.Label(row, text=label, width=25).pack(side='left')
+            variable = tk.StringVar(value=getattr(self.settings, name))
+            self.fields[name] = variable
+            ttk.Entry(row, textvariable=variable, width=25).pack(side='left')
         advanced = ttk.Frame(notebook)
         notebook.add(advanced, text='Rotinas e pontos')
         self.toggles = {}
@@ -63,7 +115,7 @@ class App:
             ttk.Checkbutton(advanced, text=label, variable=variable).pack(anchor='w', padx=8, pady=4)
         ttk.Label(advanced, text='Capture pontos e edite as ações em JSON: click, key ou wait.', wraplength=600).pack(padx=8, pady=8)
         ttk.Button(advanced, text='Capturar ponto em 3 segundos', command=self.capture_point).pack(pady=6)
-        self.editor = tk.Text(advanced, height=19, width=65, undo=True)
+        self.editor = tk.Text(advanced, height=14, width=65, undo=True, bg=theme.CARD, fg=theme.TEXT, insertbackground=theme.ACCENT, selectbackground='#304766', relief='flat', padx=12, pady=12, font=('Consolas', 10))
         self.editor.pack(fill='both', expand=True, padx=8, pady=8)
         self.editor.insert('1.0', json.dumps({'points': self.settings.points, 'routines': self.settings.routines}, indent=2))
         ttk.Button(root, text='Salvar configurações', command=self.save).pack(pady=(0, 10))
@@ -88,11 +140,39 @@ class App:
         try:
             self.settings = self.read_settings()
             self.settings.save(self.path)
-            self.status.set('Configurações salvas. Volte ao jogo e pressione F1.')
+            self.update_shortcut_hint()
+            self.status.set(f'Salvo. Volte ao jogo e use {self.settings.start_hotkey}, ou o botão Iniciar.')
             return True
         except (ValueError, TypeError, OSError, KeyError, AttributeError) as error:
             messagebox.showerror('Configuração', str(error))
             return False
+
+    def update_shortcut_hint(self):
+        self.shortcut_hint.set(f'{self.settings.start_hotkey} iniciar/parar    ·    {self.settings.area_hotkey} área    ·    {self.settings.exit_hotkey} sair')
+
+    def start_from_button(self):
+        if self.busy() or self.selecting or self.capture_pending or self.start_pending is not None:
+            return
+        if not self.save():
+            return
+        self.countdown(3)
+
+    def countdown(self, remaining):
+        if self.closing:
+            return
+        if remaining == 0:
+            self.start_pending = None
+            self.toggle()
+            return
+        self.status.set(f'Iniciando em {remaining}… Clique na janela do jogo agora.')
+        self.start_pending = self.root.after(1000, lambda: self.countdown(remaining-1))
+
+    def stop_from_button(self):
+        if self.start_pending is not None:
+            self.root.after_cancel(self.start_pending)
+            self.start_pending = None
+        self.stop.set()
+        self.status.set('Parando…' if self.busy() else 'Parado. Nenhuma tecla F é necessária para iniciar.')
 
     def busy(self):
         return self.worker is not None and self.worker.is_alive()
@@ -102,10 +182,13 @@ class App:
             self.stop.set()
             self.status.set('Parando…')
             return
+        if self.start_pending is not None:
+            self.stop_from_button()
+            return
         if self.selecting or self.capture_pending:
             return
         if not self.inputs.focused(self.fields['foreground_title'].get()):
-            self.status.set('Coloque a janela do jogo em primeiro plano antes de pressionar F1.')
+            self.status.set('Início cancelado: coloque o jogo em primeiro plano e tente novamente.')
             return
         if not self.save():
             return
@@ -128,7 +211,7 @@ class App:
         self.worker.start()
 
     def select_area(self):
-        if self.busy() or self.selecting or self.capture_pending:
+        if self.busy() or self.selecting or self.capture_pending or self.start_pending is not None:
             self.status.set('Pare o macro antes de selecionar a área.')
             return
         self.selecting = True
@@ -170,7 +253,7 @@ class App:
         overlay.focus_force()
 
     def capture_point(self):
-        if self.busy() or self.selecting or self.capture_pending:
+        if self.busy() or self.selecting or self.capture_pending or self.start_pending is not None:
             return
         name = simpledialog.askstring('Ponto', 'Nome do ponto (ex.: bait, water, shop, confirm, store):')
         if not name or not name.strip():
@@ -201,20 +284,23 @@ class App:
                 self.root.destroy()
                 return
         else:
-            down = {code for code in (0x70, 0x71, 0x72) if self.inputs.down(code)}
+            bindings = {'start': self.settings.start_hotkey, 'area': self.settings.area_hotkey, 'exit': self.settings.exit_hotkey}
+            down = active_shortcuts(bindings, self.inputs.down)
             pressed = down - self.keys
             self.keys = down
-            # Exit/stop has priority over selection/start.
-            if 0x72 in pressed:
+            if 'exit' in pressed:
                 self.close()
-            elif 0x70 in pressed:
+            elif 'start' in pressed:
                 self.toggle()
-            elif 0x71 in pressed:
+            elif 'area' in pressed:
                 self.select_area()
         self.root.after(50, self.poll)
 
     def close(self):
         self.closing = True
+        if self.start_pending is not None:
+            self.root.after_cancel(self.start_pending)
+            self.start_pending = None
         self.stop.set()
         self.status.set('Encerrando…')
 
