@@ -21,6 +21,23 @@ jobs:
       - run: python -m pip install -r requirements-build.txt
       - run: python -m unittest discover -s tests -v
       - run: python -m PyInstaller --clean --noconfirm --onefile --windowed --name GPO-Fishing-Macro --collect-all mss --hidden-import keyboard --hidden-import numpy --hidden-import win32api --hidden-import win32con --hidden-import win32gui --collect-all pynput --icon gpo_macro/assets/app.ico --add-data "gpo_macro/assets;gpo_macro/assets" run.py
+      - name: Verify packaged application opens and closes
+        shell: pwsh
+        run: |
+          $app = Start-Process -FilePath "dist/GPO-Fishing-Macro.exe" -PassThru
+          try {
+            Start-Sleep -Seconds 12
+            $app.Refresh()
+            if ($app.HasExited) { throw "Application exited during startup." }
+            if ($app.MainWindowTitle -notlike "GPO Fishing*") {
+              throw "Expected main window, got: $($app.MainWindowTitle)"
+            }
+            $null = $app.CloseMainWindow()
+            if (-not $app.WaitForExit(15000)) { throw "Application did not close." }
+            if ($app.ExitCode -ne 0) { throw "Nonzero application exit code: $($app.ExitCode)" }
+          } finally {
+            if (-not $app.HasExited) { $app.Kill() }
+          }
       - uses: actions/upload-artifact@v4
         with:
           name: GPO-Fishing-Macro-Windows

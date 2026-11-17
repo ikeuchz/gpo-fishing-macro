@@ -27,3 +27,22 @@ def load_original():
 
 core = load_original()
 OriginalMacro = core.GPOFishingMacro
+
+
+def _declare_packaged_dependencies():
+    """Static imports for PyInstaller: original imports are inside a data resource.
+
+    This declaration is analyzed by the packager, not called by the launcher.
+    """
+    import json
+    import os
+    import threading
+    import time
+    import webbrowser
+    import keyboard
+    import mss
+    import numpy
+    import win32api
+    import win32con
+    import win32gui
+    from pynput import mouse
